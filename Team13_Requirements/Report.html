@@ -1,24 +1,453 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Overview</title>
-</head>
-<body>
-    <h1>Project 1 Report</h1>
-    <h2>Team Header Table</h2>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body style="text-align:center; background-color:brown" >
+    
+        <h1>Team 13</h1>
+        <h2>Project 1</h2>
+        <h2>Chocoholics Anonymous</h2>
+        
+        <br/>
+        <h2>Team Members</h2>
+        <table>
+            <tr>
+                <td>Colin Klich</td>
+                <td>12114115</td>
+                <td>cmklich@crimson.ua.edu</td>
+                <td>Hours Spent:</td>
+            </tr>
+        </table>
+        <br/>
+        <br/>
+        <h2>Task Distribution Table</h2>
+        <table class="table2">
+            <tr>
+                <th>Name</th>
+                <th>Task</th>
+                <th>Percent Complete</th>
+            </tr>
+            <tr>
+                <td>Colin Klich</td>
+                <td>Use Case Descriptions, Report.html Formatting</td>
+                <td>%</td>
+            </tr>
+        </table>
+        <br/>
+        <br/>
+        <h2>Overview</h2>
+        <p class="paragraph"><span class="tab"></span> In Project 1, we focused on developing the data processing software for Chocoholics Anonymous. It's important to note that our scope did not encompass the communications software, terminal design, or managing payments between members and providers. Each team member, except for the project submitter, has contributed an HTML file containing their respective use case diagram and team information. This collective effort ensures alignment on the project's content. Erik Iverson is the project submitter.
 
-    <h2>Task Distrbution Table</h2>
-
-    <h2>Written Solution</h2>
-
-    <h2>Glossary</h2>
-
-    <img src="" alt="UML Use Case Diagram">
-
-    <h2>Use Case Descriptions</h2>
-
-    <h2>Bitbucket Statistics</h2>
-</body>
+            In terms of our glossary, we meticulously defined and clarified terms based on the Chocoholics Anonymous documentation and our Use Case Diagram. The latter was collaboratively created, incorporating input and insights from all group members. You can access the Use Case Diagram by downloading it from the links below or directly from the Team15_Requirements folder submission. The diagram is available in PNG format as "UseCaseDiagram.png," and the diagram file is named "UseCaseDiagram.uxf." Our analysis led us to identify 5 actors and 14 use cases, which were determined through an examination of individual use case diagrams and a comprehensive group assessment. The Use Case diagram is presented as an image, along with a delightful chocolate illustration.
+            
+            For a deeper understanding of our project, we've also provided descriptions of each use case. These descriptions were distributed among the group members to ensure comprehensive coverage. Lastly, we've included a snapshot of our Bitbucket Statistics to showcase everyone's active participation in the project.
+        </p>
+        <br/>
+        <br/>
+        <h2 id="glossary">Glossary</h2>
+        <div class="glossary" style="list-style-type:disc;">
+            <ul>
+                <li>
+                    <b>Acme Accounting Services</b> - Responsible for financial procedures such as recording payments of
+                    membership fees, suspending members whose fees are overdue, and reinstating suspended members
+                    who have now paid what is owing.
+                </li>
+                <li>
+                    <b>Automatic Weekly Report Generator</b>  - Delivers a report to a provider every Friday at midnight
+                    containing a list of services provided to ChocAn members.
+                </li>
+                <li><b>ChocAn</b> - an organization dedicated to helping people addicted to chocolate.</li>
+                <li><b>ChocAn Data Center</b> - Handles member and provider verification, as well as billing.</li>
+                <li><b>EFT</b> - Stands for electronic funds transfer, is the basis for members’ payments.</li>
+                <li>
+                    <b>Invalid</b> - A member code is  not verified and is invalid because it is not in the system or
+                    the member is suspended.
+                </li>
+                <li><b>Manager</b> - Can access the Manager’s Terminal and request reports and billing information.</li>
+                <li>
+                    <b>Manager’s Terminal</b> - What the manager will use to access EFT data, summary reports, and to
+                    print summary reports.
+                </li>
+                <li>
+                    <b>Member</b> -  Pays monthly fee to ChocAn, can receive services pertaining to ChocAn. Each member
+                    has their own unique member code.
+                </li>
+                <li><b>Member Code</b> -  A unique nine-digit number that corresponds to the member.</li>
+                <li>
+                    <b>Provider</b> - Health care professional that provides services to ChocAn members, and manages the
+                    Provider Terminal.
+                </li>
+                <li><b>Provider Directory</b> - List of service names, codes, and fees.</li>
+                <li>
+                    <b>Provider’s Terminal</b> - The terminal that the providers can manage members and the services
+                    given to them.
+                </li>
+                <li><b>Reinstated</b> - When a member resumes payment after being suspended.</li>
+                <li><b>Service</b> - Consultation or treatment with dietitians, internists, and exercise experts.</li>
+                <li>
+                    <b>Service Code</b> - Is a unique sequence of numbers that pertains to a service, such as a
+                    consultation or treatment session.
+                </li>
+                <li>
+                    <b>Summary report</b> -  Weekly report given to a manager. Details providers that need to be paid
+                    from a member, number of consultations had by that member, and overall fee to that member. Also
+                    details total number of providers that provided services, total number of consultations, and overall
+                    fee total.
+                </li>
+                <li>
+                    <b>Suspended</b> - When a member has not paid membership fees for at least a month, their account
+                    becomes suspended.
+                </li>
+                <li><b>Validated</b> - A member code is verified and is in the system.</li>
+            </ul>
+        </div>
+        <br/>
+        <br/>
+        <h2 id="Use-Case">Use Case Diagram</h2>
+        <img src="UseCaseDiagram.png" alt="Use Case Diagram">
+        <a href="UseCaseDiagram.uxf" download>
+            <p>Download Use Case Diagram File</p>
+        </a>
+        <a href="UseCaseDiagram.png" download>
+            <p>Download Use Case PNG</p>
+        </a>
+        <br/>
+        <br/>
+        <h2 id="Use-Case-Descriptions">Use Case Descriptions</h2>
+        <div class="useCase">
+            <b>Use Case: </b>Verify Service Code<br/>
+            <b>Context: </b>The provider inputs their code to gain access to the terminal.<br/>
+            <b>Actors: </b>Provider’s Terminal<br/>
+            <b>Main Success Scenario:  <br/></b>
+            <ul type="None">
+                <li>1. The system prompts for a provider code.</li>
+                <li>2. The system receives a provider code.</li>
+                <li>3. The system validates the provider code.</li>
+                <li>4. The system opens up the main menu.</li>
+            </ul>
+            <b>Extensions:  <br/></b>
+            <ol class="v">
+                <li>3a. The provider code was not validated.</li>
+                <li><span class="tab2"></span>3a.1. The system informs the provider the code was not valid.</li>
+                <li><span class="tab2"></span>3a.2. The use case continues at step 1.</li>
+            </ol>
+        </div>
+        <br/>
+        <div class="useCase">
+            <b>Use Case: </b>Provide Provider Directory<br/>
+            <b>Context: </b>The provider requests for the Provider Directory containing an alphabetically ordered list
+            of service names and corresponding service codes and fees.<br/>
+            <b>Actors: </b>Provider’s Terminal<br/>
+            <b>Main Success Scenario:  <br/></b>
+            <ul type="None">
+                <li>1. The system <u>verifies the service provider code</u>.</li>
+                <li>2. The system displays the menu on the Provider’s Terminal to select an option.</li>
+                <li>3. The system displays a button to request the Provider Directory.</li>
+                <li>4. The system displays what email the Provider Directory will be sent to.</li>
+                <li>5. The Provider Directory is sent to the provider’s email as an attachment.</li>
+            </ul>
+            <b>Extensions:  <br/></b>
+            <ol class="v">
+                <li>5a. The email did not go through. </li>
+                <li><span class="tab2"></span>5a.1. The system informs the provider the email did not go through.</li>
+                <li><span class="tab2"></span>5a.2. The system asks the provider to correct their email.</li>
+                <li><span class="tab2"></span>5a.3. The use case continues at step 2.</li>
+            </ol>
+        </div>
+        <br/>
+        <div class="useCase">
+            <b>Use Case: </b>Add New Member<br/>
+            <b>Context: </b>The provider adds a new member to the ChocAn Data Center.<br/>
+            <b>Actors: </b>Provider’s Terminal<br/>
+            <b>Main Success Scenario:  <br/></b>
+            <ul type="None">
+                <li>1. The system <u>verifies the service provider code</u>.</li>
+                <li>2. The system displays a menu on the provider terminal to select an option.</li>
+                <li>3. The provider selects the “Add New Member” option.</li>
+                <li>4. The system prompts the provider for the member’s information.</li>
+                <li><span class="tab2"></span>4.1 The provider inputs the member’s name into the terminal.</li>
+                <li><span class="tab2"></span>4.2 The provider inputs the member’s street address into the terminal.
+                </li>
+                <li><span class="tab2"></span>4.3 The provider inputs the member’s city into the terminal.</li>
+                <li><span class="tab2"></span>4.4 The provider inputs the member’s state into the terminal</li>
+                <li><span class="tab2"></span>4.5 The provider inputs the member’s ZIP code into the terminal.</li>
+                <li>5. The provider’s terminal receives the information and stores it into a Member class.</li>
+                <li>6. The system assigns the new member’s account with a unique member code.</li>
+            </ul>
+            <b>Extensions:  <br/></b>
+            <ol class="v">
+                <li>5a. The address input does not exist</li>
+                <li><span class="tab2"></span>5a.1 The system informs the Provider Terminal that the information is
+                    invalid.</li>
+                <li>5b. The member already exists in the system</li>
+                <li><span class="tab2"></span>5b.1 The system informs the Provider Terminal that the information entered
+                    is already associated with a member.</li>
+                <li><span class="tab2"></span>5b.2. The use case continues at step 4.</li>
+            </ol>
+        </div>
+        <br/>
+        <div class="useCase">
+            <b>Use Case: </b>Verify Member<br/>
+            <b>Context: </b>The terminal then dials the ChocAn Data Center, and verifies the member number.<br/>
+            <b>Actors: </b> Provider’s Terminal, ChocAn Data Center, Acme Accounting Services<br/>
+            <b>Main Success Scenario:  <br/></b>
+            <ul type="None">
+                <li>1. Provider slides member’s card through terminal.</li>
+                <li>2. Terminal dials ChocAn Data Center.</li>
+                <li>3. ChocAn Data Center verifies number.</li>
+                <li>4. When number is verified, terminal displays “Validated”.</li>
+            </ul>
+            <b>Extensions:  <br/></b>
+            <ol class="v">
+                <li>4a. If number is invalid, terminal displays reason for invalidity.</li>
+                <li><span class="tab2"></span>4a.1. The use case continues at step 1.</li>
+            </ol>
+        </div>
+        <br/>
+        <div class="useCase">
+            <b>Use Case: </b>Update Member Records<br/>
+            <b>Context: </b>When run in interactive mode the provider’s terminal allows providers to update member
+            records.<br/>
+            <b>Actors: </b>Provider’s Terminal<br/>
+            <b>Main Success Scenario:  <br/></b>
+            <ul type="None">
+                <li>1. The system <u>verifies the service provider code</u>.</li>
+                <li>2. The system displays the menu on the Provider’s Terminal to select an option.</li>
+                <li>3. The “Update Member” option is selected. </li>
+                <li>4. The system prompts for a member code.</li>
+                <li>5. The system <u>verifies the member code</u>.</li>
+                <li>6. The system displays the corresponding member’s information.</li>
+                <li>7. The system allows the provider’s terminal to make and save changes.</li>
+                <li><span class="tab2"></span>7.1 The “save” option is then selected. </li>
+                <li><span class="tab2"></span>7.2 The system receives the updated information.</li>
+                <li><span class="tab2"></span>7.3 The system confirms to the provider’s terminal that the changes have
+                    been saved.</li>
+                <li>8. The system displays the updated member record. </li>
+                <li>9. The system returns to the main menu. </li>
+            </ul>
+            <b>Extensions:  <br/></b>
+            <ol class="v">
+                <li>5a. The member is suspended.</li>
+                <li><span class="tab2"></span>5a.1. The system informs the Provider Terminal the member is suspended.
+                </li>
+                <li><span class="tab2"></span>5a.2. The use case continues at step 2. </li>
+                <li>7a. The provider’s terminal has incorrect information (impossible dates/phone numbers etc.)</li>
+                <li><span class="tab2"></span>7a.1. The system informs the provider’s terminal that the provided
+                    information is not correct.</li>
+                <li><span class="tab2"></span>7a.2. The use case continues at step 7. </li>
+                <li>7b. The member’s information could not be saved.</li>
+                <li><span class="tab2"></span>7b.1 The system informs the provider’s terminal that the updated
+                    information could not be saved.</li>
+                <li><span class="tab2"></span>7b.2 The use case continues at step 7. </li>
+            </ol>
+        </div>
+        <br/>
+        <div class="useCase">
+            <b>Use Case: </b>Delete Member<br/>
+            <b>Context: </b>The provider removes a member from the ChocAn Data Center.<br/>
+            <b>Actors: </b>Provider’s Terminal<br/>
+            <b>Main Success Scenario:  <br/></b>
+            <ul type="None">
+                <li>1. The system verifies the service provider code.</li>
+                <li>2. The system displays a menu on the provider terminal to select an option.</li>
+                <li>3. The provider selects the “Delete Member” option.</li>
+                <li>4. The system prompts the provider’s terminal for a member code.</li>
+                <li>5. The system verifies the member code.</li>
+                <li>6. The system displays an option on the provider terminal to continue or cancel the use case.</li>
+                <li>7. The provider selects “Confirm deletion” option.</li>
+                <li>8. The system clears all stored member information and frees the member code.</li>
+            </ul>
+            <b>Extensions:  <br/></b>
+            <ol class="v">
+                <li>5a. The member code does not exist.</li>
+                <li><span class="tab2"></span>5a.1. The system informs the provider’s terminal that the member code is
+                    invalid.</li>
+                <li><span class="tab2"></span>5a.2. The use case continues at step 4.</li>
+            </ol>
+        </div>
+        <br/>
+        <div class="useCase">
+            <b>Use Case: </b>Bill Member<br/>
+            <b>Context: </b>The provider records the provision of a service or consultation for a member.<br/>
+            <b>Actors: </b>Provider’s Terminal<br/>
+            <b>Main Success Scenario:  <br/></b>
+            <ul type="None">
+                <li>1. The system verifies the <u>service provider code</u>.</li>
+                <li>2. The provider’s terminal prompts for the member code.</li>
+                <li>3. The system <u>verifies the member code</u>.</li>
+                <li>4. The provider inputs the date that service was provided in MM-DD-YYYY format.</li>
+                <li>5. The provider inputs the six-digit service code into the terminal.</li>
+                <li>6. The system verifies the service code.</li>
+                <li>7. The provider’s terminal prompts the provider to confirm the service information.</li>
+                <li>8. The system writes a record of the service provided to a unique file.</li>
+                <li>9. The system fetches the fee of the service.</li>
+                <li>10. The provider’s terminal prompts the provider to confirm the service fee.</li>
+                <li>11. The system stores the service record and fee.</li>
+            </ul>
+            <b>Extensions:  <br/></b>
+            <ol class="v">
+                <li>4a. The date is invalid.</li>
+                <li><span class="tab2"></span>4a.1. The provider’s terminal displays an error.</li>
+                <li><span class="tab2"></span>4a.2. The use case continues at step 4.</li>
+                <li>6a. The service code is invalid.</li>
+                <li><span class="tab2"></span>6a.1. The provider’s terminal displays an error.</li>
+                <li><span class="tab2"></span>6a.2. The use case continues at step 5.</li>
+                <li>7a. The provider chooses to update the service provided.</li>
+                <li><span class="tab2"></span>7a.1. The use case continues at step 5.</li>
+                <li>8a. The provider chooses to update the service record.</li>
+                <li><span class="tab2"></span>8a.1. The use case continues at step 4.</li>
+            </ol>
+        </div>
+        <br/>
+        <div class="useCase">
+            <b>Use Case: </b>Suspend Member<br/>
+            <b>Context: </b>When a member has not paid membership fees for over a month, their member status becomes
+            suspended, and they cannot receive services until they are reinstated.<br/>
+            <b>Actors: </b>Acme Accounting Services, Provider’s Terminal<br/>
+            <b>Main Success Scenario:  <br/></b>
+            <ul type="None">
+                <li>1. Member has a valid account.</li>
+                <li>2. The member has not paid membership fees for at least a month.</li>
+                <li>3. Terminal displays “Member suspended".</li>
+                <li>4. Member removes suspended status when fees are paid.</li>
+            </ul>
+            <b>Extensions:  <br/></b>
+            <ol class="v">
+                <li>2a. Member has paid fees, but system has not verified payment.</li>
+                <li>4a. Member paid fees in full, but system does not remove suspended status.</li>
+            </ol>
+        </div>
+        <br/>
+        <div class="useCase">
+            <b>Use Case: </b>Reinstate Member<br/>
+            <b>Context: </b>When a suspended member pays what is owed, they are reinstated, and can resume using the
+            benefits of their membership (services).<br/>
+            <b>Actors: </b>Acme Accounting Services, Provider’s Terminal<br/>
+            <b>Main Success Scenario:  <br/></b>
+            <ul type="None">
+                <li>1. Provider’s terminal shows member has a valid account.</li>
+                <li>2. Member’s account is listed as suspended.</li>
+                <li>3. Member pays amount owed in full.</li>
+                <li>4. Acme reinstates member’s account and removes suspended status.</li>
+            </ul>
+            <b>Extensions:  <br/></b>
+            <ol class="v">
+                <li>2a. Member falsely listed as suspended when no fees are owed.</li>
+                <li>4a. Provider’s Terminal still lists member as having suspended account.</li>
+            </ol>
+        </div>
+        <br/>
+        <div class="useCase">
+            <b>Use Case: </b>Provide Member Payment Data<br/>
+            <b>Context: </b>Acme Accounting Services is responsible for recording and processing payments of
+            each member.<br/>
+            <b>Actors: </b>  Acme Accounting Services<br/>
+            <b>Main Success Scenario:  <br/></b>
+            <ul type="None">
+                <li>1. The system displays the list of options for Acme Accounting Services.</li>
+                <li>2. The system displays the option “Member Payment Information”.</li>
+                <li>3. All member payment information is displayed.</li>
+                <li>4. Acme computer automatically updates ChocAn Data Center at 9 P.M. with new payment information
+                    for each member</li>
+            </ul>
+            <b>Extensions:  <br/></b>
+            <ol class="v">
+                <li>3a. Member has not paid which will lead to suspension</li>
+                <li>4a. Computer fails to automatically update new member payment information and must be manually
+                    updated</li>
+            </ol>
+        </div>
+        <br/>
+        <div class="useCase">
+            <b>Use Case: </b>Produce Summary Report<br/>
+            <b>Context: </b>A summary report is given to the manager for accounts payable. The report lists every
+            provider to be paid that week, the number of consultations each had, and their total fee for that week.
+            Finally, the total number of providers who provided services, the total number of consultations, and the
+            overall fee total are printed.<br/>
+            <b>Actors: </b>Manager’s Terminal<br/>
+            <b>Main Success Scenario:  <br/></b>
+            <ul type="None">
+                <li>1. The system displays the menu on the Manager’s Terminal to select an option. </li>
+                <li>2. The system displays that a new summary report is available.</li>
+                <li>3. The “View Summary Report” is selected.</li>
+                <li>4. The summary report lists every provider to be paid that week, the number of consultations each
+                    had, and his or her total fee for that week. Finally, the total number of providers who provided
+                    services, the total number of consultations, and the overall fee total are displayed to the
+                    Manager’s Terminal. </li>
+            </ul>
+            <b>Extensions:  <br/></b>
+            <ol class="v">
+                <li>4a. The summary report could not be displayed.</li>
+                <li><span class="tab2"></span>4a.1 The system informs the Manager’s Terminal that the summary report
+                    could not be displayed. </li>
+                <li><span class="tab2"></span>4a.2. The use case continues at step 1.</li>
+            </ol>
+        </div>
+        <br/>
+        <div class="useCase">
+            <b>Use Case: </b>Run Report Printing<br/>
+            <b>Context: </b>The manager can run and print a report at any time during the week. This report contains a
+            list of services provided to a certain member, sorted in order of when the services were provided.<br/>
+            <b>Actors: </b>Manager’s Terminal<br/>
+            <b>Main Success Scenario:  <br/></b>
+            <ul type="None">
+                <li>1. The system displays a list of options the manager can select.</li>
+                <li>2. The system displays the option “View member reports”.</li>
+                <li>3. Manager selects desired member.</li>
+                <li>4. Report is ran displaying the selected member’s information.</li>
+            </ul>
+            <b>Extensions:  <br/></b>
+            <ol class="v">
+                <li>3a. Member report is not available.</li>
+                <li>4a. Report displays incorrect information.</li>
+            </ol>
+        </div>
+        <br/>
+        <div class="useCase">
+            <b>Use Case: </b>Run Main Accounting Procedure extends Produce Summary Report and Run Reporting Printing
+            <br/>
+            <b>Context: </b>This system compiles the week’s financial data and creates transaction reports for members,
+            providers, and managers at their request.<br/>
+            <b>Actors: </b>ChocAn Data Center, Automatic Weekly Report Generator<br/>
+            <b>Main Success Scenario:  <br/></b>
+            <ul type="None">
+                <li>1. The transactions are recorded in the ChocAn Data Center.</li>
+                <li>2. The Automatic Weekly Report Generator receives data from the Data Center and creates reports for
+                    members and providers of their respective services purchased/provided, along with their account
+                    information. It also includes a revenue total to the provider. </li>
+                <li>3. The reports are emailed to the members and providers.</li>
+            </ul>
+            <b>Extensions:  <br/></b>
+            <ol class="v">
+                <li>1a. If transactions fail to be recorded by the ChocAn data center they could be recovered by the EFT
+                    disk.</li>
+                <li>3a. Individual reports are provided to managers throughout the week if requested.</li>
+            </ol>
+        </div>
+        <br/>
+        <div class="useCase">
+            <b>Use Case: </b>Providing EFT Data<br/>
+            <b>Context: </b>All electronic funds transfers are recorded to a disk so that they can later validate
+            credits to providers. <br/>
+            <b>Actors: </b>Manager’s Terminal<br/>
+            <b>Main Success Scenario:  <br/></b>
+            <ul type="None">
+                <li>1. The system saves transaction data to a disk.</li>
+                <li>2. A financial summary report is provided weekly to the manager.</li>
+                <li>3. Banking computers use the data saved in the disk to corroborate provider bank transactions.</li>
+            </ul>
+            <b>Extensions:  <br/></b>
+            <ol class="v">
+                <li>3a. Manager and providers are notified when disk records and bank records do not match.</li>
+            </ol>
+        </div>
+        <br/>
+        <br/>
+        <h2 id="Bitbucket">BitBucket Statistics</h2>
+        <img src="BitBucket1.png" alt="BitBucket Statistics">
+        <img src="BitBucket2.png" alt="BitBucket Statistics">
+    </body>
 </html>
