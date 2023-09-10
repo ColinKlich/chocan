@@ -183,6 +183,19 @@
     </div>
     <br/>
     <div class="useCase">
+        <b>Use Case: </b>Verifies Membership<br/>
+        <b>Context: </b>The ChocAn system verifies the members identity for multiple system processes, including general verification and billing.<br/>
+        <b>Actors: </b>Provider Terminal, ChocAn Data Center, ACME Accounting<br/>
+        <b>Main Success Scenario:</b><br/>
+        <ol>
+            <li>The Provider scans the Member's nine-digit membership card.</li>
+            <li>The ChocAn Data Center responds as to whether or not the ID number is valid</li>
+        </ol>
+        <b>Extensions:</b>ACME Accounting can modify membership status<br/>
+        <p>Suspending members, reinstating members, and updating membership records all impact the verification process</p>
+    </div>
+    <br/>
+    <div class="useCase">
         <b>Use Case: </b>Suspend members<br/>
         <b>Context: </b><br/>
         <b>Actors: </b>ACME Accounting<br/>
@@ -208,26 +221,61 @@
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Report Printing<br/>
-        <b>Context: </b><br/>
+        <b>Context: </b>The main accounting procedure of the ChocAn Data Center causes weekly reports to be created for members and providers.<br/>
         <b>Actors: </b>ChocAn Data Center<br/>
+        <b>Main Success Scenario:</b><br/>
+        <ol>
+            Member Report
+            <li>Once the main accounting procedure finishes on Friday nights, an email is sent to the member's inbox.</li>
+            <li>The email contains info regarding their dealings with ChocAn: member name, member number, street address, city, state, ZIP code, date of service, provider name, and service name. </li>
+
+        </ol>
+        <ol>
+            Provider Report
+            <li>Once the main accounting procedure finishes on Friday nights, an email is sent to the providers's inbox.</li>
+            <li>The email contains all the info on the member report for the provider, but also includes the service code, fee to be paid, the total number of consultations, and the total fee for the week.</li>
+        </ol>
+        <ol>
+            Manager Report
+            <li>A manager report is also created that lists every provider to be paid for the week.</li>
+            <li>The report also contains info on the number of consultations and fees for the week.</li>
+        </ol>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Produce Report<br/>
         <b>Context: </b><br/>
         <b>Actors: </b>ChocAn Data Center<br/>
+        <b>Main Success Scenario:</b><br/>
+        <ol>
+            <li>The main accounting procedure produces three different reports on Fridays: the member report, the provider report, and the manager report.</li>
+        </ol>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Error Message<br/>
-        <b>Context: </b><br/>
-        <b>Actors: </b>ACME Accounting, provider Terminal<br/>
+        <b>Context: </b> An error message has the potential to appear when 9-digit member number is read.<br/>
+        <b>Actors: </b>ChocAn Data Center, Provider Terminal<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li>Provider scans the members nine-digit membership card. </li>
+            <li>If the membership number is valid, the word "Validated" appears on the terminal.</li>
+            <li>If the membership number is invalid, the words "Invalid number" will appear.</li>
+            <li>If the member has not paid membership fees for at least a month, the words "Member suspended" will appear.</li>
+    
+        </ol>
     </div>
     <br/>
     <div class="useCase">
-        <b>Use Case: </b>Check Report<br/>
-        <b>Context: </b><br/>
-        <b>Actors: </b>ACME Accounting, provider terminal<br/>
+        <b>Use Case: </b>Check Number<br/>
+        <b>Context: </b>The Provider Terminal cross-references the member ID number with the verification info in the ChocAn Data Center<br/>
+        <b>Actors: </b>ChocAn Data Center, Provider Terminal<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li>Provider Terminal sends the nine-digit membership ID number over to the ChocAn Data Center</li>
+            <li>The ChocAn Data Center replies with confirmation as to whether or not that ID represents an active member.</li>
+
+        </ol>
     </div>
     <br/>
 
