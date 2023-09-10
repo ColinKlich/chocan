@@ -128,30 +128,58 @@
         <b>Use Case: </b>Verify Service Code<br/>
         <b>Context: </b>The provider inputs their code to gain access to the terminal.<br/>
         <b>Actors: </b>Provider’s Terminal, ACME Accounting<br/>
+        <b>Main Success Scenario: </b><br/>
+        <ol>
+            <li>Provider passes card through ChocAn Terminal</li>
+            <li>Keys in date of service</li>
+            <li>Keys in six digit service code</li>
+        </ol>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Update member records<br/>
-        <b>Context: </b><br/>
+        <b>Context: </b>Provider Updates ChocAn member personal information<br/>
         <b>Actors: </b>Provider’s Terminal<br/>
+        <b>Main Success Scenario:</b><br/>
+        <ol>
+            <li>Provider logs into ChocAn software in interactive mode</li>
+            <li>Provider changes personal info of ChocAn member</li>
+        </ol>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Verify Provider number<br/>
-        <b>Context: </b><br/>
+        <b>Context: </b>Provider logs into ChocAn Software<br/>
         <b>Actors: </b>Provider’s Terminal<br/>
+        <b>Main Success Scenario:</b><br/>
+        <ol>
+            <li>Provider switches on terminal</li>
+            <li>Keys in provider number to verify access</li>
+        </ol>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Bill member<br/>
-        <b>Context: </b><br/>
+        <b>Context: </b>Provider Bills ChocAn for service provided<br/>
         <b>Actors: </b>Provider’s Terminal<br/>
+        <b>Main Success Scenario:</b><br/>
+        <ol>
+            <li>Provider swipes card and keys in member number</li>
+            <li>Keys in date service was provided</li>
+            <li>Provider looks up and keys in correct service code</li>
+            <li>Provider verifies the correct service was input</li>
+        </ol>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Request product directory<br/>
-        <b>Context: </b><br/>
+        <b>Context: </b>Provider requests directory from ChocAn software<br/>
         <b>Actors: </b>Provider’s Terminal<br/>
+        <b>Main Success Scenario:</b><br/>
+        <ol>
+            <li>Provider requests software product from ChocAn</li>
+            <li>Email attachment containing list of all ChocAn products is sent</li>
+        </ol>
     </div>
     <br/>
     <div class="useCase">
