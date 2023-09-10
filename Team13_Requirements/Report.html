@@ -221,8 +221,19 @@
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Report Printing<br/>
-        <b>Context: </b><br/>
+        <b>Context: </b>The main accounting procedure of the ChocAn Data Center causes weekly reports to be created for members and providers.<br/>
         <b>Actors: </b>ChocAn Data Center<br/>
+        <ol>
+            Member Report
+            <li>Once the main accounting procedure finishes on Friday nights, an email is sent to the member's inbox.</li>
+            <li>The email contains info regarding their dealings with ChocAn: member name, member number, street address, city, state, ZIP code, date of service, provider name, and service name. </li>
+
+        </ol>
+        <ol>
+            Provider Report
+            <li>Once the main accounting procedure finishes on Friday nights, an email is sent to the providers's inbox.</li>
+            <li>The email contains all the info on the member report for the provider, but also includes the service code, fee to be paid, the total number of consultations, and the total fee for the week.</li>
+        </ol>
     </div>
     <br/>
     <div class="useCase">
