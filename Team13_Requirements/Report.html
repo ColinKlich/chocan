@@ -220,14 +220,22 @@
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Error Message<br/>
-        <b>Context: </b><br/>
-        <b>Actors: </b>ACME Accounting, provider Terminal<br/>
+        <b>Context: </b> An error message has the potential to appear when 9-digit member number is read.<br/>
+        <b>Actors: </b>ChocAn Data Center, Provider Terminal<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li>Provider scans the members nine-digit membership card. </li>
+            <li>If the membership number is valid, the word "Validated" appears on the terminal.</li>
+            <li>If the membership number is invalid, the words "Invalid number" will appear.</li>
+            <li>If the member has not paid membership fees for at least a month, the words "Member suspended" will appear.</li>
+    
+        </ol>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Check Report<br/>
         <b>Context: </b><br/>
-        <b>Actors: </b>ACME Accounting, provider terminal<br/>
+        <b>Actors: </b>ACME Accounting, Provider terminal<br/>
     </div>
     <br/>
 
