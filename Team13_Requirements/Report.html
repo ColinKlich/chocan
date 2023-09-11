@@ -197,36 +197,58 @@
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Suspend members<br/>
-        <b>Context: </b> ACME Accounting suspends members if payment is not received<br/>
+        <b>Context: </b>When a member has not paid membership fees for over a month, their member status becomes
+        suspended, and they cannot receive services until they are reinstated.<br/>
         <b>Actors: </b>ACME Accounting<br/>
-        <b>Main Success Scenario:</b><br/>
-        <ol>
-            <li>Member does not pay monthly fee for ChocAn services</li>
-            <li>ACME computer updates relevant member info at 9AM suspending ineligible members</li>
-        </ol>
+        <b>Main Success Scenario:  <br/></b>
+        <ul type="None">
+            <li>1. Member has a valid account.</li>
+            <li>2. The member has not paid membership fees for at least a month.</li>
+            <li>3. Terminal displays “Member suspended".</li>
+            <li>4. Member removes suspended status when fees are paid.</li>
+        </ul>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Reinstate members<br/>
-        <b>Context: </b>ACME acounting updates and reinstates suspended members info who have payed all outstanding fees<br/>
+        <b>Context: </b>Member pays missing dues and is reinstated<br/>
         <b>Actors: </b>ACME Accounting<br/>
-        <b>Main Success Scenario:</b><br/>
-        <ol>
-            <li>Member pays monthly fee and any outstanding fees for ChocAn services</li>
-            <li>ACME computer updates relevant member info at 9AM reinstating now eligible members</li>
-        </ol>
+        <b>Main Success Scenario:  <br/></b>
+        <ul type="None">
+            <li>1. Provider’s terminal shows member has a valid account.</li>
+            <li>2. Member’s account is listed as suspended.</li>
+            <li>3. Member pays amount owed in full.</li>
+            <li>4. Acme reinstates member’s account and removes suspended status.</li>
+        </ul>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Record payments<br/>
-        <b>Context: </b><br/>
+        <b>Context: </b>Records when users have made payments so that members can be suspended if they are behind on payments<br/>
         <b>Actors: </b>ACME Accounting<br/>
+        <b>Main Success Scenario:  <br/></b>
+        <ul type="None">
+            <li>1. The system displays the option “Member Payment Information” under the user's account information.</li>
+            <li>2. All member payment information is displayed.</li>
+            <li>3. Acme computer automatically updates ChocAn Data Center at 9 P.M. with new payment information
+                for each member</li>
+        </ul>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Main Accounting procedure<br/>
-        <b>Context: </b><br/>
+        <b>Context: </b>This system compiles the week’s financial data and creates transaction reports for members,
+        providers, and managers at their request.<br/>
         <b>Actors: </b>ChocAn Data Center<br/>
+        <b>Main Success Scenario:  <br/></b>
+        <ul type="None">
+            <li>1. The transactions are recorded in the ChocAn Data Center.</li>
+            <li>2. The Automatic Weekly Report Generator receives data from the Data Center and creates reports for
+                members and providers of their respective services purchased/provided, along with their account
+                information. It also includes a revenue total to the provider. </li>
+            <li>3. The reports are emailed to the members and providers.</li>
+        </ul>
+        <b>Extends: </b>Report Printing, Produce Report <br/>
     </div>
     <br/>
     <div class="useCase">
