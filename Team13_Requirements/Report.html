@@ -197,14 +197,24 @@
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Suspend members<br/>
-        <b>Context: </b><br/>
+        <b>Context: </b> ACME Accounting suspends members if payment is not received<br/>
         <b>Actors: </b>ACME Accounting<br/>
+        <b>Main Success Scenario:</b><br/>
+        <ol>
+            <li>Member does not pay monthly fee for ChocAn services</li>
+            <li>ACME computer updates relevant member info at 9AM suspending ineligible members</li>
+        </ol>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Reinstate members<br/>
-        <b>Context: </b><br/>
+        <b>Context: </b>ACME acounting updates and reinstates suspended members info who have payed all outstanding fees<br/>
         <b>Actors: </b>ACME Accounting<br/>
+        <b>Main Success Scenario:</b><br/>
+        <ol>
+            <li>Member pays monthly fee and any outstanding fees for ChocAn services</li>
+            <li>ACME computer updates relevant member info at 9AM reinstating now eligible members</li>
+        </ol>
     </div>
     <br/>
     <div class="useCase">
