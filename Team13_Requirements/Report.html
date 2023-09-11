@@ -21,32 +21,32 @@
             <td> Caleb Dochow </td>
             <td> 12158065 </td>
             <td> cdochow@crimson.ua.edu </td>
-            <td> Hours Spent: </td>
+            <td> Hours Spent: 6</td>
     
         </tr>
         <tr>
             <td> Chris Hellen </td>
-            <td> CWID </td>
-            <td> @crimson.ua.edu </td>
-            <td> Hours Spent: </td>
+            <td> 12066979 </td>
+            <td> chellen@crimson.ua.edu </td>
+            <td> Hours Spent: 6</td>
         </tr>
         <tr>
             <td> Colin Klich </td>
             <td> 12114115 </td>
             <td> cmklich@crimson.ua.edu </td>
-            <td> Hours Spent: </td>
+            <td> Hours Spent: 6</td>
         </tr>
         <tr>
             <td> Kara Moran </td>
             <td> 12260246 </td>
             <td> kjmoran@crimson.ua.edu </td>
-            <td> Hours Spent: </td>
+            <td> Hours Spent: 6</td>
         </tr>
         <tr>
             <td> Samuel Wisnoff </td>
-            <td> CWID </td>
-            <td> @crimson.ua.edu </td>
-            <td> Hours Spent: </td>
+            <td> 12254702 </td>
+            <td> slwisnoff@crimson.ua.edu </td>
+            <td> Hours Spent: 6 </td>
         </tr>
 
     </table>
@@ -64,27 +64,27 @@
         <tr>
             <td> Caleb Dochow </td>
             <td> Paragraph, Report.html, Use Case Diagram </td>
-            <td> % </td>
+            <td> 20% </td>
         </tr>
         <tr>
             <td> Chris Hellen </td>
             <td> Use Case Desc., Report.html, Use Case Diagram </td>
-            <td> % </td>
+            <td> 20% </td>
         </tr>
         <tr>
             <td> Colin Klich </td>
             <td> Use Case Desc., Report.html, Use Case Diagram </td>
-            <td> % </td>
+            <td> 20% </td>
         </tr>
         <tr>
             <td> Kara Moran </td>
             <td> Glossary, Report.html, Use Case Diagram </td>
-            <td> % </td>
+            <td> 20% </td>
         </tr>
         <tr>
             <td> Samuel Wisnoff </td>
             <td> Use Case Desc., Report.html, Use Case Diagram </td>
-            <td> % </td>
+            <td> 20% </td>
         </tr>
 
     </table>
@@ -117,10 +117,201 @@
 
 
         </p>
-
-    <img src="" alt="UML Use Case Diagram">
+    <br/>
+    <h2>Use Case Diagram</h2>
+    <img style="height: 300px;" src="./use-case-diagrams/CalebDochowUseCaseDiagram.png" alt="UML Use Case Diagram">
+    <br/>
 
     <h2>Use Case Descriptions</h2>
 
+    <div class="useCase">
+        <b>Use Case: </b>Verify Service Code<br/>
+        <b>Context: </b>The provider inputs their code to gain access to the terminal.<br/>
+        <b>Actors: </b>Provider’s Terminal, ACME Accounting<br/>
+        <b>Main Success Scenario: </b><br/>
+        <ol>
+            <li>Provider passes card through ChocAn Terminal</li>
+            <li>Keys in date of service</li>
+            <li>Keys in six digit service code</li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Update member records<br/>
+        <b>Context: </b>Provider Updates ChocAn member personal information<br/>
+        <b>Actors: </b>Provider’s Terminal<br/>
+        <b>Main Success Scenario:</b><br/>
+        <ol>
+            <li>Provider logs into ChocAn software in interactive mode</li>
+            <li>Provider changes personal info of ChocAn member</li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Verify Provider number<br/>
+        <b>Context: </b>Provider logs into ChocAn Software<br/>
+        <b>Actors: </b>Provider’s Terminal<br/>
+        <b>Main Success Scenario:</b><br/>
+        <ol>
+            <li>Provider switches on terminal</li>
+            <li>Keys in provider number to verify access</li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Bill member<br/>
+        <b>Context: </b>Provider Bills ChocAn for service provided<br/>
+        <b>Actors: </b>Provider’s Terminal<br/>
+        <b>Main Success Scenario:</b><br/>
+        <ol>
+            <li>Provider swipes card and keys in member number</li>
+            <li>Keys in date service was provided</li>
+            <li>Provider looks up and keys in correct service code</li>
+            <li>Provider verifies the correct service was input</li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Request product directory<br/>
+        <b>Context: </b>Provider requests directory from ChocAn software<br/>
+        <b>Actors: </b>Provider’s Terminal<br/>
+        <b>Main Success Scenario:</b><br/>
+        <ol>
+            <li>Provider requests software product from ChocAn</li>
+            <li>Email attachment containing list of all ChocAn products is sent</li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Verifies Membership<br/>
+        <b>Context: </b>The ChocAn system verifies the members identity for multiple system processes, including general verification and billing.<br/>
+        <b>Actors: </b>Provider Terminal, ChocAn Data Center, ACME Accounting<br/>
+        <b>Main Success Scenario:</b><br/>
+        <ol>
+            <li>The Provider scans the Member's nine-digit membership card.</li>
+            <li>The ChocAn Data Center responds as to whether or not the ID number is valid</li>
+        </ol>
+        <b>Extensions:</b>ACME Accounting can modify membership status<br/>
+        <p>Suspending members, reinstating members, and updating membership records all impact the verification process</p>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Suspend members<br/>
+        <b>Context: </b>When a member has not paid membership fees for over a month, their member status becomes
+        suspended, and they cannot receive services until they are reinstated.<br/>
+        <b>Actors: </b>ACME Accounting<br/>
+        <b>Main Success Scenario:  <br/></b>
+        <ul type="None">
+            <li>1. Member has a valid account.</li>
+            <li>2. The member has not paid membership fees for at least a month.</li>
+            <li>3. Terminal displays “Member suspended".</li>
+            <li>4. Member removes suspended status when fees are paid.</li>
+        </ul>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Reinstate members<br/>
+        <b>Context: </b>Member pays missing dues and is reinstated<br/>
+        <b>Actors: </b>ACME Accounting<br/>
+        <b>Main Success Scenario:  <br/></b>
+        <ul type="None">
+            <li>1. Provider’s terminal shows member has a valid account.</li>
+            <li>2. Member’s account is listed as suspended.</li>
+            <li>3. Member pays amount owed in full.</li>
+            <li>4. Acme reinstates member’s account and removes suspended status.</li>
+        </ul>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Record payments<br/>
+        <b>Context: </b>Records when users have made payments so that members can be suspended if they are behind on payments<br/>
+        <b>Actors: </b>ACME Accounting<br/>
+        <b>Main Success Scenario:  <br/></b>
+        <ul type="None">
+            <li>1. The system displays the option “Member Payment Information” under the user's account information.</li>
+            <li>2. All member payment information is displayed.</li>
+            <li>3. Acme computer automatically updates ChocAn Data Center at 9 P.M. with new payment information
+                for each member</li>
+        </ul>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Main Accounting procedure<br/>
+        <b>Context: </b>This system compiles the week’s financial data and creates transaction reports for members,
+        providers, and managers at their request.<br/>
+        <b>Actors: </b>ChocAn Data Center<br/>
+        <b>Main Success Scenario:  <br/></b>
+        <ul type="None">
+            <li>1. The transactions are recorded in the ChocAn Data Center.</li>
+            <li>2. The Automatic Weekly Report Generator receives data from the Data Center and creates reports for
+                members and providers of their respective services purchased/provided, along with their account
+                information. It also includes a revenue total to the provider. </li>
+            <li>3. The reports are emailed to the members and providers.</li>
+        </ul>
+        <b>Extends: </b>Report Printing, Produce Report <br/>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Report Printing<br/>
+        <b>Context: </b>The main accounting procedure of the ChocAn Data Center causes weekly reports to be created for members and providers.<br/>
+        <b>Actors: </b>ChocAn Data Center<br/>
+        <b>Main Success Scenario:</b><br/>
+        <ol>
+            Member Report
+            <li>Once the main accounting procedure finishes on Friday nights, an email is sent to the member's inbox.</li>
+            <li>The email contains info regarding their dealings with ChocAn: member name, member number, street address, city, state, ZIP code, date of service, provider name, and service name. </li>
+
+        </ol>
+        <ol>
+            Provider Report
+            <li>Once the main accounting procedure finishes on Friday nights, an email is sent to the providers's inbox.</li>
+            <li>The email contains all the info on the member report for the provider, but also includes the service code, fee to be paid, the total number of consultations, and the total fee for the week.</li>
+        </ol>
+        <ol>
+            Manager Report
+            <li>A manager report is also created that lists every provider to be paid for the week.</li>
+            <li>The report also contains info on the number of consultations and fees for the week.</li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Produce Report<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>ChocAn Data Center<br/>
+        <b>Main Success Scenario:</b><br/>
+        <ol>
+            <li>The main accounting procedure produces three different reports on Fridays: the member report, the provider report, and the manager report.</li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Error Message<br/>
+        <b>Context: </b> An error message has the potential to appear when 9-digit member number is read.<br/>
+        <b>Actors: </b>ChocAn Data Center, Provider Terminal<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li>Provider scans the members nine-digit membership card. </li>
+            <li>If the membership number is valid, the word "Validated" appears on the terminal.</li>
+            <li>If the membership number is invalid, the words "Invalid number" will appear.</li>
+            <li>If the member has not paid membership fees for at least a month, the words "Member suspended" will appear.</li>
+    
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Check Number<br/>
+        <b>Context: </b>The Provider Terminal cross-references the member ID number with the verification info in the ChocAn Data Center<br/>
+        <b>Actors: </b>ChocAn Data Center, Provider Terminal<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li>Provider Terminal sends the nine-digit membership ID number over to the ChocAn Data Center</li>
+            <li>The ChocAn Data Center replies with confirmation as to whether or not that ID represents an active member.</li>
+
+        </ol>
+    </div>
+    <br/>
+
     <h2>Bitbucket Statistics</h2>
+    <img src="stats1.png" alt="UML Use Case Diagram">
+    <img src="stats2.png" alt="UML Use Case Diagram 2">
 </body>
