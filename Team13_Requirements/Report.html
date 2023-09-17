@@ -100,7 +100,7 @@ For a deeper comprehension of our project, we have also furnished descriptions f
 
     <h2>Glossary</h2>
         <p>
-            <li><b>Acme Accounting Services</b> Third-party organization partnered with ChocAn to provide financial procedures</li>
+            <li><b>Operator Services</b> Third-party organization partnered with ChocAn to provide financial procedures</li>
             <li><b>Clock</b> Runs Main Accounting <P></P>rocedures at set times throughout the day</li>
             <li><b>ChocAn Data Center</b>: Central system which holds all data concerning members, allows managers to update information about members, and automatically runs accounting procedure weekly</li>
             <li><b>Chocoholics Anonymous (ChocAn)</b>: An organization dedicataed to helping people addicted to chocolate</li>
@@ -129,9 +129,9 @@ For a deeper comprehension of our project, we have also furnished descriptions f
     <h2>Use Case Descriptions</h2>
 
     <div class="useCase">
-        <b>Use Case: </b>Verify Service Code<br/>
+        <b>Use Case: </b>Verify Provider Number<br/>
         <b>Context: </b>The provider inputs their code to gain access to the terminal.<br/>
-        <b>Actors: </b>Provider’s Terminal, ACME Accounting<br/>
+        <b>Actors: </b>Provider<br/>
         <b>Main Success Scenario: </b><br/>
         <ol>
             <li>Provider passes card through ChocAn Terminal</li>
@@ -141,9 +141,21 @@ For a deeper comprehension of our project, we have also furnished descriptions f
     </div>
     <br/>
     <div class="useCase">
+        <b>Use Case: </b>Verify Manager number<br/>
+        <b>Context: </b>The manager inputs their code to gain access to the terminal.<br/>
+        <b>Actors: </b>Manager<br/>
+        <b>Main Success Scenario: </b><br/>
+        <ol>
+            <li>Manager passes card through ChocAn Terminal</li>
+            <li>Keys in date of service</li>
+            <li>Keys in six digit service code</li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
         <b>Use Case: </b>Update member records<br/>
         <b>Context: </b>Provider Updates ChocAn member personal information<br/>
-        <b>Actors: </b>Provider’s Terminal<br/>
+        <b>Actors: </b>Provider<br/>
         <b>Main Success Scenario:</b><br/>
         <ol>
             <li>Provider logs into ChocAn software in interactive mode</li>
@@ -152,21 +164,22 @@ For a deeper comprehension of our project, we have also furnished descriptions f
     </div>
     <br/>
     <div class="useCase">
-        <b>Use Case: </b>Verify Provider number<br/>
-        <b>Context: </b>Provider logs into ChocAn Software<br/>
-        <b>Actors: </b>Provider’s Terminal<br/>
+        <b>Use Case: </b>Check Number<br/>
+        <b>Context: </b>Provider checks customer number to validate membership.<br/>
+        <b>Actors: </b>Provider<br/>
         <b>Main Success Scenario:</b><br/>
         <ol>
             <li>Provider switches on terminal</li>
-            <li>Keys in provider number to verify access</li>
-            <li>Provider has access to ChocAn provder software</li>
+            <li>Keys in customer number to verify membership</li>
+            <li>Provider completes other services for the customer</li>
         </ol>
+        <b>Extends: </b> Check membership <br/>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Bill member<br/>
         <b>Context: </b>Provider Bills ChocAn for service provided<br/>
-        <b>Actors: </b>Provider’s Terminal<br/>
+        <b>Actors: </b>Provider<br/>
         <b>Main Success Scenario:</b><br/>
         <ol>
             <li>Provider swipes card and keys in member number</li>
@@ -180,7 +193,7 @@ For a deeper comprehension of our project, we have also furnished descriptions f
     <div class="useCase">
         <b>Use Case: </b>Request product directory<br/>
         <b>Context: </b>Provider requests directory from ChocAn software<br/>
-        <b>Actors: </b>Provider’s Terminal<br/>
+        <b>Actors: </b>Provider<br/>
         <b>Main Success Scenario:</b><br/>
         <ol>
             <li>Provider requests software product from ChocAn</li>
@@ -191,13 +204,13 @@ For a deeper comprehension of our project, we have also furnished descriptions f
     <div class="useCase">
         <b>Use Case: </b>Verifies Membership<br/>
         <b>Context: </b>The ChocAn system verifies the members identity for multiple system processes, including general verification and billing.<br/>
-        <b>Actors: </b>Provider Terminal, ChocAn Data Center, ACME Accounting<br/>
+        <b>Actors: </b>Provider<br/>
         <b>Main Success Scenario:</b><br/>
         <ol>
             <li>The Provider scans the Member's nine-digit membership card.</li>
             <li>The ChocAn Data Center responds as to whether or not the ID number is valid</li>
         </ol>
-        <b>Extensions:</b>ACME Accounting can modify membership status<br/>
+        <b>Extensions:</b>Operator can modify membership status<br/>
         <p>Suspending members, reinstating members, and updating membership records all impact the verification process</p>
     </div>
     <br/>
@@ -205,7 +218,7 @@ For a deeper comprehension of our project, we have also furnished descriptions f
         <b>Use Case: </b>Suspend members<br/>
         <b>Context: </b>When a member has not paid membership fees for over a month, their member status becomes
         suspended, and they cannot receive services until they are reinstated.<br/>
-        <b>Actors: </b>ACME Accounting<br/>
+        <b>Actors: </b>Operator<br/>
         <b>Main Success Scenario:  <br/></b>
         <ul type="None">
             <li>1. Member has a valid account.</li>
@@ -218,10 +231,10 @@ For a deeper comprehension of our project, we have also furnished descriptions f
     <div class="useCase">
         <b>Use Case: </b>Reinstate members<br/>
         <b>Context: </b>Member pays missing dues and is reinstated<br/>
-        <b>Actors: </b>ACME Accounting<br/>
+        <b>Actors: </b>Operator<br/>
         <b>Main Success Scenario:  <br/></b>
         <ul type="None">
-            <li>1. Provider’s terminal shows member has a valid account.</li>
+            <li>1. Provider shows member has a valid account.</li>
             <li>2. Member’s account is listed as suspended.</li>
             <li>3. Member pays amount owed in full.</li>
             <li>4. Acme reinstates member’s account and removes suspended status.</li>
@@ -231,7 +244,7 @@ For a deeper comprehension of our project, we have also furnished descriptions f
     <div class="useCase">
         <b>Use Case: </b>Record payments<br/>
         <b>Context: </b>Records when users have made payments so that members can be suspended if they are behind on payments<br/>
-        <b>Actors: </b>ACME Accounting<br/>
+        <b>Actors: </b>Operator<br/>
         <b>Main Success Scenario:  <br/></b>
         <ul type="None">
             <li>1. The system displays the option “Member Payment Information” under the user's account information.</li>
@@ -245,7 +258,7 @@ For a deeper comprehension of our project, we have also furnished descriptions f
         <b>Use Case: </b>Main Accounting procedure<br/>
         <b>Context: </b>This system compiles the week’s financial data and creates transaction reports for members,
         providers, and managers at their request.<br/>
-        <b>Actors: </b>ChocAn Data Center<br/>
+        <b>Actors: </b>Clock<br/>
         <b>Main Success Scenario:  <br/></b>
         <ul type="None">
             <li>1. The transactions are recorded in the ChocAn Data Center.</li>
@@ -260,7 +273,7 @@ For a deeper comprehension of our project, we have also furnished descriptions f
     <div class="useCase">
         <b>Use Case: </b>Report Printing<br/>
         <b>Context: </b>The main accounting procedure of the ChocAn Data Center causes weekly reports to be created for members and providers.<br/>
-        <b>Actors: </b>ChocAn Data Center<br/>
+        <b>Actors: </b>Clock<br/>
         <b>Main Success Scenario:</b><br/>
         <ol>
             Member Report
@@ -283,7 +296,7 @@ For a deeper comprehension of our project, we have also furnished descriptions f
     <div class="useCase">
         <b>Use Case: </b>Produce Report<br/>
         <b>Context: </b><br/>
-        <b>Actors: </b>ChocAn Data Center<br/>
+        <b>Actors: </b>Clock<br/>
         <b>Main Success Scenario:</b><br/>
         <ol>
             <li>The main accounting procedure produces three different reports on Fridays: the member report, the provider report, and the manager report.</li>
@@ -293,7 +306,7 @@ For a deeper comprehension of our project, we have also furnished descriptions f
     <div class="useCase">
         <b>Use Case: </b>Error Message<br/>
         <b>Context: </b> An error message has the potential to appear when 9-digit member number is read.<br/>
-        <b>Actors: </b>ChocAn Data Center, Provider Terminal<br/>
+        <b>Actors: </b>Clock, Provider<br/>
         <b>Main Success Scenario</b> <br/>
         <ol>
             <li>Provider scans the members nine-digit membership card. </li>
@@ -306,11 +319,11 @@ For a deeper comprehension of our project, we have also furnished descriptions f
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Check Number<br/>
-        <b>Context: </b>The Provider Terminal cross-references the member ID number with the verification info in the ChocAn Data Center<br/>
-        <b>Actors: </b>ChocAn Data Center, Provider Terminal<br/>
+        <b>Context: </b>The Provider cross-references the member ID number with the verification info in the ChocAn Data Center<br/>
+        <b>Actors: </b>Clock, Provider<br/>
         <b>Main Success Scenario</b> <br/>
         <ol>
-            <li>Provider Terminal sends the nine-digit membership ID number over to the ChocAn Data Center</li>
+            <li>Provider sends the nine-digit membership ID number over to the ChocAn Data Center</li>
             <li>The ChocAn Data Center replies with confirmation as to whether or not that ID represents an active member.</li>
 
         </ol>
