@@ -141,18 +141,6 @@ For a deeper comprehension of our project, we have also furnished descriptions f
     </div>
     <br/>
     <div class="useCase">
-        <b>Use Case: </b>Verify Manager number<br/>
-        <b>Context: </b>The manager inputs their code to gain access to the terminal.<br/>
-        <b>Actors: </b>Manager<br/>
-        <b>Main Success Scenario: </b><br/>
-        <ol>
-            <li>Manager passes card through ChocAn Terminal</li>
-            <li>Keys in date of service</li>
-            <li>Keys in six digit service code</li>
-        </ol>
-    </div>
-    <br/>
-    <div class="useCase">
         <b>Use Case: </b>Update member records<br/>
         <b>Context: </b>Provider Updates ChocAn member personal information<br/>
         <b>Actors: </b>Provider<br/>
@@ -202,43 +190,182 @@ For a deeper comprehension of our project, we have also furnished descriptions f
     </div>
     <br/>
     <div class="useCase">
-        <b>Use Case: </b>Suspend members<br/>
-        <b>Context: </b>When a member has not paid membership fees for over a month, their member status becomes
-        suspended, and they cannot receive services until they are reinstated.<br/>
-        <b>Actors: </b>Operator<br/>
-        <b>Main Success Scenario:  <br/></b>
-        <ul type="None">
-            <li>1. Member has a valid account.</li>
-            <li>2. The member has not paid membership fees for at least a month.</li>
-            <li>3. Terminal displays “Member suspended".</li>
-            <li>4. Member removes suspended status when fees are paid.</li>
-        </ul>
+        <b>Use Case: </b>Error Message<br/>
+        <b>Context: </b> An error message has the potential to appear when 9-digit member number is read.<br/>
+        <b>Actors: </b>Clock, Provider<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li>Provider scans the members nine-digit membership card. </li>
+            <li>If the membership number is valid, the word "Validated" appears on the terminal.</li>
+            <li>If the membership number is invalid, the words "Invalid number" will appear.</li>
+            <li>If the member has not paid membership fees for at least a month, the words "Member suspended" will appear.</li>
+    
+        </ol>
     </div>
     <br/>
     <div class="useCase">
-        <b>Use Case: </b>Reinstate members<br/>
-        <b>Context: </b>Member pays missing dues and is reinstated<br/>
-        <b>Actors: </b>Operator<br/>
-        <b>Main Success Scenario:  <br/></b>
-        <ul type="None">
-            <li>1. Provider shows member has a valid account.</li>
-            <li>2. Member’s account is listed as suspended.</li>
-            <li>3. Member pays amount owed in full.</li>
-            <li>4. Acme reinstates member’s account and removes suspended status.</li>
-        </ul>
+        <b>Use Case: </b>Check Number<br/>
+        <b>Context: </b>The Provider cross-references the member ID number with the verification info in the ChocAn Data Center<br/>
+        <b>Actors: </b>Clock, Provider<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li>Provider sends the nine-digit membership ID number over to the ChocAn Data Center</li>
+            <li>The ChocAn Data Center replies with confirmation as to whether or not that ID represents an active member.</li>
+
+        </ol>
+        <b>Extends: </b>Validate membership<br/>
     </div>
     <br/>
     <div class="useCase">
-        <b>Use Case: </b>Record payments<br/>
-        <b>Context: </b>Records when users have made payments so that members can be suspended if they are behind on payments<br/>
+        <b>Use Case: </b>Error Message<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Provider<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Verify Username/Password<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Provider<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Total Fees<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Provider<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Summary Report<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Manager<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Verify Manager number<br/>
+        <b>Context: </b>The manager inputs their code to gain access to the terminal.<br/>
+        <b>Actors: </b>Manager<br/>
+        <b>Main Success Scenario: </b><br/>
+        <ol>
+            <li>Manager passes card through ChocAn Terminal</li>
+            <li>Keys in date of service</li>
+            <li>Keys in six digit service code</li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Run Report<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Manager<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Verify Username/Password<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Manager<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Account Payable<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Manager<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Add New Members<br/>
+        <b>Context: </b><br/>
         <b>Actors: </b>Operator<br/>
-        <b>Main Success Scenario:  <br/></b>
-        <ul type="None">
-            <li>1. The system displays the option “Member Payment Information” under the user's account information.</li>
-            <li>2. All member payment information is displayed.</li>
-            <li>3. Acme computer automatically updates ChocAn Data Center at 9 P.M. with new payment information
-                for each member</li>
-        </ul>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Delete Members<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Operator<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Update Member Records<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Operator<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Update Provider Records<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Operator<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Interactive Mode<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Clock<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Interactive Mode<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Clock<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Update Membership Records<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Clock<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
     </div>
     <br/>
     <div class="useCase">
@@ -288,33 +415,6 @@ For a deeper comprehension of our project, we have also furnished descriptions f
         <ol>
             <li>The main accounting procedure produces three different reports on Fridays: the member report, the provider report, and the manager report.</li>
         </ol>
-    </div>
-    <br/>
-    <div class="useCase">
-        <b>Use Case: </b>Error Message<br/>
-        <b>Context: </b> An error message has the potential to appear when 9-digit member number is read.<br/>
-        <b>Actors: </b>Clock, Provider<br/>
-        <b>Main Success Scenario</b> <br/>
-        <ol>
-            <li>Provider scans the members nine-digit membership card. </li>
-            <li>If the membership number is valid, the word "Validated" appears on the terminal.</li>
-            <li>If the membership number is invalid, the words "Invalid number" will appear.</li>
-            <li>If the member has not paid membership fees for at least a month, the words "Member suspended" will appear.</li>
-    
-        </ol>
-    </div>
-    <br/>
-    <div class="useCase">
-        <b>Use Case: </b>Check Number<br/>
-        <b>Context: </b>The Provider cross-references the member ID number with the verification info in the ChocAn Data Center<br/>
-        <b>Actors: </b>Clock, Provider<br/>
-        <b>Main Success Scenario</b> <br/>
-        <ol>
-            <li>Provider sends the nine-digit membership ID number over to the ChocAn Data Center</li>
-            <li>The ChocAn Data Center replies with confirmation as to whether or not that ID represents an active member.</li>
-
-        </ol>
-        <b>Extends: </b>Validate membership<br/>
     </div>
     <br/>
 
