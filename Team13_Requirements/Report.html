@@ -92,25 +92,30 @@
 
     <h2>Project Overview</h2>
         <p>
-            For Project 1, our group focused on the ChocAn software. This software handles everything, including verifying members, tracking member activity, organizing fees, and updating member records. Every individual on team 13 was tasked to produce a group file "Report.html" as well as submit a personal html file. Our group split up the necessary tasks to ensure equal participation for fairness and efficiency. Work was divided to have one person handle the Paragraph, one person handle the Glossary, and the rest handle the Use Case Definitions. After a task is complete, we move on to help with another task. The project also required every member to create their own Use Case Diagram, which allowed use to produce the best possible diagram for our final "Report.html". As mentioned earlier, we have provided Use Case Descriptions and a Glossary to further elaborate on our Use Case Diagram. This is featured in "Report.html". 
-        </p>
+            In Project 1, our primary focus centered on the development of data processing software tailored to the needs of Chocoholics Anonymous, an organization dedicated to helping people addicted to chocolate. It's important to emphasize that our project scope intentionally excluded the development of communication software, terminal design, and the intricacies of managing payments between members and providers. With the exception of the project submitter, every team member has contributed an HTML file housing their respective use case diagram and team-related information. This concerted effort ensures a unified understanding of the project's content, with Caleb Dochow taking the role of the project submitter.
+
+In regards to our glossary, we took painstaking measures to meticulously define and clarify terms, drawing insights from both the Chocoholics Anonymous documentation and our collaborative Use Case Diagram. This diagram was a product of joint efforts, synthesizing input and insights from all group members. To access the Use Case Diagram, you can download it directly from the Team13_Requirements folder submission. The diagram is available in PNG format under the filename "RevisedUseCase.png," while the diagram file itself is named "RevisedP1.uxf." Our analysis led us to identify a total of 4 actors and 14 use cases, derived from a thorough examination of individual use case diagrams and a comprehensive group assessment. The Use Case diagram is presented as an image.
+
+For a deeper comprehension of our project, we have also furnished descriptions for each use case. These descriptions were thoughtfully distributed among group members to ensure comprehensive coverage. Lastly, we've incorporated a snapshot of our Bitbucket Statistics to showcase the active involvement of everyone in the project.</p>
 
     <h2>Glossary</h2>
         <p>
-            <li><b>Acme Accounting Services</b> Third-party organization partnered with ChocAn to provide financial procedures</li>
+            <li><b>Operator Services</b>: Third-party organization partnered with ChocAn to provide financial procedures</li>
             <li><b>ChocAn Data Center</b>: Central system which holds all data concerning members, allows managers to update information about members, and automatically runs accounting procedure weekly</li>
             <li><b>Chocoholics Anonymous (ChocAn)</b>: An organization dedicataed to helping people addicted to chocolate</li>
-            <li><b>Computer terminal</b>: Interface available for providers to assist members</li>            
+            <li><b>Clock</b>: Runs Main Accounting procedures at set times throughout the day</li>
+            <li><b>Computer terminal</b>: Interface available for providers to assist members</li>    
+            <li><b>Error message</b>: Returned by terminal if membership status is invalid</li>          
             <li><b>Electronic funds transfer (EFT)</b>:  Record which contains data for the week's fees</li>
-            <li><b>Error message</b>: </li>
+            <li><b>Manager</b>: Actor with capabilities to run reports and create summary reports</li>  
             <li><b>Member card</b>: Card which holds member number encoded on magnetic strips</li>            
             <li><b>Member number</b>: Unique nine-digit code addigned to each member</li>
             <li><b>Member</b>: Patron of ChocAn seeking help for chocolate addiction</li>            
             <li><b>Monthly fee</b>: Payment which entitles members to unlimited access of ChocAn's services</li>
-            <li><b>Operator</b>: </li>
+            <li><b>Operator</b>: Actor with capability to changer membership status of current members and add or delete members</li>  
             <li><b>Provider directory</b>: directory which holds service codes for each service</li>            
-            <li><b>Provider form</b>: Documentation filled out by provider to verify software's service record </li>            
-            <li><b>Provider</b>: Health care professional employed by ChocAn to provide a variety of services to members</li>
+            <li><b>Provider form</b>: Documentation filled out by provider to verify software's service record </li> 
+            <li><b>Provider number</b>: Unique code each provider enters in order to use terminal </li>   
             <li><b>Report</b>: weekly document sent as email</li>
             <li><b>Service code</b>: Unique number that corresponds to the service received by a member</li>
             <li><b>Service fee</b>: Cost associated with a certain service, paid by ChocAn</li>
@@ -121,50 +126,42 @@
         </p>
     <br/>
     <h2>Use Case Diagram</h2>
-    <img style="height: 300px;" src="./use-case-diagrams/CalebDochowUseCaseDiagram.png" alt="UML Use Case Diagram">
+    <img style="height: 500px;" src="./pngs/RevisedUseCase.png" alt="UML Use Case Diagram">
     <br/>
 
     <h2>Use Case Descriptions</h2>
 
     <div class="useCase">
-        <b>Use Case: </b>Verify Service Code<br/>
+        <b>Use Case: </b>Verify Provider Number<br/>
         <b>Context: </b>The provider inputs their code to gain access to the terminal.<br/>
-        <b>Actors: </b>Provider’s Terminal, ACME Accounting<br/>
+        <b>Actors: </b>Provider<br/>
         <b>Main Success Scenario: </b><br/>
         <ol>
             <li>Provider passes card through ChocAn Terminal</li>
             <li>Keys in date of service</li>
             <li>Keys in six digit service code</li>
+            <li>Exit</li>
         </ol>
+        <b>Extensions: N/A</b>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Update member records<br/>
         <b>Context: </b>Provider Updates ChocAn member personal information<br/>
-        <b>Actors: </b>Provider’s Terminal<br/>
+        <b>Actors: </b>Provider<br/>
         <b>Main Success Scenario:</b><br/>
         <ol>
             <li>Provider logs into ChocAn software in interactive mode</li>
             <li>Provider changes personal info of ChocAn member</li>
+            <li>Exit</li>
         </ol>
-    </div>
-    <br/>
-    <div class="useCase">
-        <b>Use Case: </b>Verify Provider number<br/>
-        <b>Context: </b>Provider logs into ChocAn Software<br/>
-        <b>Actors: </b>Provider’s Terminal<br/>
-        <b>Main Success Scenario:</b><br/>
-        <ol>
-            <li>Provider switches on terminal</li>
-            <li>Keys in provider number to verify access</li>
-            <li>Provider has access to ChocAn provder software</li>
-        </ol>
+        <b>Extensions: N/A</b>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Bill member<br/>
         <b>Context: </b>Provider Bills ChocAn for service provided<br/>
-        <b>Actors: </b>Provider’s Terminal<br/>
+        <b>Actors: </b>Provider<br/>
         <b>Main Success Scenario:</b><br/>
         <ol>
             <li>Provider swipes card and keys in member number</li>
@@ -172,78 +169,237 @@
             <li>Provider looks up and keys in correct service code</li>
             <li>Provider verifies the correct service was input</li>
             <li>ChocAn is billed for service</li>
+            <li>Exit</li>
         </ol>
+        <b>Extensions: N/A</b>
     </div>
     <br/>
     <div class="useCase">
-        <b>Use Case: </b>Request product directory<br/>
+        <b>Use Case: </b>Request provider directory<br/>
         <b>Context: </b>Provider requests directory from ChocAn software<br/>
-        <b>Actors: </b>Provider’s Terminal<br/>
+        <b>Actors: </b>Provider<br/>
         <b>Main Success Scenario:</b><br/>
         <ol>
             <li>Provider requests software product from ChocAn</li>
             <li>Email attachment containing list of all ChocAn products is sent</li>
+            <li>Exit</li>
         </ol>
+        <b>Extensions: N/A</b>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Verifies Membership<br/>
         <b>Context: </b>The ChocAn system verifies the members identity for multiple system processes, including general verification and billing.<br/>
-        <b>Actors: </b>Provider Terminal, ChocAn Data Center, ACME Accounting<br/>
+        <b>Actors: </b>Provider<br/>
         <b>Main Success Scenario:</b><br/>
         <ol>
             <li>The Provider scans the Member's nine-digit membership card.</li>
             <li>The ChocAn Data Center responds as to whether or not the ID number is valid</li>
         </ol>
-        <b>Extensions:</b>ACME Accounting can modify membership status<br/>
+        <b>Extensions:</b>Operator can modify membership status<br/>
         <p>Suspending members, reinstating members, and updating membership records all impact the verification process</p>
     </div>
     <br/>
     <div class="useCase">
-        <b>Use Case: </b>Suspend members<br/>
-        <b>Context: </b>When a member has not paid membership fees for over a month, their member status becomes
-        suspended, and they cannot receive services until they are reinstated.<br/>
-        <b>Actors: </b>ACME Accounting<br/>
-        <b>Main Success Scenario:  <br/></b>
-        <ul type="None">
-            <li>1. Member has a valid account.</li>
-            <li>2. The member has not paid membership fees for at least a month.</li>
-            <li>3. Terminal displays “Member suspended".</li>
-            <li>4. Member removes suspended status when fees are paid.</li>
-        </ul>
+        <b>Use Case: </b>Error Message<br/>
+        <b>Context: </b> An error message has the potential to appear when 9-digit member number is read.<br/>
+        <b>Actors: </b>Clock, Provider<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li>Provider scans the members nine-digit membership card. </li>
+            <li>If the membership number is valid, the word "Validated" appears on the terminal.</li>
+            <li>If the membership number is invalid, the words "Invalid number" will appear.</li>
+            <li>If the member has not paid membership fees for at least a month, the words "Member suspended" will appear.</li>
+            <li>Return to Update Member Records</li>
+        </ol>
+        <b>Extensions: N/A</b>
     </div>
     <br/>
     <div class="useCase">
-        <b>Use Case: </b>Reinstate members<br/>
-        <b>Context: </b>Member pays missing dues and is reinstated<br/>
-        <b>Actors: </b>ACME Accounting<br/>
-        <b>Main Success Scenario:  <br/></b>
-        <ul type="None">
-            <li>1. Provider’s terminal shows member has a valid account.</li>
-            <li>2. Member’s account is listed as suspended.</li>
-            <li>3. Member pays amount owed in full.</li>
-            <li>4. Acme reinstates member’s account and removes suspended status.</li>
-        </ul>
+        <b>Use Case: </b>Check Number<br/>
+        <b>Context: </b>The Provider cross-references the member ID number with the verification info in the ChocAn Data Center<br/>
+        <b>Actors: </b>Clock, Provider<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li>Provider sends the nine-digit membership ID number over to the ChocAn Data Center</li>
+            <li>The ChocAn Data Center replies with confirmation as to whether or not that ID represents an active member.</li>
+            <li>Exit</li>
+        </ol>
+        <b>Extends: </b>Validate membership<br/>
     </div>
     <br/>
     <div class="useCase">
-        <b>Use Case: </b>Record payments<br/>
-        <b>Context: </b>Records when users have made payments so that members can be suspended if they are behind on payments<br/>
-        <b>Actors: </b>ACME Accounting<br/>
-        <b>Main Success Scenario:  <br/></b>
-        <ul type="None">
-            <li>1. The system displays the option “Member Payment Information” under the user's account information.</li>
-            <li>2. All member payment information is displayed.</li>
-            <li>3. Acme computer automatically updates ChocAn Data Center at 9 P.M. with new payment information
-                for each member</li>
-        </ul>
+        <b>Use Case: </b>Verify Username/Password<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Provider<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Total Fees<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Provider<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Summary Report<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Manager<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Verify Manager number<br/>
+        <b>Context: </b>The manager inputs their code to gain access to the terminal.<br/>
+        <b>Actors: </b>Manager<br/>
+        <b>Main Success Scenario: </b><br/>
+        <ol>
+            <li>Manager passes card through ChocAn Terminal</li>
+            <li>Keys in date of service</li>
+            <li>Keys in six digit service code</li>
+            <li>Exit</li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Run Report<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Manager<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Verify Username/Password<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Manager<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Account Payable<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Manager<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Add New Members<br/>
+        <b>Context: </b>When ChocAn Software is run in interactive mode during the day it allows operators to add new ChocAn members<br/>
+        <b>Actors: </b>Operator<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li>Time of day is during interactive mode hours for ChocAn</li>
+            <li>Prospective member wants to sign up for ChocAn services</li>
+            <li>Operator logs into ChocAn software in interactive mode</li>
+            <li>Operator adds creates a new membership for prospective member</li>
+            <li>Member now gets access to all of ChocAn's services</li>
+            <li>Exit</li>
+        </ol>
+        <b>Extensions: N/A</b>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Delete Members<br/>
+        <b>Context: </b>When ChocAn Software is run in interactive mode during the day it allows operators to delete ChocAn members who have resigned<br/>
+        <b>Actors: </b>Operator<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li>Time of day is during interactive mode hours for ChocAn</li>
+            <li>Member has resigned from ChocAn</li>
+            <li>Operator logs into ChocAn software in interactive mode</li>
+            <li>Operator deletes membership for former member</li>
+            <li>Member now loses access to all of ChocAn's services</li>
+            <li>Exit</li>
+        </ol>
+        <b>Extensions: N/A</b>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>When ChocAn Software is run in interactive mode during the day it allows operators to update current ChocAn members records<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Operator<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li>Time of day is during interactive mode hours for ChocAn</li>
+            <li>Current Member has outdated information on account for ChocAn</li>
+            <li>Operator logs into ChocAn software in interactive mode</li>
+            <li>Operator updates member details for for current member</li>
+            <li>Members information is now up to date</li>
+            <li>Exit</li>
+        </ol>
+        <b>Extensions: N/A</b>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Update Provider Records<br/>
+        <b>Context: </b>When ChocAn Software is run in interactive mode during the day it allows operators to update current ChocAn providers records<br/>
+        <b>Actors: </b>Operator<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li>Time of day is during interactive mode hours for ChocAn</li>
+            <li>Provider has outdated information on account for ChocAn</li>
+            <li>Operator logs into ChocAn software in interactive mode</li>
+            <li>Operator updates provider details for for current member</li>
+            <li>Providers information is now up to date</li>
+            <li>Exit</li>
+        </ol>
+        <b>Extensions: N/A</b>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Interactive Mode<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Clock<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Interactive Mode<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Clock<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+    <br/>
+    <div class="useCase">
+        <b>Use Case: </b>Update Membership Records<br/>
+        <b>Context: </b><br/>
+        <b>Actors: </b>Clock<br/>
+        <b>Main Success Scenario</b> <br/>
+        <ol>
+            <li></li>
+        </ol>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Main Accounting procedure<br/>
         <b>Context: </b>This system compiles the week’s financial data and creates transaction reports for members,
         providers, and managers at their request.<br/>
-        <b>Actors: </b>ChocAn Data Center<br/>
+        <b>Actors: </b>Clock<br/>
         <b>Main Success Scenario:  <br/></b>
         <ul type="None">
             <li>1. The transactions are recorded in the ChocAn Data Center.</li>
@@ -251,6 +407,7 @@
                 members and providers of their respective services purchased/provided, along with their account
                 information. It also includes a revenue total to the provider. </li>
             <li>3. The reports are emailed to the members and providers.</li>
+            <li>Exit</li>
         </ul>
         <b>Extends: </b>Report Printing, Produce Report <br/>
     </div>
@@ -258,64 +415,41 @@
     <div class="useCase">
         <b>Use Case: </b>Report Printing<br/>
         <b>Context: </b>The main accounting procedure of the ChocAn Data Center causes weekly reports to be created for members and providers.<br/>
-        <b>Actors: </b>ChocAn Data Center<br/>
+        <b>Actors: </b>Clock<br/>
         <b>Main Success Scenario:</b><br/>
         <ol>
             Member Report
             <li>Once the main accounting procedure finishes on Friday nights, an email is sent to the member's inbox.</li>
             <li>The email contains info regarding their dealings with ChocAn: member name, member number, street address, city, state, ZIP code, date of service, provider name, and service name. </li>
-
+            <li>Exit</li>
         </ol>
         <ol>
             Provider Report
             <li>Once the main accounting procedure finishes on Friday nights, an email is sent to the providers's inbox.</li>
             <li>The email contains all the info on the member report for the provider, but also includes the service code, fee to be paid, the total number of consultations, and the total fee for the week.</li>
+            <li>Exit</li>
         </ol>
         <ol>
             Manager Report
             <li>A manager report is also created that lists every provider to be paid for the week.</li>
             <li>The report also contains info on the number of consultations and fees for the week.</li>
+            <li>Exit</li>
         </ol>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Produce Report<br/>
         <b>Context: </b><br/>
-        <b>Actors: </b>ChocAn Data Center<br/>
+        <b>Actors: </b>Clock<br/>
         <b>Main Success Scenario:</b><br/>
         <ol>
             <li>The main accounting procedure produces three different reports on Fridays: the member report, the provider report, and the manager report.</li>
-        </ol>
-    </div>
-    <br/>
-    <div class="useCase">
-        <b>Use Case: </b>Error Message<br/>
-        <b>Context: </b> An error message has the potential to appear when 9-digit member number is read.<br/>
-        <b>Actors: </b>ChocAn Data Center, Provider Terminal<br/>
-        <b>Main Success Scenario</b> <br/>
-        <ol>
-            <li>Provider scans the members nine-digit membership card. </li>
-            <li>If the membership number is valid, the word "Validated" appears on the terminal.</li>
-            <li>If the membership number is invalid, the words "Invalid number" will appear.</li>
-            <li>If the member has not paid membership fees for at least a month, the words "Member suspended" will appear.</li>
-    
-        </ol>
-    </div>
-    <br/>
-    <div class="useCase">
-        <b>Use Case: </b>Check Number<br/>
-        <b>Context: </b>The Provider Terminal cross-references the member ID number with the verification info in the ChocAn Data Center<br/>
-        <b>Actors: </b>ChocAn Data Center, Provider Terminal<br/>
-        <b>Main Success Scenario</b> <br/>
-        <ol>
-            <li>Provider Terminal sends the nine-digit membership ID number over to the ChocAn Data Center</li>
-            <li>The ChocAn Data Center replies with confirmation as to whether or not that ID represents an active member.</li>
-
+            <li>Exit</li>
         </ol>
     </div>
     <br/>
 
     <h2>Bitbucket Statistics</h2>
-    <img src="stats1.png" alt="UML Use Case Diagram">
-    <img src="stats2.png" alt="UML Use Case Diagram 2">
+    <img src="./pngs/stats1.png" alt="UML Use Case Diagram">
+    <img src="./pngs/stats2.png" alt="UML Use Case Diagram 2">
 </body>
