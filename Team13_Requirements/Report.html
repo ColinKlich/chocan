@@ -284,22 +284,27 @@ For a deeper comprehension of our project, we have also furnished descriptions f
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Verify Username/Password<br/>
-        <b>Context: </b><br/>
+        <b>Context: </b>Managers have the ability to run reports on ChocAn services during the week, but they must verify their identity at the manager terminal. <br/>
         <b>Actors: </b>Manager<br/>
         <b>Main Success Scenario</b> <br/>
         <ol>
-            <li></li>
+            <li>Manager inputs their username and password into the terminal to verify their identity.</li>
+            <li>The manager has their identity verifies, granting them the ability to run reports on ChocAn services.</li>
         </ol>
+        <b>Extensions: N/A</b>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Account Payable<br/>
-        <b>Context: </b><br/>
+        <b>Context: </b>From the summary report given to managers, the accounts payable are listed. Every provider that needs to be paid is listed on the summary report as well as the number of consultations and final fee.<br/>
         <b>Actors: </b>Manager<br/>
         <b>Main Success Scenario</b> <br/>
         <ol>
-            <li></li>
+            <li>The manager recieves the summary report.</li>
+            <li>The report contains info about the providers that need to be paid</li>
+            <li>This information is billed to the company as accounts payable because the providers need to be paid for their work.</li>
         </ol>
+        <b>Extensions: N/A</b>
     </div>
     <br/>
     <div class="useCase">
@@ -368,32 +373,25 @@ For a deeper comprehension of our project, we have also furnished descriptions f
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Interactive Mode<br/>
-        <b>Context: </b><br/>
+        <b>Context: </b>During the workday, the software enters into an interactive mode that grants operators the ability to add and alter the status of ChocAn members.<br/>
         <b>Actors: </b>Clock<br/>
         <b>Main Success Scenario</b> <br/>
         <ol>
-            <li></li>
-        </ol>
-    </div>
-    <br/>
-    <div class="useCase">
-        <b>Use Case: </b>Interactive Mode<br/>
-        <b>Context: </b><br/>
-        <b>Actors: </b>Clock<br/>
-        <b>Main Success Scenario</b> <br/>
-        <ol>
-            <li></li>
+            <li>The software's system clock accurately detects that the ChocAn workday has started.</li>
+            <li>Operators are then granted the ability to update the membership records of ChocAn.</li>
+            <li>Operators can alter the membership records by adding members, deleting members, or updating member records.</li>
         </ol>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Update Membership Records<br/>
-        <b>Context: </b><br/>
+        <b>Context: </b>Once the software switches into interactive mode, Operators gain the ability to alter membership records.<br/>
         <b>Actors: </b>Clock<br/>
         <b>Main Success Scenario</b> <br/>
         <ol>
-            <li></li>
+            <li>Operators gain the ability to add members, delete members, and update member profiles.</li>
         </ol>
+        <b>Extensions: N/A</b>
     </div>
     <br/>
     <div class="useCase">
@@ -447,6 +445,7 @@ For a deeper comprehension of our project, we have also furnished descriptions f
             <li>The main accounting procedure produces three different reports on Fridays: the member report, the provider report, and the manager report.</li>
             <li>Exit</li>
         </ol>
+        <b>Extensions: N/A</b>
     </div>
     <br/>
 
