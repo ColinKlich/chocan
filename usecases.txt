@@ -2,16 +2,16 @@
 -Member Management: An operator manages and makes changes to the member database. Add Member, Edit Member, and Delete Member extend this use case.
     -Add Member: A new member is added to the directory.
     -Delete Member: A member is deleted from the directory.
-    -Edit Member: Details about a member are altered.
--Provider Management: An operator manages and makes changes to the provider database. Add Provider, Edit Provider, and Delete Provider Extend this use case.
-    -Add Provider: A new provider is added to the directory.
-    -Delete Provider: A provider is deleted from the directory.
-    -Edit Provider: Details about a provider are altered.
--Weekly Accounting Procedure: Once a week, the Timer tells the system it is time to run the Weekly Accounting Procedure. The system then generates a number of reports (details on the reports are in the ChocAn document), and then sends them where each is supposed to go.
--Request Reports: A Manager can, at any time, request any or all of the reports included in the Weekly Accounting procedure. Since these reports are generated when the Manager requests them, the data within is up to date.
--Request Provider Directory: A Provider can request the Provider Directory (details within the ChocAn document), and it will be sent to them via email.
--Verify Member: A Provider verifies a Member has valid and up to date membership with ChocAn before providing service.
+    -DONE Edit Member: Details about a member are altered.
+-DONE Provider Management: An operator manages and makes changes to the provider database. Add Provider, Edit Provider, and Delete Provider Extend this use case.
+    -DONE Add Provider: A new provider is added to the directory.
+    -DONE Delete Provider: A provider is deleted from the directory.
+    -DONE Edit Provider: Details about a provider are altered.
+-DONE Weekly Accounting Procedure: Once a week, the Timer tells the system it is time to run the Weekly Accounting Procedure. The system then generates a number of reports (details on the reports are in the ChocAn document), and then sends them where each is supposed to go.
+-DONE Request Reports: A Manager can, at any time, request any or all of the reports included in the Weekly Accounting procedure. Since these reports are generated when the Manager requests them, the data within is up to date.
+-DONE Request Provider Directory: A Provider can request the Provider Directory (details within the ChocAn document), and it will be sent to them via email.
+-DONE Verify Member: A Provider verifies a Member has valid and up to date membership with ChocAn before providing service.
 -Bill ChocAn: After proving service to the Member, the Provider then bills ChocAn
--Verify Provider:
--Verify Manager:
--Verify Operator:
+-DONE Verify Provider:
+-DONE Verify Manager:
+-DONE Verify Operator:
