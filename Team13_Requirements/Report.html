@@ -94,7 +94,7 @@
         <p>
             In Project 1, our primary focus centered on the development of data processing software tailored to the needs of Chocoholics Anonymous, an organization dedicated to helping people addicted to chocolate. It's important to emphasize that our project scope intentionally excluded the development of communication software, terminal design, and the intricacies of managing payments between members and providers. With the exception of the project submitter, every team member has contributed an HTML file housing their respective use case diagram and team-related information. This concerted effort ensures a unified understanding of the project's content, with Caleb Dochow taking the role of the project submitter.
 
-In regards to our glossary, we took painstaking measures to meticulously define and clarify terms, drawing insights from both the Chocoholics Anonymous documentation and our collaborative Use Case Diagram. This diagram was a product of joint efforts, synthesizing input and insights from all group members. To access the Use Case Diagram, you can download it directly from the Team13_Requirements folder submission. The diagram is available in PNG format under the filename "CalebDochowUseCaseDiagram.png," while the diagram file itself is named "RevisedP1.uxf." Our analysis led us to identify a total of 4 actors and 14 use cases, derived from a thorough examination of individual use case diagrams and a comprehensive group assessment. The Use Case diagram is presented as an image.
+In regards to our glossary, we took painstaking measures to meticulously define and clarify terms, drawing insights from both the Chocoholics Anonymous documentation and our collaborative Use Case Diagram. This diagram was a product of joint efforts, synthesizing input and insights from all group members. To access the Use Case Diagram, you can download it directly from the Team13_Requirements folder submission. The diagram is available in PNG format under the filename "RevisedUseCase.png," while the diagram file itself is named "RevisedP1.uxf." Our analysis led us to identify a total of 4 actors and 14 use cases, derived from a thorough examination of individual use case diagrams and a comprehensive group assessment. The Use Case diagram is presented as an image.
 
 For a deeper comprehension of our project, we have also furnished descriptions for each use case. These descriptions were thoughtfully distributed among group members to ensure comprehensive coverage. Lastly, we've incorporated a snapshot of our Bitbucket Statistics to showcase the active involvement of everyone in the project.</p>
 
@@ -121,12 +121,12 @@ For a deeper comprehension of our project, we have also furnished descriptions f
             <li><b>Service fee</b>: Cost associated with a certain service, paid by ChocAn</li>
             <li><b>Service record</b>: Document recorded after each member's service to keep important information in ChocAn Data Center</li>
             <li><b>Summary report</b>: Document given to manager for them to track payments due for the week</li>
-
+            <li><b>Timer</b>: Weekly system that automatically runs accounting procedure at the end of the week</li>
 
         </p>
     <br/>
     <h2>Use Case Diagram</h2>
-    <img style="height: 300px;" src="./pngs/RevisedUseCase.png" alt="UML Use Case Diagram">
+    <img style="height: 500px;" src="./pngs/RevisedUseCase.png" alt="UML Use Case Diagram">
     <br/>
 
     <h2>Use Case Descriptions</h2>
@@ -230,31 +230,33 @@ For a deeper comprehension of our project, we have also furnished descriptions f
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Verify Username/Password<br/>
-        <b>Context: </b><br/>
+        <b>Context: Verification needed to run ChocAn software</b><br/>
         <b>Actors: </b>Provider<br/>
         <b>Main Success Scenario</b> <br/>
         <ol>
-            <li></li>
+            <li>Provider inputs their username and password into the terminal to verify their identity.</li>
+            <li>The provider has their identity verified, granting them the ability to run reports on ChocAn services.</li>
         </ol>
+        <b>Extension: N/A</b>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Total Fees<br/>
-        <b>Context: </b><br/>
+        <b>Context: Provider totals weekly fees owed to them</b><br/>
         <b>Actors: </b>Provider<br/>
         <b>Main Success Scenario</b> <br/>
         <ol>
-            <li></li>
+            <li>Provider uses reports from week to verify what they are owed by ChocAn</li>
         </ol>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Summary Report<br/>
-        <b>Context: </b><br/>
+        <b>Context: Weekly report is delivered to manager to track payment information for the week.</b><br/>
         <b>Actors: </b>Manager<br/>
-        <b>Main Success Scenario</b> <br/>
+        <b>Main Success Scenario:</b> <br/>
         <ol>
-            <li></li>
+            <li>Report is delivered to manager at the end of the week</li>
         </ol>
     </div>
     <br/>
@@ -273,32 +275,39 @@ For a deeper comprehension of our project, we have also furnished descriptions f
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Run Report<br/>
-        <b>Context: </b><br/>
+        <b>Context: </b>Manager can request accounting report anytime throughout the week<br/>
         <b>Actors: </b>Manager<br/>
         <b>Main Success Scenario</b> <br/>
         <ol>
-            <li></li>
+            <li>Manager requests report from accounting system</li>
+            <li>Exit</li>
         </ol>
+        <b>Extensions: N/A</b>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Verify Username/Password<br/>
-        <b>Context: </b><br/>
+        <b>Context: </b>Managers have the ability to run reports on ChocAn services during the week, but they must verify their identity at the manager terminal. <br/>
         <b>Actors: </b>Manager<br/>
         <b>Main Success Scenario</b> <br/>
         <ol>
-            <li></li>
+            <li>Manager inputs their username and password into the terminal to verify their identity.</li>
+            <li>The manager has their identity verifies, granting them the ability to run reports on ChocAn services.</li>
         </ol>
+        <b>Extensions: N/A</b>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Account Payable<br/>
-        <b>Context: </b><br/>
+        <b>Context: </b>From the summary report given to managers, the accounts payable are listed. Every provider that needs to be paid is listed on the summary report as well as the number of consultations and final fee.<br/>
         <b>Actors: </b>Manager<br/>
         <b>Main Success Scenario</b> <br/>
         <ol>
-            <li></li>
+            <li>The manager recieves the summary report.</li>
+            <li>The report contains info about the providers that need to be paid</li>
+            <li>This information is billed to the company as accounts payable because the providers need to be paid for their work.</li>
         </ol>
+        <b>Extensions: N/A</b>
     </div>
     <br/>
     <div class="useCase">
@@ -367,32 +376,25 @@ For a deeper comprehension of our project, we have also furnished descriptions f
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Interactive Mode<br/>
-        <b>Context: </b><br/>
+        <b>Context: </b>During the workday, the software enters into an interactive mode that grants operators the ability to add and alter the status of ChocAn members.<br/>
         <b>Actors: </b>Clock<br/>
         <b>Main Success Scenario</b> <br/>
         <ol>
-            <li></li>
-        </ol>
-    </div>
-    <br/>
-    <div class="useCase">
-        <b>Use Case: </b>Interactive Mode<br/>
-        <b>Context: </b><br/>
-        <b>Actors: </b>Clock<br/>
-        <b>Main Success Scenario</b> <br/>
-        <ol>
-            <li></li>
+            <li>The software's system clock accurately detects that the ChocAn workday has started.</li>
+            <li>Operators are then granted the ability to update the membership records of ChocAn.</li>
+            <li>Operators can alter the membership records by adding members, deleting members, or updating member records.</li>
         </ol>
     </div>
     <br/>
     <div class="useCase">
         <b>Use Case: </b>Update Membership Records<br/>
-        <b>Context: </b><br/>
+        <b>Context: </b>Once the software switches into interactive mode, Operators gain the ability to alter membership records.<br/>
         <b>Actors: </b>Clock<br/>
         <b>Main Success Scenario</b> <br/>
         <ol>
-            <li></li>
+            <li>Operators gain the ability to add members, delete members, and update member profiles.</li>
         </ol>
+        <b>Extensions: N/A</b>
     </div>
     <br/>
     <div class="useCase">
@@ -446,6 +448,7 @@ For a deeper comprehension of our project, we have also furnished descriptions f
             <li>The main accounting procedure produces three different reports on Fridays: the member report, the provider report, and the manager report.</li>
             <li>Exit</li>
         </ol>
+        <b>Extensions: N/A</b>
     </div>
     <br/>
 
