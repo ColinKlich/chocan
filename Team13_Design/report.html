@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 2 Report</title>
+    <title>Project 3 Report</title>
 </head>
 <body>
-    <h1>Project 2 Report</h1>
+    <h1>Project 3 Report</h1>
     
     <h2>Team Members</h2>
     <table class = table1 border = "1">
@@ -101,35 +101,19 @@
     </table>
     <br/>
 
-    <h2>Analysis</h2>
-        <p>The effective operation of the ChocAn system involves computerized components for member and provider management, service recording, billing, and reporting. Data storage is essential, with secure databases for member, provider, service, and financial data. Hardware requirements include servers, provider terminals, manager terminals, and EFT processing equipment. Integration with Acme Accounting Services and banking systems is crucial for financial transactions. User interactions occur through member card verification, specialized ChocAn terminals, and manager interfaces. In summary, the ChocAn system combines computerized sections, secure data storage, necessary hardware, and seamless interactions with other systems to facilitate efficient member services and provider billing.</p>
+    <h2>Class Diagram</h2>
+    <img src="">
     <br/>
 
-    <h2>Stereotype Class Diagram</h2>
-    <img src="./pngs/class diagrams/StereotypeClassDiagram.png">
-    
+    <h2>Sequence Diagrams</h2>
     <br/>
 
-    <h2>Activity Diagrams</h2>
+    <h3>Use Case Sequence Diagrams</h3>
     <br/>
-    <h3>Overall Activity Diagram</h3>
-    <img src="./pngs/main activity diagrams/HaiHoangMainActivityDiagram.png">
-    <br/>
-
-    <h3>Use Case Activity Diagrams</h3>
-    <br/>
-        <li><b>Add Member</b>
+        <li><b>Member Management</b>
             <img src="./pngs/Activity Diagrams/AddMember.png">
-        <li><b>Delete Member</b>
-            <img src="./pngs/Activity Diagrams/DeleteMember.png">
-        <li><b>Edit Member</b>
-            <img src="./pngs/Activity Diagrams/EditMember.png">
-        <li><b>Add Provider</b>
+        <li><b>Provider Management</b>
             <img src="./pngs/Activity Diagrams/AddProvider.png">
-        <li><b>Delete Provider</b>
-            <img src="./pngs/Activity Diagrams/DeleteProvider.png">
-        <li><b>Edit Provider</b>
-            <img src="./pngs/Activity Diagrams/EditProvider.png">
         <li><b>Weekly Accounting Procedure</b>
             <img src="./pngs/Activity Diagrams/WeeklyAccountingProcedure.png">
         <li><b>Request Reports</b>
@@ -137,17 +121,26 @@
         <li><b>Request Provider Directory</b>
             <img src="./pngs/Activity Diagrams/RequestProviderDirectory.png">
         <li><b>Verify Member</b>
-            <img src="./pngs/Activity Diagrams/VerifyMember.png">
+            <img src="./pngs/sequencediagrams/ValidateMember.png">
         <li><b>Bill ChocAn</b>
-            <img src="./pngs/Activity Diagrams/BillChocAn.png">
+            <img src="./pngs/sequencediagrams/">
         <li><b>Verify Provider</b>
-            <img src="./pngs/Activity Diagrams/VerifyProvider.png">
+            <img src="./pngs/sequencediagrams/ValidateProvider.png">
         <li><b>Verify Manager</b>
-            <img src="./pngs/Activity Diagrams/VerifyManager.png">
+            <img src="./pngs/sequencediagrams/ValidateManager.png">
         <li><b>Verify Operator</b>
-            <img src="./pngs/Activity Diagrams/VerifyOperator.png">
+            <img src="./pngs/sequencediagrams/ValidateOperator.png">
 
     <br/>
+
+    <h2>Design Analysis</h2>
+        <p>The proposed design exhibits a robust form of cohesion, which is intentionally achieved. This high level of cohesion arises from the strong interconnections between the actions performed by the various modules. However, it lacks substantial logical, temporal, or procedural cohesion, as these actions are not closely tied in a sequential or time-dependent manner. While there are instances of functional cohesion, its practicality is limited due to the complexity of the required modules.
+
+            As a result, the predominant form of cohesion in this design is informational cohesion. This is evident in how most of our modules execute a range of actions, each having its distinct entry point and independent code.
+            
+            Though the design does show some degree of content coupling, it notably lacks common coupling or stamp coupling. Instead, the primary coupling method employed is data coupling, which is demonstrated by the modules sharing homogeneous data items, with all their elements being utilized by the modules they call.</p>
+    <br/>
+
     <h2>Bitbucket Statistics</h2>
     <img src="./pngs/stat2.png" alt="stats2">
     <img src="./pngs/stat1.png" alt="stats1">
