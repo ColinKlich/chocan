@@ -7,7 +7,7 @@ public class Provider {
     private String city;
     private String state;
     private int zipCode;
-    private List<ProviderService> servicesProvided;
+  //  private List<ProviderService> servicesProvided;
     private int numberOfConsultations;
     private int totalFees;
 
@@ -18,7 +18,7 @@ public class Provider {
         this.city = city;
         this.state = state;
         this.zipCode = zipCode;
-        this.servicesProvided = new ArrayList<ProviderService>();
+       // this.servicesProvided = new ArrayList<ProviderService>();
         this.numberOfConsultations = 0;
         this.totalFees = 0;
     }
@@ -39,10 +39,10 @@ public class Provider {
         return numberOfConsultations;
     }
 
-    public List<ProviderService> getServicesProvided() {
+ /*   public List<ProviderService> getServicesProvided() {
         return servicesProvided;
     }
-
+*/
     //Update Provider Info
     public void setProviderName(String providerName) {
         this.providerName = providerName;
@@ -68,8 +68,8 @@ public class Provider {
         this.zipCode = zipCode;
     }
 
-    public void setServicesProvided(List<ProviderService> servicesProvided) {
+/*    public void setServicesProvided(List<ProviderService> servicesProvided) {
         this.servicesProvided = servicesProvided;
     }
-
+*/
 }
