@@ -1,3 +1,4 @@
+package terminals;
 //Class for the Manager Terminal
 public class ManagerTerminal {
 

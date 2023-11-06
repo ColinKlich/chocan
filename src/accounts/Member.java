@@ -17,11 +17,11 @@ public class Member {
         this.zipCode = zipCode;
     }
 
-    public String getMemberName() {
+    public String getName() {
         return memberName;
     }
 
-    public int getMemberNumber() {
+    public int getNumber() {
         return memberNumber;
     }
 

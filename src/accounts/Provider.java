@@ -23,11 +23,11 @@ public class Provider {
         this.totalFees = 0;
     }
 
-    public String getProviderName() {
+    public String getName() {
         return providerName;
     }
 
-    public int getProviderNumber() {
+    public int getNumber() {
         return providerNumber;
     }
 
