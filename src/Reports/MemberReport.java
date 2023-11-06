@@ -1,3 +1,5 @@
+package Reports;
+
 import java.util.*;
 
 public class MemberReport{
@@ -7,5 +9,9 @@ public class MemberReport{
     String memberCity;
     String memberState;
     int memberZip;
-    List<ProviderService> servicesUsed = new ArrayList<ProviderService>();
+    List<Class<?>> servicesUsed = new ArrayList<>();
+
+    public static void print(){
+        
+    }
 }

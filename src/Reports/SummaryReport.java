@@ -1,8 +1,15 @@
+package Reports;
+
 import java.util.*;
 
 public class SummaryReport {
-    List<Provider> providerList = new ArrayList<Provider>();
-    int totalProviders;
-    int totalConsultations;
-    int totalFee;
+    
+    private List<Class<?>> providerList = new ArrayList<>();
+    private int totalProviders;
+    private int totalConsultations;
+    private int totalFee;
+
+    public static void print(){
+        
+    }
 }
