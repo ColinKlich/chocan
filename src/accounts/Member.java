@@ -1,10 +1,10 @@
 package accounts;
 
 public class Member {
-    private String memberName;
-    private int memberNumber;
-    private String address;
-    private String city;
-    private String state;
-    private int zipCode;
+    public String memberName;
+    public int memberNumber;
+    public String address;
+    public String city;
+    public String state;
+    public int zipCode;
 }

@@ -1,15 +1,15 @@
 package accounts;
 
 public class Provider {
-    private String providerName;
-    private int providerNumber;
-    private String address;
-    private String city;
-    private String state;
-    private int zipCode;
-  //  private List<ProviderService> servicesProvided;
-    private int numberOfConsultations;
-    private int totalFees;
+    public String providerName;
+    public int providerNumber;
+    public String address;
+    public String city;
+    public String state;
+    public int zipCode;
+  //public List<ProviderService> servicesProvided;
+    public int numberOfConsultations;
+    public int totalFees;
 
     public Provider(String providerName, int providerNumber, String address, String city, String state, int zipCode){
         this.providerName = providerName;
