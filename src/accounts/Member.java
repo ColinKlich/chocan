@@ -24,4 +24,20 @@ public class Member {
     public int getNumber() {
         return memberNumber;
     }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public int getZipCode() {
+        return zipCode;
+    }
 }

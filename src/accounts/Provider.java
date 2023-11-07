@@ -31,6 +31,22 @@ public class Provider {
         return providerNumber;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public int getZipCode() {
+        return zipCode;
+    }
+
     public int getTotalFees() {
         return totalFees;
     }

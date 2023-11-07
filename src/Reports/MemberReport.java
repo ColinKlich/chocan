@@ -1,4 +1,4 @@
-package Reports;
+package reports;
 import accounts.Member;
 
 public class MemberReport{
