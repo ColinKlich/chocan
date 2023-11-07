@@ -1,6 +1,7 @@
 package Reports;
 import accounts.Provider;
 import java.io.*;
+import java.util.*;
 
 public class ProviderReport {
 
@@ -10,19 +11,19 @@ public class ProviderReport {
 	static String city;
 	static String state;
 	static int zipCode;
-	//List<ProviderService> servicesProvided;
+	static List<Class<?>> servicesProvided = new ArrayList<>();
 	static int numberOfConsultations;
 	static int totalFees;
 
 	public ProviderReport (Provider provider){
-	    providerName = provider.providerName;
-		providerNumber = provider.providerNumber;
-        address = provider.address;
-        city = provider.city;
-        state = provider.state;
-        zipCode = provider.zipCode;
-        numberOfConsultations = provider.numberOfConsultations;
-        totalFees = provider.totalFees;
+	    providerName = provider.getName();
+		providerNumber = provider.getNumber();
+        address = provider.getAddress();
+        city = provider.getCity();
+        state = provider.getState();
+        zipCode = provider.getZipCode();
+        numberOfConsultations = provider.getNumberOfConsultations();
+        totalFees = provider.getTotalFees();
 	}
 
     private static String formatReport(){
@@ -41,13 +42,13 @@ public class ProviderReport {
     }
 
 	public static void print(){
-        
+
         String formattedReport = formatReport();
 
         try {
             File file = new File("ProviderReport.txt");
             if (file.createNewFile()) {
-                FileWriter writer = new FileWriter("filename.txt");
+                FileWriter writer = new FileWriter("ProviderReport.txt");
                 writer.write(formattedReport);
                 writer.close();
             } else {

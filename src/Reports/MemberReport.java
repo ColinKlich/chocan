@@ -13,10 +13,10 @@ public class MemberReport{
     public void MemberReport(Member member){
         memberName = member.getName();
 		memberNumber = member.getNumber();
-        address = member.address;
-        city = member.city;
-        state = member.state;
-        zipCode = member.zipCode;
+        address = member.getAddress();
+        city = member.getCity();
+        state = member.getState();
+        zipCode = member.getZipCode();
     }
 
     public static void print(){
