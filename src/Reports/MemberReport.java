@@ -11,8 +11,8 @@ public class MemberReport{
     static int zipCode;
 
     public void MemberReport(Member member){
-        memberName = member.memberName;
-		memberNumber = member.memberNumber;
+        memberName = member.getName();
+		memberNumber = member.getNumber();
         address = member.address;
         city = member.city;
         state = member.state;
