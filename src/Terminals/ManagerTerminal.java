@@ -43,7 +43,7 @@ public class ManagerTerminal {
                         running = false;
                     }
                 }
-            }else if(Objects.equals(terminal, "quit")){ //QUIT
+            }else if(Objects.equals(terminal.toLowerCase(), "quit")){ //QUIT
                 running = false;;
             }
         }
