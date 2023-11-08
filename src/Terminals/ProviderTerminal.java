@@ -2,7 +2,7 @@ package Terminals;
 
 import accounts.Provider;
 import controllers.AccountsController;
-import java.text.ParseException;
+import controllers.ProviderController;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ public class ProviderTerminal {
     private boolean verified = false;
 
     Scanner scanner = new Scanner(System.in);
-    Provider admin = new Provider("admin", "admin", "testing123");
+    Provider admin = new Provider("admin", "admin", "testing123"); //NEEDS TO BE ADDED
 
     ProviderTerminal(AccountsController accounts){
         boolean running = true;
@@ -31,9 +31,9 @@ public class ProviderTerminal {
 
                     String choice = scanner.nextLine();
                     if (Objects.equals(choice, "1")) {
-                        manageMember(accounts);
+                        billChocAn();
                     } else if (Objects.equals(choice, "2")) {
-                        manageProvider(accounts);
+                        validateMember(accounts);
                     } else if (Objects.equals(choice.toLowerCase(), "quit")){
                         running = false;
                     }
