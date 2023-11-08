@@ -1,7 +1,9 @@
 package controllers;
 
 import Reports.MemberReport;
+import Reports.ProviderReport;
 import Terminals.ManagerTerminal;
+import Reports.SummaryReport;
 
 public class ManagerController {
 	//Goal: design a control system designed solely for Managers
@@ -12,12 +14,28 @@ public class ManagerController {
 	 * 
 	 */
 	ManagerTerminal terminal;
+	MemberReport memberReport;
+	ProviderReport providerReport;
+	SummaryReport summaryReport;
 	
 	public ManagerController() {
 		terminal = new ManagerTerminal();
 	}
 	
 	public void getAllReports() {
+		summaryReport = new SummaryReport(12345);
+		//Create a new summary report constructor that takes in integers and finds some dummy data
+		//Put the dummy data in summary report
+		//Take in user input to decide what report.
+		// static get method would print out all the stuff
+		//SummaryReport newReport = SummaryReport.Get(Input)
+		//newReport.print()
+		summaryReport.print();
+		memberReport = new MemberReport(null);
+		memberReport.print();
+		providerReport = new ProviderReport(null);
+		providerReport.print();
+		
 		
 		
 		return;
