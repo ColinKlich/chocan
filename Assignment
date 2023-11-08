@@ -1,6 +1,6 @@
 Chris: Timer, Reports.
-Collin: Account Controller, Operator terminal
-Hai: member, provider, operator, (managers).
+Collin: Account Controller, Operator terminal, operator
+Hai: member, provider, (managers).
 Kara:Provider controller->Provider service. 
-Caleb: Main terminal, Manager terminal.
+Caleb: Main terminal, Manager terminal, Provider Terminal
 Sam: Manager controller, EFT.
