@@ -10,7 +10,7 @@ public class ProviderTerminal {
     private boolean verified = false;
 
     Scanner scanner = new Scanner(System.in);
-    Provider admin = new Provider("admin", "admin", "testing123"); //NEEDS TO BE ADDED
+    Provider admin = new Provider("admin", 123456789, "address", "city", "state", 12345);
 
     ProviderTerminal(AccountsController accounts){
         boolean running = true;
@@ -43,17 +43,13 @@ public class ProviderTerminal {
     }
 
     public boolean verifyProvider(Provider admin) {
-        System.out.println("Enter Username:");
-        String username = scanner.nextLine();
+        System.out.println("Enter Provider Number:");
+        String providerNum = scanner.nextLine();
 
-        System.out.println("Enter Password:");
-        String password = scanner.nextLine();
-
-        if (Objects.equals(admin.getUsername(), username)
-                && Objects.equals(admin.getPassword(), password)) {
+        if (Objects.equals(Integer.toString(admin.getNumber()), providerNum)) {
             return true;
         } else {
-            System.out.println("Incorrect Username or Password.");
+            System.out.println("Incorrect Provider Number.");
             return false;
         }
     }
