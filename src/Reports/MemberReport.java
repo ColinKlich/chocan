@@ -2,46 +2,38 @@ package reports;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import accounts.Member;
 
 public class MemberReport{
 
-    static private String memberName;
-    static private int memberNumber;
-    static private String address;
-    static private String city;
-    static private String state;
-    static private int zipCode;
-    static private List<Class<?>> servicesProvided = new ArrayList<>();
+    private String memberName;
+    private int memberNumber;
+    private String address;
+    private String city;
+    private String state;
+    private int zipCode;
+    private String formattedReport;
 
     public MemberReport(Member member){
-        memberName = member.getName();
-		memberNumber = member.getNumber();
-        address = member.getAddress();
-        city = member.getCity();
-        state = member.getState();
-        zipCode = member.getZipCode();
-    }
+        this.memberName = member.getName();
+		this.memberNumber = member.getNumber();
+        this.address = member.getAddress();
+        this.city = member.getCity();
+        this.state = member.getState();
+        this.zipCode = member.getZipCode();
 
-    private static String formatReport(){
-        String formattedReport = 
-        "Provider Name: " + memberName + '\n' +
-        "Provider Number: " + memberNumber + '\n' +
-        "Provider Street Address: " + address + '\n' +
-        "Provider City: " + city + '\n' +
-        "Provider State: " + state + '\n' +
-        "Provider Zip Code: " + zipCode + '\n' + 
+        formattedReport = 
+        "Member Name: " + memberName + '\n' +
+        "Member Number: " + memberNumber + '\n' +
+        "Member Street Address: " + address + '\n' +
+        "Member City: " + city + '\n' +
+        "Member State: " + state + '\n' +
+        "Member Zip Code: " + zipCode + '\n' + 
         "Services Provided: " + '\n';
-
-        return formattedReport;
     }
 
-    public static void print(){
-
-        String formattedReport = formatReport();
+    public void print(){
 
         try {
             File report = new File("MemberReport.txt");
