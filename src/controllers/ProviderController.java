@@ -32,10 +32,17 @@ public class ProviderController {
 			memberNumber = DEFAULT_MEMBER_NUMBER;
 		}
 
+		/*
+		 * 
+		 */
 
         
 
 
          System.out.println("Fee owed to provider: $" + totalFee);
     }
+
+	public void requestProviderDirectory() {
+
+	}
 }
