@@ -12,6 +12,7 @@ public class ServiceProvided {
     private int serviceCode;
     private String comments;
     private String serviceName;
+    private String memberName;
     private int fee;
 
     public ServiceProvided(String serviceName, String serviceDate, int serviceCode, String providerName, int providerNum, int memberNum, String memberName, int fee, String comments){
@@ -21,6 +22,7 @@ public class ServiceProvided {
         this.serviceDate = serviceDate;
         this.providerNumber = providerNum;
         this.memberNumber = memberNum;
+        this.memberName = memberName;
         this.serviceCode = serviceCode;
         this.comments = comments;
         this.fee = fee;
@@ -36,5 +38,25 @@ public class ServiceProvided {
 
     public String getServiceName() {
         return serviceName;
+    }
+
+    public String getCurrentDate() {
+        return currentDateTime;
+    }
+
+    public int getFee() {
+        return fee;
+    }
+
+    public String getMemberName() {
+        return memberName;
+    }
+
+    public int getMemberNumber() {
+        return memberNumber;
+    }
+
+    public int getServiceCode() {
+        return serviceCode;
     }
 }

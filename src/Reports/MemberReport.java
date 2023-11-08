@@ -40,7 +40,7 @@ public class MemberReport{
         "Member Zip Code: " + zipCode + '\n';
 
         for (ServiceProvided service : servicesUsed){
-            formattedReport +=
+            this.formattedReport +=
             "Date of Service: " + service.getServiceDate() + '\n' +
             "Provider Name: " + service.getProviderName() + '\n' + 
             "Service Name: " + service.getServiceName() + '\n';
