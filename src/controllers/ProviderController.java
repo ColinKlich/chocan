@@ -16,7 +16,7 @@ public class ProviderController {
 
     public void billChocAn(int amount, int serviceCode) {
         /*
-         * access List of servicesProvided to get totalfee
+         * validate member
          */
 
 		InputStreamReader sr = new InputStreamReader(System.in);
@@ -35,8 +35,6 @@ public class ProviderController {
 		/*
 		 * 
 		 */
-
-        
 
 
          System.out.println("Fee owed to provider: $" + totalFee);
