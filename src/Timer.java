@@ -1,15 +1,19 @@
 public class Timer {
-    int time;
+    private static int time;
 
-    public Timer() {
+    public Timer(int time) {
+        Timer.time = time;
     }
 
-    public static void runInteractiveMode(int time) {
-
+    public static boolean runInteractiveMode() {
+        if (time > 9 || time < 17){
+            return true;
+        }
+        return false;
     }
 
     public static void updateMemberRecords() {
-
+        
     }
 
     public static void printAllReports () {
