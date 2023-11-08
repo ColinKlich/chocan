@@ -7,25 +7,34 @@ import java.io.IOException;
 import java.util.*;
 
 public class SummaryReport {
+    private int totalProviders;
+    private int totalConsultations;
+    private int overallFeeTotal;
+    private String formattedReport;
 
-    private static List<Class<Provider>> providerList = new ArrayList<>();
-    private static int totalProviders = providerList.size();
-    private static int totalConsultations;
-    private static int overallFeeTotal;
+    public SummaryReport (List<Provider> providerList){
+        this.totalProviders = providerList.size();
+        for (Provider provider : providerList){
+            this.totalConsultations += provider.getNumberOfConsultations();
+        }
+        for (Provider provider : providerList){
+            this.overallFeeTotal += provider.getTotalFees();
+        }
 
-    public SummaryReport (){
-        
+        for (Provider provider : providerList){
+            this.formattedReport += 
+            "Provider: " + provider.getName() + '\n' +
+            "Number of Consultations: " + provider.getNumberOfConsultations() + '\n' +
+            "Total Fee: " + provider.getTotalFees() + '\n';
+        }
+
+        this.formattedReport += 
+        "Total number of Providers: " + totalProviders + '\n' +
+        "Total number of Consultations: " + totalConsultations + '\n' +
+        "Overall Total Fee: " + overallFeeTotal;
     }
 
-    private static String formatReport(){
-        String formattedReport = "";
-
-        return formattedReport;
-    }
-
-    public static void print(){
-
-        String formattedReport = formatReport();
+    public void print(){
 
         try {
             File report = new File("SummaryReport.txt");

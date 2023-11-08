@@ -1,35 +1,31 @@
 package Reports;
 import accounts.Provider;
 import java.io.*;
-import java.util.*;
 
 public class ProviderReport {
 
-	static private String providerName;
-	static private int providerNumber;
-	static private String address;
-	static private String city;
-	static private String state;
-	static private int zipCode;
-	static private List<Class<?>> servicesProvided = new ArrayList<>();
-	static private int numberOfConsultations;
-	static private int totalFees;
+	private String providerName;
+	private int providerNumber;
+	private String address;
+	private String city;
+	private String state;
+	private int zipCode;
+	private int numberOfConsultations;
+	private int totalFees;
+    private String formattedReport;
     
     //Constructor for the ProviderReport class
 	public ProviderReport (Provider provider){
-	    providerName = provider.getName();
-		providerNumber = provider.getNumber();
-        address = provider.getAddress();
-        city = provider.getCity();
-        state = provider.getState();
-        zipCode = provider.getZipCode();
-        numberOfConsultations = provider.getNumberOfConsultations();
-        totalFees = provider.getTotalFees();
-	}
+	    this.providerName = provider.getName();
+		this.providerNumber = provider.getNumber();
+        this.address = provider.getAddress();
+        this.city = provider.getCity();
+        this.state = provider.getState();
+        this.zipCode = provider.getZipCode();
+        this.numberOfConsultations = provider.getNumberOfConsultations();
+        this.totalFees = provider.getTotalFees();
 
-    //Formats all relevant info into a printable report 
-    private static String formatReport(){
-        String formattedReport = 
+        this.formattedReport = 
         "Provider Name: " + providerName + '\n' +
         "Provider Number: " + providerNumber + '\n' +
         "Provider Street Address: " + address + '\n' +
@@ -39,14 +35,10 @@ public class ProviderReport {
         "Services Provided: " + '\n' + 
         "Total number of Consultations with Members: " + numberOfConsultations + '\n' +
         "Total Fee for the Week" + totalFees;
-
-        return formattedReport;
-    }
+	}
 
     //Uses the formatted report for the given provider and writes it to the ProviderReport.txt file
-	public static void print(){
-
-        String formattedReport = formatReport();
+	public void print(){
 
         try {
             File report = new File("ProviderReport.txt");
