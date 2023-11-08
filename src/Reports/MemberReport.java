@@ -1,4 +1,4 @@
-package Reports;
+package reports;
 import services.*;
 import java.io.*;
 import java.time.*;
@@ -15,7 +15,7 @@ public class MemberReport{
     private String city;
     private String state;
     private int zipCode;
-    private List<Service> servicesUsed;
+    private List<ServiceProvided> servicesUsed;
     private String formattedReport;
     private String currDate;
 
@@ -37,8 +37,14 @@ public class MemberReport{
         "Member Street Address: " + address + '\n' +
         "Member City: " + city + '\n' +
         "Member State: " + state + '\n' +
-        "Member Zip Code: " + zipCode + '\n' + 
-        "Services Provided: " + '\n';
+        "Member Zip Code: " + zipCode + '\n';
+
+        for (ServiceProvided service : servicesUsed){
+            formattedReport +=
+            "Date of Service: " + service.getServiceDate() + '\n' +
+            "Provider Name: " + service.getProviderName() + '\n' + 
+            "Service Name: " + service.getServiceName() + '\n';
+        }
     }
 
     public void print(){
