@@ -23,7 +23,19 @@ public class Provider {
         this.totalFees = 0;
     }
 
-    public String getName() {
+    public Provider() {
+    	this.providerName = null;
+        this.providerNumber = -1;
+        this.address = null;
+        this.city = null;
+        this.state = null;
+        this.zipCode = -1;
+        // this.servicesProvided = null;
+        this.numberOfConsultations = -1;
+        this.totalFees = -1;
+	}
+
+	public String getName() {
         return providerName;
     }
 
@@ -59,33 +71,35 @@ public class Provider {
         return servicesProvided;
     }
 */
-    //Update Provider Info
-    public void setProviderName(String providerName) {
-        this.providerName = providerName;
-    }
-
     public void setProviderNumber(int providerNumber) {
-        this.providerNumber = providerNumber;
+    	this.providerNumber = providerNumber;
     }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public void setZipCode(int zipCode) {
-        this.zipCode = zipCode;
-    }
+    //Update Provider Info
+   public void updateProviderInformation(String providerName, String address, String city, String state, int zipCode, int numberOfConsultations, int totalFees) {
+	   this.providerName = providerName;
+       this.address = address;
+       this.city = city;
+       this.state = state;
+       this.zipCode = zipCode;
+       this.numberOfConsultations = numberOfConsultations;
+       this.totalFees = totalFees;
+   }
+   
+   public void addFees(int fees) {
+	   this.totalFees = this.totalFees + fees;
+   }
+   
+   public void consultationComplete() {
+	   this.numberOfConsultations = this.numberOfConsultations + 1;
+   }
 
 /*    public void setServicesProvided(List<ProviderService> servicesProvided) {
         this.servicesProvided = servicesProvided;
     }
 */
+   public void deleteProvider(Provider providerDelete) {
+	   providerDelete = new Provider();
+	   providerDelete = null;
+	  
+   }
 }
