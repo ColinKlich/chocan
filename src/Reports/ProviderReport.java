@@ -1,6 +1,8 @@
 package Reports;
 import accounts.Provider;
+import services.Service;
 import java.io.*;
+import java.util.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -14,6 +16,7 @@ public class ProviderReport {
 	private int zipCode;
 	private int numberOfConsultations;
 	private int totalFees;
+    private List<Service> servicesProvided;
     private String formattedReport;
     private String currDate;
     
@@ -38,9 +41,10 @@ public class ProviderReport {
         "Provider Street Address: " + address + '\n' +
         "Provider City: " + city + '\n' +
         "Provider State: " + state + '\n' +
-        "Provider Zip Code: " + zipCode + '\n' + 
-        "Services Provided: " + '\n' + 
-        "Total number of Consultations with Members: " + numberOfConsultations + '\n' +
+        "Provider Zip Code: " + zipCode + '\n';
+
+
+        this.formattedReport += "Total number of Consultations with Members: " + numberOfConsultations + '\n' +
         "Total Fee for the Week" + totalFees;
 	}
 
