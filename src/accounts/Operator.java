@@ -11,8 +11,16 @@ public class Operator {
 		this.password = password;
     }
 
-	public String getOperatorName() {
+	public String getName() {
         return name;
+    }
+
+	public String getUsername() {
+        return username;
+    }
+	
+	public String getPassword() {
+        return password;
     }
 
 	public void setOperatorCredentials(String username, String password) {
