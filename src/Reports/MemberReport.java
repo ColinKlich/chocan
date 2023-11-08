@@ -1,9 +1,9 @@
 package Reports;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import services.*;
+import java.io.*;
+import java.time.*;
+import java.time.format.*;
+import java.util.*;
 
 import accounts.Member;
 
@@ -15,6 +15,7 @@ public class MemberReport{
     private String city;
     private String state;
     private int zipCode;
+    private List<Service> servicesUsed;
     private String formattedReport;
     private String currDate;
 
@@ -25,6 +26,7 @@ public class MemberReport{
         this.city = member.getCity();
         this.state = member.getState();
         this.zipCode = member.getZipCode();
+        
         LocalDate date = LocalDate.now(); 
         DateTimeFormatter format = DateTimeFormatter.ofPattern("MM-dd-yyyy");
         currDate = date.format(format);

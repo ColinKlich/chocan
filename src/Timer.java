@@ -1,5 +1,3 @@
-import Reports.ProviderReport;
-
 public class Timer {
     private int time;
     private String dotw;
