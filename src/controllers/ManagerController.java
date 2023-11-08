@@ -1,10 +1,11 @@
 package controllers;
 
+import Reports.MemberReport;
+
 public class ManagerController {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public MemberReport getMemberReport() {
+		
 	}
 
 }
