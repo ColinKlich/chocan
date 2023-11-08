@@ -1,4 +1,4 @@
-import reports.ProviderReport;
+import Reports.ProviderReport;
 
 public class Timer {
     private int time;

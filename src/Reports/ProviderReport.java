@@ -1,6 +1,8 @@
-package reports;
+package Reports;
 import accounts.Provider;
 import java.io.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class ProviderReport {
 
@@ -13,6 +15,7 @@ public class ProviderReport {
 	private int numberOfConsultations;
 	private int totalFees;
     private String formattedReport;
+    private String currDate;
     
     //Constructor for the ProviderReport class
 	public ProviderReport (Provider provider){
@@ -24,6 +27,10 @@ public class ProviderReport {
         this.zipCode = provider.getZipCode();
         this.numberOfConsultations = provider.getNumberOfConsultations();
         this.totalFees = provider.getTotalFees();
+
+        LocalDate date = LocalDate.now(); 
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+        currDate = date.format(format);
 
         this.formattedReport = 
         "Provider Name: " + providerName + '\n' +
@@ -39,21 +46,10 @@ public class ProviderReport {
 
     //Uses the formatted report for the given provider and writes it to the ProviderReport.txt file
 	public void print(){
+        File report = new File(providerName + currDate + ".txt");
 
         try {
-            File report = new File("ProviderReport.txt");
-            if (report.createNewFile()) {
-                System.out.println("File created: " + report.getName());
-            } else {
-                System.out.println("File already exists.");
-            }
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-
-        try {
-            FileWriter writer = new FileWriter("ProviderReport.txt");
+            FileWriter writer = new FileWriter(report.getName());
             writer.write(formattedReport);
             writer.close();
         } catch (IOException e) {

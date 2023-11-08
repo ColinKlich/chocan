@@ -1,7 +1,9 @@
-package reports;
+package Reports;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import accounts.Member;
 
@@ -14,6 +16,7 @@ public class MemberReport{
     private String state;
     private int zipCode;
     private String formattedReport;
+    private String currDate;
 
     public MemberReport(Member member){
         this.memberName = member.getName();
@@ -22,6 +25,9 @@ public class MemberReport{
         this.city = member.getCity();
         this.state = member.getState();
         this.zipCode = member.getZipCode();
+        LocalDate date = LocalDate.now(); 
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+        currDate = date.format(format);
 
         formattedReport = 
         "Member Name: " + memberName + '\n' +
@@ -34,21 +40,10 @@ public class MemberReport{
     }
 
     public void print(){
+        File report = new File(memberName + currDate + ".txt");
 
         try {
-            File report = new File("MemberReport.txt");
-            if (report.createNewFile()) {
-                System.out.println("File created: " + report.getName());
-            } else {
-                System.out.println("File already exists.");
-            }
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-
-        try {
-            FileWriter writer = new FileWriter("MemberReport.txt");
+            FileWriter writer = new FileWriter(report.getName());
             writer.write(formattedReport);
             writer.close();
         } catch (IOException e) {
