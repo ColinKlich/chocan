@@ -1,6 +1,7 @@
-package Reports;
+package reports;
 import accounts.Provider;
 import services.Service;
+import services.ServiceProvided;
 import java.io.*;
 import java.util.*;
 import java.time.LocalDate;
@@ -16,7 +17,7 @@ public class ProviderReport {
 	private int zipCode;
 	private int numberOfConsultations;
 	private int totalFees;
-    private List<Service> servicesProvided;
+    private List<ServiceProvided> servicesProvided;
     private String formattedReport;
     private String currDate;
     
@@ -30,6 +31,7 @@ public class ProviderReport {
         this.zipCode = provider.getZipCode();
         this.numberOfConsultations = provider.getNumberOfConsultations();
         this.totalFees = provider.getTotalFees();
+        this.servicesProvided = provider.servicesProvided;
 
         LocalDate date = LocalDate.now(); 
         DateTimeFormatter format = DateTimeFormatter.ofPattern("MM-dd-yyyy");
@@ -43,8 +45,18 @@ public class ProviderReport {
         "Provider State: " + state + '\n' +
         "Provider Zip Code: " + zipCode + '\n';
 
-
-        this.formattedReport += "Total number of Consultations with Members: " + numberOfConsultations + '\n' +
+        for (ServiceProvided service :  servicesProvided){
+            this.formattedReport += 
+            "Date of Service: " + service.getServiceDate() + '\n' +
+            "Date and time data were recieved by the computer: " + service.getCurrentDate() + '\n' + 
+            "Member Name: " + service.getMemberName() + '\n' + 
+            "Member Number: " + service.getMemberNumber() + '\n' + 
+            "Service Code: " + service.getServiceCode() + '\n' +
+            "Fee to be paid: $" + service.getFee() + '\n';
+        }
+        
+        this.formattedReport += 
+        "Total number of Consultations with Members: " + numberOfConsultations + '\n' +
         "Total Fee for the Week" + totalFees;
 	}
 

@@ -7,17 +7,56 @@ public class ServiceProvided {
     private String currentDateTime;
     private String serviceDate;
     private int providerNumber;
+    private String providerName;
     private int memberNumber;
     private int serviceCode;
     private String comments;
+    private String serviceName;
+    private String memberName;
+    private int fee;
 
-    public ServiceProvided(int providerNum, int memberNum, int serviceCode, String comments){
+    public ServiceProvided(String serviceName, String serviceDate, int serviceCode, String providerName, int providerNum, int memberNum, String memberName, int fee, String comments){
         LocalDate date = LocalDate.now();
         DateTimeFormatter format = DateTimeFormatter.ofPattern("MM-DD-YY HH:MM:SS");
-        this.serviceDate = date.format(format);
+        this.currentDateTime = date.format(format);
+        this.serviceDate = serviceDate;
         this.providerNumber = providerNum;
         this.memberNumber = memberNum;
+        this.memberName = memberName;
         this.serviceCode = serviceCode;
         this.comments = comments;
+        this.fee = fee;
+    }
+
+    public String getServiceDate() {
+        return serviceDate;
+    }
+
+    public String getProviderName() {
+        return providerName;
+    }
+
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    public String getCurrentDate() {
+        return currentDateTime;
+    }
+
+    public int getFee() {
+        return fee;
+    }
+
+    public String getMemberName() {
+        return memberName;
+    }
+
+    public int getMemberNumber() {
+        return memberNumber;
+    }
+
+    public int getServiceCode() {
+        return serviceCode;
     }
 }
