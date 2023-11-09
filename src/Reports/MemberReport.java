@@ -16,7 +16,7 @@ public class MemberReport{
     private String state;
     private int zipCode;
     private List<ServiceProvided> servicesUsed;
-    private String formattedReport;
+    public String formattedReport;
     private String currDate;
 
     public MemberReport(Member member){
@@ -39,12 +39,12 @@ public class MemberReport{
         "Member State: " + state + '\n' +
         "Member Zip Code: " + zipCode + '\n';
 
-        for (ServiceProvided service : servicesUsed){
+        /*for (ServiceProvided service : servicesUsed){
             this.formattedReport +=
             "Date of Service: " + service.getServiceDate() + '\n' +
             "Provider Name: " + service.getProviderName() + '\n' + 
             "Service Name: " + service.getServiceName() + '\n';
-        }
+        }*/
     }
 
     public void print(){
