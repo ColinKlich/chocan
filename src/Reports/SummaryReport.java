@@ -82,10 +82,25 @@ public class SummaryReport {
     		
     	}
     	else if (reportNumber == 3) {
+    		System.out.println("Summary Report 9/1/2023");
+    		System.out.println("Provider: Grunkle Stan. Number of Consultations: 50. Total Fee: $500");
+    		System.out.println("Provider: Bill Nye. Number of Consultations: 50. Total Fee: $300");
+    		System.out.println("Provider: Doctor Who. Number of Consultations: 7. Total Fee: $1000");
+    		System.out.println("Provider: Illidan Stormrage. Number of Consultations: 50. Total Fee: $500");
+    		System.out.println("Total Number of Providers: 4");
+    		System.out.println("Total Number of Consultations: 157");
+    		System.out.println("Overall Total Fee: $2300");
     		
     	}
     	else if (reportNumber == 4) {
-    		
+    		System.out.println("Summary Report 4/5/2023");
+    		System.out.println("Provider: Stuart R. Bell. Number of Consultations: 20. Total Fee: $5000");
+    		System.out.println("Provider: Lego City. Number of Consultations: 50. Total Fee: $300");
+    		System.out.println("Provider: Jeff Bezos. Number of Consultations: 25. Total Fee: $1000");
+    		System.out.println("Provider: LeBron James. Number of Consultations: 50. Total Fee: $500");
+    		System.out.println("Total Number of Providers: 4");
+    		System.out.println("Total Number of Consultations: 145");
+    		System.out.println("Overall Total Fee: $6800");
     		
     	}
     	return  report;
