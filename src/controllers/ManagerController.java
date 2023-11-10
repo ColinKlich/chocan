@@ -31,8 +31,7 @@ public class ManagerController {
 		// static get method would print out all the stuff
 		//SummaryReport newReport = SummaryReport.Get(Input)
 		//newReport.print()
-		memberReport = new MemberReport(null);
-		memberReport.print();
+		memberReport.getMemberReport(reportNum);
 		providerReport = new ProviderReport(null);
 		providerReport.print();
 		
@@ -41,8 +40,8 @@ public class ManagerController {
 		return;
 	}
 	
-	public void getMemberReport() {
-		
+	public void getMemberReport(int reportNum) {
+		memberReport.getMemberReport(reportNum);
 		return;
 	}
 	
