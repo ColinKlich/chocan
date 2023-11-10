@@ -11,26 +11,26 @@ public class ManagerController {
 	/*
 	 * Need to have options so that you can pick what report you want
 	 * Needs to access the current state of the report as designed by the Weekly Accounting Procedure
-	 * 
+	 * EDIT: Not using the current state of a dynamic report, instead I am using static dummy data gained through the get Method
 	 */
 	ManagerTerminal terminal;
 	MemberReport memberReport;
 	ProviderReport providerReport;
 	SummaryReport summaryReport;
-	
+	/*
 	public ManagerController() {
 		terminal = new ManagerTerminal();
 	}
+	*/
 	
-	public void getAllReports() {
-		summaryReport = new SummaryReport(12345);
+	public void getAllReports(int reportNum) {
+		summaryReport.getSummaryReport(reportNum);
 		//Create a new summary report constructor that takes in integers and finds some dummy data
 		//Put the dummy data in summary report
 		//Take in user input to decide what report.
 		// static get method would print out all the stuff
 		//SummaryReport newReport = SummaryReport.Get(Input)
 		//newReport.print()
-		summaryReport.print();
 		memberReport = new MemberReport(null);
 		memberReport.print();
 		providerReport = new ProviderReport(null);
@@ -52,8 +52,8 @@ public class ManagerController {
 		return;
 	}
 	
-	public void getSummaryReport() {
-		
+	public void getSummaryReport(int reportNum) {
+		summaryReport.getSummaryReport(reportNum);
 		
 		return;
 	}
