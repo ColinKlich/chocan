@@ -55,8 +55,8 @@ public class SummaryReport {
         }
 	}
     
-    public SummaryReport getSummaryReport(int reportNumber) {
-    	SummaryReport report;
+    public void getSummaryReport(int reportNumber) {
+    	//SummaryReport report;
     	//4 reports filled with sample info to test functionality
     	
     	if (reportNumber == 1) {
@@ -103,6 +103,6 @@ public class SummaryReport {
     		System.out.println("Overall Total Fee: $6800");
     		
     	}
-    	return  report;
+    	return ;
     }
 }
