@@ -54,4 +54,10 @@ public class SummaryReport {
             e.printStackTrace();
         }
 	}
+    
+    public SummaryReport getSummaryReport(int reportNumber) {
+    	SummaryReport report;
+    	
+    	return  report;
+    }
 }
