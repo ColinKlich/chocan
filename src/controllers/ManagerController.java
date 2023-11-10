@@ -32,8 +32,8 @@ public class ManagerController {
 		//SummaryReport newReport = SummaryReport.Get(Input)
 		//newReport.print()
 		memberReport.getMemberReport(reportNum);
-		providerReport = new ProviderReport(null);
-		providerReport.print();
+		providerReport.getProviderReport(reportNum);
+
 		
 		
 		
@@ -45,8 +45,8 @@ public class ManagerController {
 		return;
 	}
 	
-	public void getProviderReport() {
-		
+	public void getProviderReport(int reportNum) {
+		providerReport.getProviderReport(reportNum);
 		
 		return;
 	}
