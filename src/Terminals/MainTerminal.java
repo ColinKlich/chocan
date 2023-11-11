@@ -10,6 +10,8 @@ public class MainTerminal {
     public static AccountsController accounts = new AccountsController();
 
     public static void main(String[] args) throws ParseException, IOException {
+        accounts.readMemberData();
+        accounts.readProviderData();
         boolean running = true;
         while (running) {
             Scanner terminalInput = new Scanner(System.in);
@@ -31,6 +33,8 @@ public class MainTerminal {
             } else if (Objects.equals(terminal, "4")) {
                 runMainAccountingProcedure(accounts);
             } else {
+                accounts.storeMemberData();
+                accounts.storeProviderData();
                 running = false;
                 System.out.println("Have a Great Day!!!");
             }

@@ -2,16 +2,26 @@ package controllers;
 
 import accounts.*;
 import java.util.List;
+import java.util.Map;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.Reader;
+import java.math.BigDecimal;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
+
+import org.json.simple.JSONObject;
 
 public class AccountsController {
     private List<Member> members;
     private List<Provider> providers;
     Scanner myObj = new Scanner(System.in);
 
-    public AccountsController(){
+    public AccountsController() {
         this.members = new ArrayList<Member>();
         this.providers = new ArrayList<Provider>();
     }
@@ -24,26 +34,29 @@ public class AccountsController {
         return providers;
     }
 
-    // public void addMember(String memberName, int memberNumber, String address, String city, String state, int zipCode){
-    //     Member member = new Member(memberName, memberNumber, address, city, state, zipCode);
-    //     this.members.add(member);
+    // public void addMember(String memberName, int memberNumber, String address, String city,
+    // String state, int zipCode){
+    // Member member = new Member(memberName, memberNumber, address, city, state, zipCode);
+    // this.members.add(member);
     // }
 
-    // public void addProvider(String providerName, int providerNumber, String address, String city, String state,
-    //                         int zipCode){
-    //     Provider provider = new Provider(providerName, providerNumber, address, city, state, zipCode);
-    //     this.providers.add(provider);
+    // public void addProvider(String providerName, int providerNumber, String address, String city,
+    // String state,
+    // int zipCode){
+    // Provider provider = new Provider(providerName, providerNumber, address, city, state,
+    // zipCode);
+    // this.providers.add(provider);
     // }
 
-    public void deleteMember(String name){
+    public void deleteMember(String name) {
         members.removeIf(member -> member.getName().equals(name));
     }
 
-    public void deleteProvider(String name){
-    providers.removeIf(provider -> provider.getName().equals(name));
+    public void deleteProvider(String name) {
+        providers.removeIf(provider -> provider.getName().equals(name));
     }
 
-    public void addMember(){
+    public void addMember() {
         System.out.println("Member Name: ");
         String name = myObj.nextLine();
         System.out.println("Member Number: ");
@@ -66,7 +79,7 @@ public class AccountsController {
         addMember();
     }
 
-    public void addProvider(){
+    public void addProvider() {
         System.out.println("Provider Name: ");
         String name = myObj.nextLine();
         System.out.println("Provider Number: ");
@@ -89,6 +102,73 @@ public class AccountsController {
         addProvider();
     }
 
+    public void readMemberData() {
+        try {
+            // create a reader
+            Reader reader = Files.newBufferedReader(Paths.get("members.json"));
 
+            // create parser
+            JsonObject parser = (JsonObject) Jsoner.deserialize(reader);
+            members = parser.get("members");
+
+            // close reader
+            reader.close();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void readProviderData() {
+                try {
+            // create a reader
+            Reader reader = Files.newBufferedReader(Paths.get("providers.json"));
+
+            // create parser
+            JsonObject parser = (JsonObject) Jsoner.deserialize(reader);
+            providers = parser.get("providers");
+
+            // close reader
+            reader.close();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void storeMemberData() {
+        try {
+            // create a writer
+            BufferedWriter writer = Files.newBufferedWriter(Paths.get("members.json"));
+
+            JSONArray jsonArray = new JSONArray(members);
+            // write JSON to file
+            Jsoner.serialize(jsonArray, writer);
+
+            // close the writer
+            writer.close();
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void storeProviderData() {
+        try {
+            // create a writer
+            BufferedWriter writer = Files.newBufferedWriter(Paths.get("providers.json"));
+
+            JSONArray jsonArray = new JSONArray(providers);
+
+            // write JSON to file
+            Jsoner.serialize(jsonArray, writer);
+
+            // close the writer
+            writer.close();
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
 
 }
