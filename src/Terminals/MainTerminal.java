@@ -1,4 +1,4 @@
-package terminals;
+package Terminals;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -25,11 +25,11 @@ public class MainTerminal {
             String terminal = terminalInput.nextLine();
 
             if (Objects.equals(terminal, "1")) {
-                ProviderTerminal(accounts);
+                new ProviderTerminal(accounts);
             } else if (Objects.equals(terminal, "2")) {
-                ManagerTerminal(accounts);
+                //new ManagerTerminal(accounts);
             } else if (Objects.equals(terminal, "3")) {
-                OperatorTerminal(accounts);
+                //OperatorTerminal(accounts);
             } else if (Objects.equals(terminal, "4")) {
                 runMainAccountingProcedure(accounts);
             } else {
@@ -38,9 +38,16 @@ public class MainTerminal {
                 running = false;
                 System.out.println("Have a Great Day!!!");
             }
+            
+            terminalInput.close();
         }
 
 
     }
+
+	private static void runMainAccountingProcedure(AccountsController accounts2) {
+		// TODO Auto-generated method stub
+		
+	}
 }
 
