@@ -1,7 +1,7 @@
 package controllers;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+//import java.io.BufferedReader;
+//import java.io.InputStreamReader;
 /*import java.lang.reflect.Member;*/
 import services.ServiceProvided;
 import java.util.Objects;
@@ -21,33 +21,38 @@ public class ProviderController {
 
     public void billChocAn() {
 
+		// ensure membership status is valid
 		if (Objects.equals(validateMember(), false)) {
 			return;
 		}
 
 		Scanner scanner = new Scanner(System.in);
 		String date = scanner.nextLine();
+		scanner.close();
+		// do what with date?
 
 		boolean unverified = true;
 
-		Scanner getVerification = new Scanner(System.in);
-		int verification = getVerification.nextInt();
-
 		while (unverified) {
+			
+			Scanner getVerification = new Scanner(System.in);
+			int verification = getVerification.nextInt();
+			getVerification.close();
 
-				Scanner readCode = new Scanner(System.in);
-				int serviceCode = readCode.nextInt();
+			Scanner readCode = new Scanner(System.in);
+			int serviceCode = readCode.nextInt();
+			readCode.close();
 
-				if (Objects.equals(serviceCode, 000000)) {
+			if (Objects.equals(serviceCode, 000000)) {
 				String serviceName = service.getServiceName();
 
 				for (int i = 0; i < 20; i++)
 					System.out.print(serviceName.charAt(i));
-				}
+			}
 
-				System.out.print("Verify service:");
-				System.out.print("[1] Correct");
-				System.out.print("[2] Incorrect");		
+			System.out.print("Verify service:");
+			System.out.print("[1] Correct");
+			System.out.print("[2] Incorrect");		
 
 			if (Objects.equals(verification, 1)) {
 				unverified = false;
@@ -67,7 +72,8 @@ public class ProviderController {
 		System.out.println("[2] No");
 
 		Scanner scanner2 = new Scanner(System.in);
-		String option = scanner2.nextLine();		
+		String option = scanner2.nextLine();
+		scanner2.close();		
 
 		if (Objects.equals(option, "1")) {
 			System.out.println("Enter comments:");
@@ -80,6 +86,8 @@ public class ProviderController {
 			System.out.println("Invalid input");
 			return;
 		}
+
+
 
 	}
 
@@ -94,7 +102,9 @@ public class ProviderController {
 	public boolean validateMember() {
         System.out.print("Enter Member Number:");
 		Scanner input = new Scanner(System.in);
+		input.close();
         int memberNum = input.nextInt();
+		// do what with memberNum?
 
         if (Objects.equals(member.getMemberStatus(), "Valid")) {
 			System.out.println("Validated");

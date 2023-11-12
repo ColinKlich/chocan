@@ -1,4 +1,4 @@
-package terminals;
+package Terminals;
 
 import accounts.Manager;
 
@@ -15,16 +15,14 @@ public class ManagerTerminal {
     ManagerTerminal(AccountsController accounts){
         boolean running = true;
         while (running) {
-            System.out.println("Operator Terminal");
+            System.out.println("Manager Terminal");
             System.out.println("[1] Login");
             System.out.println("[Quit] Return to Main Menu");
             String terminal = scanner.nextLine();
 
             if(Objects.equals(terminal.toLowerCase(), "quit")){ //QUIT
                 running = false;
-            }
-
-            if (Objects.equals(terminal, "1")) { //LOGIN
+            }else if (Objects.equals(terminal, "1")) { //LOGIN
                 verified = verifyManager(admin);
                 if (verified) {
 

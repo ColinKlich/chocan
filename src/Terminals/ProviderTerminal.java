@@ -1,4 +1,4 @@
-package terminals;
+package Terminals;
 
 import accounts.Provider;
 import controllers.AccountsController;
