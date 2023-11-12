@@ -32,12 +32,12 @@ public class ProviderTerminal {
 
                     String choice = scanner.nextLine();
                     if (Objects.equals(choice, "1")) {
-                    	int billingAmount = 0;
-                    	System.out.println("How much would you like to Bill ChocAn? (Input a valid integer amount.)");
-                    	billingAmount = scanner.nextInt();
-                        controller.billChocAn(billingAmount);
+                    	//int billingAmount = 0;
+                    	//System.out.println("How much would you like to Bill ChocAn? (Input a valid integer amount.)");
+                    	//billingAmount = scanner.nextInt();
+                        controller.billChocAn();
                     } else if (Objects.equals(choice, "2")) {
-                       // controller.validateMember(accounts);
+                       controller.validateMember();
                     }
                     else if (Objects.equals(choice, "3")) {
                         controller.requestProviderDirectory();
@@ -46,6 +46,8 @@ public class ProviderTerminal {
                         running = false;
                     }
                 }
+            }else if (Objects.equals(terminal.toLowerCase(), "quit")){
+                        running = false;
             }
         }
     }
