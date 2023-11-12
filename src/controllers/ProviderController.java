@@ -21,6 +21,7 @@ public class ProviderController {
 
     public void billChocAn() {
 
+		// ensure membership status is valid
 		if (Objects.equals(validateMember(), false)) {
 			return;
 		}
@@ -30,24 +31,24 @@ public class ProviderController {
 
 		boolean unverified = true;
 
-		Scanner getVerification = new Scanner(System.in);
-		int verification = getVerification.nextInt();
-
 		while (unverified) {
+			
+			Scanner getVerification = new Scanner(System.in);
+			int verification = getVerification.nextInt();
 
-				Scanner readCode = new Scanner(System.in);
-				int serviceCode = readCode.nextInt();
+			Scanner readCode = new Scanner(System.in);
+			int serviceCode = readCode.nextInt();
 
-				if (Objects.equals(serviceCode, 000000)) {
+			if (Objects.equals(serviceCode, 000000)) {
 				String serviceName = service.getServiceName();
 
 				for (int i = 0; i < 20; i++)
 					System.out.print(serviceName.charAt(i));
-				}
+			}
 
-				System.out.print("Verify service:");
-				System.out.print("[1] Correct");
-				System.out.print("[2] Incorrect");		
+			System.out.print("Verify service:");
+			System.out.print("[1] Correct");
+			System.out.print("[2] Incorrect");		
 
 			if (Objects.equals(verification, 1)) {
 				unverified = false;
