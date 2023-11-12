@@ -30,6 +30,7 @@ public class ProviderController {
 		String date = scanner.nextLine();
 		scanner.close();
 		// do what with date?
+		// store in serviceProvided
 
 		boolean unverified = true;
 
@@ -88,11 +89,8 @@ public class ProviderController {
 	}
 
 	public void requestProviderDirectory() {
-			System.out.println("Provider Directory:");
-			System.out.format("Example Service A", "000000\n");
-			System.out.format("Example Service B", "000001\n");
-			System.out.format("Example Service C", "000002\n");
-			System.out.format("Example Service D", "000003\n");
+		// print services from providerDirectory
+
 	}
 
 	public boolean validateMember() {
