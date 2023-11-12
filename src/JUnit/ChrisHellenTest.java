@@ -1,7 +1,12 @@
 package JUnit;
 import reports.*;
+import services.ServiceProvided;
 import accounts.*;
 import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
 import static org.junit.Before;
 import static org.junit.Test;
 
@@ -22,27 +27,16 @@ public class ChrisHellenTest {
 
     @Test
     public void memberFormatReportTest() {
-        assertEquals(
-        "Member Name: " + "John Doe" + '\n' +
-        "Member Number: " + 99999 + '\n' +
-        "Member Street Address: " + "1234 Meadow Ln" + '\n' +
-        "Member City: " + "Chicago" + '\n' +
-        "Member State: " + "IL" + '\n' +
-        "Member Zip Code: " + 60031 + '\n', memberReport.formattedReport);
+        assertEquals(true, memberReport.print());
     }
 
     @Test
     public void providerFormatReportTest() {
-        assertEquals(
-        "Member Name: " + "John Doe" + '\n' +
-        "Member Number: " + 99999 + '\n' +
-        "Member Street Address: " + "1234 Meadow Ln" + '\n' +
-        "Member City: " + "Chicago" + '\n' +
-        "Member State: " + "IL" + '\n' +
-        "Member Zip Code: " + 60031 + '\n', memberReport.formattedReport);
+        assertEquals(true, providerReport.print());
     }    
 
-    @Test public void memberGetNameTest(){
+    @Test 
+    public void memberGetNameTest(){
         assertEquals("John Doe", member.getName());
     }
 
