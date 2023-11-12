@@ -1,3 +1,4 @@
+package timer;
 public class Timer {
     private int time;
     private String dotw;
