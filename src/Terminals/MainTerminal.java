@@ -47,8 +47,8 @@ public class MainTerminal {
     }
 
 	private static void createData() {
-        providerDirectory.addService("session with a dietician", 598470, 50);
-        providerDirectory.addService("aerobics exercise session", 88394, 30);
+        //providerDirectory.addService("session with a dietician", 598470, 50);
+        //providerDirectory.addService("aerobics exercise session", 88394, 30);
     }
 
     private static void runMainAccountingProcedure(AccountsController accounts) {

@@ -1,9 +1,10 @@
 package controllers;
 
-import reports.MemberReport;
-import reports.ProviderReport;
-import reports.SummaryReport;
-import terminals.ManagerTerminal;
+import java.util.List;
+
+import accounts.Member;
+import accounts.Provider;
+import reports.*;
 
 public class ManagerController {
 	//Goal: design a control system designed solely for Managers
@@ -13,51 +14,91 @@ public class ManagerController {
 	 * Needs to access the current state of the report as designed by the Weekly Accounting Procedure
 	 * EDIT: Not using the current state of a dynamic report, instead I am using static dummy data gained through the get Method
 	 */
-	ManagerTerminal terminal;
-	MemberReport memberReport;
-	ProviderReport providerReport;
-	SummaryReport summaryReport;
-	/*
-	public ManagerController() {
-		terminal = new ManagerTerminal();
-	}
-	*/
+	List<Provider> providerList;
+	List<Member> memberList;
 	
-	public void getAllReports(int reportNum) {
-		summaryReport.getSummaryReport(reportNum);
-		//Create a new summary report constructor that takes in integers and finds some dummy data
-		//Put the dummy data in summary report
-		//Take in user input to decide what report.
-		// static get method would print out all the stuff
-		//SummaryReport newReport = SummaryReport.Get(Input)
-		//newReport.print()
-		memberReport.getMemberReport(reportNum);
-		providerReport.getProviderReport(reportNum);
+//	MemberReport memberReport;
+//	ProviderReport providerReport;
+//	SummaryReport summaryReport;
+	
+	public ManagerController(AccountsController accounts) {
+		providerList = accounts.getProviders();
+		memberList = accounts.getMembers();
+		printSummaryReport();
+	}
+	
+	
+	private void printSummaryReport() {
+		SummaryReport summary = new SummaryReport(providerList);
+		summary.print();
+	}
 
+
+	private void printAllProviderReports() {
+		//List<Provider> providerList = accounts.getProviders();
+		for(Provider provider: providerList) {
+			printProviderReport(provider);
+		}
 		
-		
-		
-		return;
 	}
-	
-	public void getMemberReport(int reportNum) {
-		memberReport.getMemberReport(reportNum);
-		return;
+
+
+	private void printProviderReport(Provider provider) {
+		ProviderReport report = new ProviderReport(provider);
+		report.print();
 	}
-	
-	public void getProviderReport(int reportNum) {
-		providerReport.getProviderReport(reportNum);
+
+
+	private void printAllMemberReports() {
+		//List<Member> memberList = accounts.getMembers();
+		for(Member member: memberList) {
+			printMemberReport(member);
+		}
 		
-		return;
 	}
-	
-	public void getSummaryReport(int reportNum) {
-		summaryReport.getSummaryReport(reportNum);
-		
-		return;
+
+
+	private void printMemberReport(Member member) {
+		MemberReport report = new MemberReport(member);
+		report.print();
 	}
-	
-	
+
+
+//	public void getAllReports(int reportNum) {
+//		summaryReport.getSummaryReport(reportNum);
+//		//Create a new summary report constructor that takes in integers and finds some dummy data
+//		//Put the dummy data in summary report
+//		//Take in user input to decide what report.
+//		// static get method would print out all the stuff
+//		//SummaryReport newReport = SummaryReport.Get(Input)
+//		//newReport.print()
+//		memberReport.getMemberReport(reportNum);
+//		providerReport.getProviderReport(reportNum);
+//
+//		
+//		
+//		
+//		return;
+//	}
+//	
+//	public void getMemberReport(int reportNum) {
+//		memberReport.getMemberReport(reportNum);
+//		return;
+//	}
+//	
+//	public void getProviderReport(int reportNum) {
+//		providerReport.getProviderReport(reportNum);
+//		
+//		return;
+//	}
+//	
+//	public void getSummaryReport(int reportNum) {
+//		summaryReport.getSummaryReport(reportNum);
+//		
+//		return;
+//	}
+//	
+//	
 	
 
 
