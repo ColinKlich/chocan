@@ -9,12 +9,12 @@ public class ProviderDirectory {
 
     }
     
-    public addService(String name, int code, int fee){
+    public void addService(String name, int code, int fee){
         Service temp = new Service(name, code, fee);
         this.services.add(temp);
     }
 
-    public deleteService(String name){
+    public void deleteService(String name){
         services.removeIf(service -> service.getName().equals(name));
     }
 }

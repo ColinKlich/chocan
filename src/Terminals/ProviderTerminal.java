@@ -1,4 +1,4 @@
-package Terminals;
+package terminals;
 
 import accounts.Provider;
 import controllers.AccountsController;
@@ -46,6 +46,8 @@ public class ProviderTerminal {
                         running = false;
                     }
                 }
+            }else if (Objects.equals(terminal.toLowerCase(), "quit")){
+                        running = false;
             }
         }
     }
