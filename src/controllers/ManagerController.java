@@ -6,7 +6,7 @@ import accounts.Member;
 import accounts.Provider;
 import reports.*;
 
-public class ManagerController(AccountsController accounts) {
+public class ManagerController{
 	//Goal: design a control system designed solely for Managers
 	//Objective #1: Need to have a member report retrieval function
 	/*
@@ -14,8 +14,8 @@ public class ManagerController(AccountsController accounts) {
 	 * Needs to access the current state of the report as designed by the Weekly Accounting Procedure
 	 * EDIT: Not using the current state of a dynamic report, instead I am using static dummy data gained through the get Method
 	 */
-	List<Provider> providerList;
-	List<Member> memberList;
+	private List<Provider> providerList;
+	private List<Member> memberList;
 	
 //	MemberReport memberReport;
 //	ProviderReport providerReport;
