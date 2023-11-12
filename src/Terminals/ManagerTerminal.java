@@ -1,14 +1,7 @@
 package Terminals;
 
 import accounts.Manager;
-import controllers.AccountsController;
 import controllers.ManagerController;
-import Reports.MemberReport;
-import Reports.ProviderReport;
-import Reports.SummaryReport;
-import java.io.FileNotFoundException;
-import java.io.UnsupportedEncodingException;
-import java.text.ParseException;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -78,7 +71,7 @@ public class ManagerTerminal {
             String choice = scanner.nextLine();
             int num; //REPORT NUMBER
 
-            switch(choice){
+            switch(choice.toLowerCase()){
                 case "1":
                     System.out.println("Enter Report Number [1-4]:");
                     num = Integer.valueOf(scanner.nextLine());
@@ -92,7 +85,6 @@ public class ManagerTerminal {
                 case "3":
                     System.out.println("Enter Report Number [1-4]:");
                     num = Integer.valueOf(scanner.nextLine());
-
                     reportInformation.getMemberReport(num);
                     break;
                 case "4":

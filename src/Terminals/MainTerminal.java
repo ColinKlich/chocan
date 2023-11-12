@@ -1,4 +1,4 @@
-package terminals;
+package Terminals;
 
 import java.io.IOException;
 import java.text.ParseException;
