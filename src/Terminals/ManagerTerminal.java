@@ -22,9 +22,7 @@ public class ManagerTerminal {
 
             if(Objects.equals(terminal.toLowerCase(), "quit")){ //QUIT
                 running = false;
-            }
-
-            if (Objects.equals(terminal, "1")) { //LOGIN
+            }else if (Objects.equals(terminal, "1")) { //LOGIN
                 verified = verifyManager(admin);
                 if (verified) {
 

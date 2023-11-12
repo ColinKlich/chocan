@@ -1,4 +1,4 @@
-package terminals;
+package Terminals;
 
 import accounts.Operator;
 import controllers.AccountsController;
