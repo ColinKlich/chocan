@@ -18,24 +18,47 @@ public class ProviderController {
 
     }
 
-    public void billChocAn(int amount) {
+    public void billChocAn() {
 
 		validateMember(member);
 		/*add in providerTerminal */
 
-		
 		Scanner scanner = new Scanner(System.in);
 		String date = scanner.nextLine();
 
-		Scanner readCode = new Scanner(System.in);
-		int serviceCode = scanner.nextInt();
+		boolean unverified = true;
 
-		if (Objects.equals(serviceCode, 000000)) {
-			String serviceName = service.getServiceName();
+		Scanner getVerification = new Scanner(System.in);
+		int verification = getVerification.nextInt();
 
-			for (int i = 0; i < 20; i++)
-				System.out.print(serviceName.charAt(i));
+		while (unverified) {
+
+				Scanner readCode = new Scanner(System.in);
+				int serviceCode = readCode.nextInt();
+
+				if (Objects.equals(serviceCode, 000000)) {
+				String serviceName = service.getServiceName();
+
+				for (int i = 0; i < 20; i++)
+					System.out.print(serviceName.charAt(i));
+				}
+
+				System.out.print("Verify service:");
+				System.out.print("[1] Correct");
+				System.out.print("[2] Incorrect");		
+
+			if (Objects.equals(verification, 1)) {
+				unverified = false;
+			}
+			else if (Objects.equals(verification, 2)) {
+				System.out.print("Reenter service code:");
+				unverified = true;
+		
+			}
 		}
+
+		System.out.print("Amount billed to ChocAn: $" + service.fee);
+
 
 		System.out.println("Enter comments");
 		System.out.println("[1] Yes");

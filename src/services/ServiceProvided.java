@@ -13,7 +13,7 @@ public class ServiceProvided {
     public String comments;
     private String serviceName;
     private String memberName;
-    private int fee;
+    public int fee;
 
     public ServiceProvided(String serviceName, String serviceDate, int serviceCode, String providerName, int providerNum, int memberNum, String memberName, int fee, String comments){
         LocalDate date = LocalDate.now();
