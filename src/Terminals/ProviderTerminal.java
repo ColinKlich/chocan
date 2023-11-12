@@ -5,7 +5,7 @@ import controllers.AccountsController;
 import controllers.ProviderController;
 import java.util.Objects;
 import java.util.Scanner;
-
+//GOAL: Need to create a validate member function for the provider terminal
 public class ProviderTerminal {
     private boolean verified = false;
 
@@ -32,12 +32,15 @@ public class ProviderTerminal {
 
                     String choice = scanner.nextLine();
                     if (Objects.equals(choice, "1")) {
-                        billChocAn();
+                    	int billingAmount = 0;
+                    	System.out.println("How much would you like to Bill ChocAn? (Input a valid integer amount.)");
+                    	billingAmount = scanner.nextInt();
+                        controller.billChocAn(billingAmount);
                     } else if (Objects.equals(choice, "2")) {
-                        validateMember(accounts);
+                       // controller.validateMember(accounts);
                     }
                     else if (Objects.equals(choice, "3")) {
-                        requestProviderDirectory();
+                        controller.requestProviderDirectory();
                     }
                      else if (Objects.equals(choice.toLowerCase(), "quit")){
                         running = false;
