@@ -1,11 +1,11 @@
-package terminals;
+package Terminals;
 
 import accounts.Manager;
 import controllers.AccountsController;
 import controllers.ManagerController;
-import reports.MemberReport;
-import reports.ProviderReport;
-import reports.SummaryReport;
+import Reports.MemberReport;
+import Reports.ProviderReport;
+import Reports.SummaryReport;
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
@@ -76,6 +76,19 @@ public class ManagerTerminal {
 
             // Get user input
             String choice = scanner.nextLine();
+
+            switch(choice){
+                case "1":
+                    break;
+                case "2":
+                    break;
+                case "3":
+                    break;
+                case "4":
+                    break;
+                case "Quit":
+                    break;
+            }
 
         }
     }
