@@ -1,5 +1,10 @@
 package accounts;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import services.Service;
+
 public class Provider {
     private String providerName;
     private int providerNumber;
@@ -7,7 +12,7 @@ public class Provider {
     private String city;
     private String state;
     private int zipCode;
-  //private List<ProviderService> servicesProvided;
+    private List<Service> servicesProvided;
     private int numberOfConsultations;
     private int totalFees;
 
@@ -18,7 +23,7 @@ public class Provider {
         this.city = city;
         this.state = state;
         this.zipCode = zipCode;
-       // this.servicesProvided = new ArrayList<ProviderService>();
+        this.servicesProvided = new ArrayList<Service>();
         this.numberOfConsultations = 0;
         this.totalFees = 0;
     }
@@ -30,7 +35,7 @@ public class Provider {
         this.city = null;
         this.state = null;
         this.zipCode = -1;
-        // this.servicesProvided = null;
+        this.servicesProvided = null;
         this.numberOfConsultations = -1;
         this.totalFees = -1;
 	}
@@ -67,10 +72,10 @@ public class Provider {
         return numberOfConsultations;
     }
 
- /*   public List<ProviderService> getServicesProvided() {
+    public List<Service> getServicesProvided() {
         return servicesProvided;
     }
-*/
+
     public void setProviderNumber(int providerNumber) {
     	this.providerNumber = providerNumber;
     }
@@ -93,10 +98,10 @@ public class Provider {
 	   this.numberOfConsultations = this.numberOfConsultations + 1;
    }
 
-/*    public void setServicesProvided(List<ProviderService> servicesProvided) {
+   public void setServicesProvided(List<Service> servicesProvided) {
         this.servicesProvided = servicesProvided;
     }
-*/
+
    public void deleteProvider(Provider providerDelete) {
 	   providerDelete = new Provider();
 	   providerDelete = null;

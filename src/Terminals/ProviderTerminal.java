@@ -27,6 +27,7 @@ public class ProviderTerminal {
                     System.out.println("Provider Terminal");
                     System.out.println("[1] Bill ChocAn");
                     System.out.println("[2] Validate Member");
+                    System.out.println("[3] Request Provider Directory");
                     System.out.println("[Quit] Return to Main Menu");
 
                     String choice = scanner.nextLine();
@@ -34,7 +35,11 @@ public class ProviderTerminal {
                         billChocAn();
                     } else if (Objects.equals(choice, "2")) {
                         validateMember(accounts);
-                    } else if (Objects.equals(choice.toLowerCase(), "quit")){
+                    }
+                    else if (Objects.equals(choice, "3")) {
+                        requestProviderDirectory();
+                    }
+                     else if (Objects.equals(choice.toLowerCase(), "quit")){
                         running = false;
                     }
                 }
