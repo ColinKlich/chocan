@@ -47,7 +47,7 @@ public class MainTerminal {
 
     }
 
-	private static void runMainAccountingProcedure(AccountsController accounts2) {
+	private static void runMainAccountingProcedure(AccountsController accounts) {
 		// TODO Auto-generated method stub
 		
 	}

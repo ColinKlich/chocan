@@ -2,19 +2,9 @@ package controllers;
 
 import accounts.*;
 import java.util.List;
-import java.util.Map;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.Reader;
-import java.math.BigDecimal;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
-
-import org.json.simple.JSONObject;
 
 public class AccountsController {
     private List<Member> members;
@@ -100,75 +90,6 @@ public class AccountsController {
     public void updateProvider(String providerName) throws ParseException {
         deleteProvider(providerName);
         addProvider();
-    }
-
-    public void readMemberData() {
-        try {
-            // create a reader
-            Reader reader = Files.newBufferedReader(Paths.get("members.json"));
-
-            // create parser
-            JsonObject parser = (JsonObject) Jsoner.deserialize(reader);
-            members = parser.get("members");
-
-            // close reader
-            reader.close();
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    public void readProviderData() {
-                try {
-            // create a reader
-            Reader reader = Files.newBufferedReader(Paths.get("providers.json"));
-
-            // create parser
-            JsonObject parser = (JsonObject) Jsoner.deserialize(reader);
-            providers = parser.get("providers");
-
-            // close reader
-            reader.close();
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    public void storeMemberData() {
-        try {
-            // create a writer
-            BufferedWriter writer = Files.newBufferedWriter(Paths.get("members.json"));
-
-            JSONArray jsonArray = new JSONArray(members);
-            // write JSON to file
-            Jsoner.serialize(jsonArray, writer);
-
-            // close the writer
-            writer.close();
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    public void storeProviderData() {
-        try {
-            // create a writer
-            BufferedWriter writer = Files.newBufferedWriter(Paths.get("providers.json"));
-
-            JSONArray jsonArray = new JSONArray(providers);
-
-            // write JSON to file
-            Jsoner.serialize(jsonArray, writer);
-
-            // close the writer
-            writer.close();
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
     }
 
 }
