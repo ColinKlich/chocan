@@ -29,7 +29,7 @@ public class MainTerminal {
             } else if (Objects.equals(terminal, "2")) {
                 //new ManagerTerminal(accounts);
             } else if (Objects.equals(terminal, "3")) {
-                //OperatorTerminal(accounts);
+                new OperatorTerminal(accounts);
             } else if (Objects.equals(terminal, "4")) {
                 runMainAccountingProcedure(accounts);
             } else {
