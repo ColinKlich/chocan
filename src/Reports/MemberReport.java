@@ -16,7 +16,7 @@ public class MemberReport{
     private String state;
     private int zipCode;
     private List<ServiceProvided> servicesUsed;
-    private String formattedReport;
+    public String formattedReport;
     private String currDate;
 
     public MemberReport(Member member){

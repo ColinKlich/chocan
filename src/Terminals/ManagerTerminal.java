@@ -3,16 +3,14 @@ package Terminals;
 import accounts.Manager;
 import controllers.AccountsController;
 import controllers.ManagerController;
-
+import Reports.MemberReport;
+import Reports.ProviderReport;
+import Reports.SummaryReport;
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.util.Objects;
 import java.util.Scanner;
-
-import Reports.MemberReport;
-import Reports.ProviderReport;
-import Reports.SummaryReport;
 
 public class ManagerTerminal {
     private boolean verified = false;
@@ -78,6 +76,19 @@ public class ManagerTerminal {
 
             // Get user input
             String choice = scanner.nextLine();
+
+            switch(choice){
+                case "1":
+                    break;
+                case "2":
+                    break;
+                case "3":
+                    break;
+                case "4":
+                    break;
+                case "Quit":
+                    break;
+            }
 
         }
     }
