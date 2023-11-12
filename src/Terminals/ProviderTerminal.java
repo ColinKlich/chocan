@@ -46,8 +46,9 @@ public class ProviderTerminal {
                         running = false;
                     }
                 }
+            }else if (Objects.equals(terminal.toLowerCase(), "quit")){
+                        running = false;
             }
-        }
     }
 
     public boolean verifyProvider(Provider admin) {
