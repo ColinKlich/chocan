@@ -5,13 +5,14 @@ import java.text.ParseException;
 import java.util.Objects;
 import java.util.Scanner;
 import controllers.AccountsController;
+import services.ProviderDirectory;
 
 public class MainTerminal {
     public static AccountsController accounts = new AccountsController();
+    public static ProviderDirectory providerDirectory = new ProviderDirectory();
 
     public static void main(String[] args) throws ParseException, IOException {
-        //accounts.readMemberData();
-        //accounts.readProviderData();
+        createData();
         Scanner terminalInput = new Scanner(System.in);
 
         boolean running = true;
@@ -35,8 +36,6 @@ public class MainTerminal {
             } else if (Objects.equals(terminal, "4")) {
                 runMainAccountingProcedure(accounts);
             } else {
-                //accounts.storeMemberData();
-                //accounts.storeProviderData();
                 running = false;
                 System.out.println("Have a Great Day!!!");
             }
@@ -47,7 +46,12 @@ public class MainTerminal {
 
     }
 
-	private static void runMainAccountingProcedure(AccountsController accounts) {
+	private static void createData() {
+        providerDirectory.addService("session with a dietician", 598470, 50);
+        providerDirectory.addService("aerobics exercise session", 88394, 30);
+    }
+
+    private static void runMainAccountingProcedure(AccountsController accounts) {
 		// TODO Auto-generated method stub
 		
 	}
