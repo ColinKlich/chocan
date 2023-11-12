@@ -5,7 +5,7 @@ import reports.ProviderReport;
 import reports.SummaryReport;
 import terminals.ManagerTerminal;
 
-public class ManagerController {
+public class ManagerController(AccountsController accounts) {
 	//Goal: design a control system designed solely for Managers
 	//Objective #1: Need to have a member report retrieval function
 	/*
