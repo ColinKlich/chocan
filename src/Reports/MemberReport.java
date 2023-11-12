@@ -47,17 +47,19 @@ public class MemberReport{
         }
     }
 
-    public void print(){
+    public boolean print(){
         File report = new File(memberName + currDate + ".txt");
 
         try {
             FileWriter writer = new FileWriter(report.getName());
             writer.write(formattedReport);
             writer.close();
+			return true;
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+		return false;
 	}
     
     public void getMemberReport(int reportNumber) {

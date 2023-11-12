@@ -23,7 +23,7 @@ public class ProviderTerminal {
             if (Objects.equals(terminal, "1")) {
                 verified = verifyProvider(admin);
                 if (verified) {
-
+                	ProviderController controller = new ProviderController();
                     System.out.println("Provider Terminal");
                     System.out.println("[1] Bill ChocAn");
                     System.out.println("[2] Validate Member");

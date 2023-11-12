@@ -1,9 +1,9 @@
 package controllers;
 
-import reports.MemberReport;
-import reports.ProviderReport;
-import reports.SummaryReport;
-import terminals.ManagerTerminal;
+import Reports.MemberReport;
+import Reports.ProviderReport;
+import Reports.SummaryReport;
+import Terminals.ManagerTerminal;
 
 public class ManagerController {
 	//Goal: design a control system designed solely for Managers

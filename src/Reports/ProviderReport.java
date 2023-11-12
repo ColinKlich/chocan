@@ -1,6 +1,5 @@
 package reports;
 import accounts.Provider;
-import services.Service;
 import services.ServiceProvided;
 import java.io.*;
 import java.util.*;
@@ -31,7 +30,7 @@ public class ProviderReport {
         this.zipCode = provider.getZipCode();
         this.numberOfConsultations = provider.getNumberOfConsultations();
         this.totalFees = provider.getTotalFees();
-        this.servicesProvided = provider.servicesProvided;
+        this.servicesProvided = provider.getServicesProvided();
 
         LocalDate date = LocalDate.now(); 
         DateTimeFormatter format = DateTimeFormatter.ofPattern("MM-dd-yyyy");
@@ -61,17 +60,19 @@ public class ProviderReport {
 	}
 
     //Uses the formatted report for the given provider and writes it to the ProviderReport.txt file
-	public void print(){
+	public boolean print(){
         File report = new File(providerName + currDate + ".txt");
 
         try {
             FileWriter writer = new FileWriter(report.getName());
             writer.write(formattedReport);
             writer.close();
+			return true;
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+		return false;
 	}
 	
 	public void getProviderReport(int reportNumber) {
