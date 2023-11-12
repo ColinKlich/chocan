@@ -1,7 +1,8 @@
 package Terminals;
 
 import accounts.Manager;
-import controllers.ManagerController;
+
+import controllers.*;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -11,7 +12,7 @@ public class ManagerTerminal {
     Scanner scanner = new Scanner(System.in);
     Manager admin = new Manager("admin", "admin", "testing123");
 
-    ManagerTerminal(ManagerController accounts){
+    ManagerTerminal(AccountsController accounts){
         boolean running = true;
         while (running) {
             System.out.println("Operator Terminal");
@@ -33,7 +34,7 @@ public class ManagerTerminal {
                     String choice = scanner.nextLine();
 
                     if (Objects.equals(choice, "1")) { //GENERATE REPORTS
-                        generateReports(accounts);
+                        //generateReports(accounts);
                     }
 
                     if(Objects.equals(terminal.toLowerCase(), "quit")){ //QUIT
