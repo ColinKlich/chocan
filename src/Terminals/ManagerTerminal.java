@@ -13,6 +13,7 @@ public class ManagerTerminal {
     Manager admin = new Manager("admin", "admin", "testing123");
 
     ManagerTerminal(AccountsController accounts){
+        ManagerController reports = new ManagerController(accounts);
         boolean running = true;
         while (running) {
             System.out.println("Manager Terminal");
@@ -32,7 +33,7 @@ public class ManagerTerminal {
                     String choice = scanner.nextLine();
 
                     if (Objects.equals(choice, "1")) { //GENERATE REPORTS
-                        //generateReports(accounts);
+                        //generateReports(report);
                     }
 
                     if(Objects.equals(terminal.toLowerCase(), "quit")){ //QUIT
