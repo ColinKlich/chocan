@@ -1,4 +1,4 @@
-package Terminals;
+package terminals;
 
 import accounts.Manager;
 
