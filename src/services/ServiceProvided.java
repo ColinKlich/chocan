@@ -10,7 +10,7 @@ public class ServiceProvided {
     private String providerName;
     private int memberNumber;
     private int serviceCode;
-    private String comments;
+    public String comments;
     private String serviceName;
     private String memberName;
     private int fee;

@@ -1,18 +1,16 @@
-package Terminals;
+package terminals;
 
 import accounts.Manager;
 import controllers.AccountsController;
 import controllers.ManagerController;
-
+import reports.MemberReport;
+import reports.ProviderReport;
+import reports.SummaryReport;
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.util.Objects;
 import java.util.Scanner;
-
-import Reports.MemberReport;
-import Reports.ProviderReport;
-import Reports.SummaryReport;
 
 public class ManagerTerminal {
     private boolean verified = false;
