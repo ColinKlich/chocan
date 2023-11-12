@@ -2,10 +2,11 @@ package controllers;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.lang.reflect.Member;
+/*import java.lang.reflect.Member;*/
 import services.ServiceProvided;
 import java.util.Objects;
 import java.util.Scanner;
+import accounts.Member;
 
 public class ProviderController {
 
@@ -20,8 +21,9 @@ public class ProviderController {
 
     public void billChocAn() {
 
-		validateMember(member);
-		/*add in providerTerminal */
+		if (Objects.equals(validateMember(), false)) {
+			return;
+		}
 
 		Scanner scanner = new Scanner(System.in);
 		String date = scanner.nextLine();
@@ -64,7 +66,8 @@ public class ProviderController {
 		System.out.println("[1] Yes");
 		System.out.println("[2] No");
 
-		Scanner option = new Scanner(System.in);
+		Scanner scanner2 = new Scanner(System.in);
+		String option = scanner2.nextLine();		
 
 		if (Objects.equals(option, "1")) {
 			System.out.println("Enter comments:");
@@ -87,4 +90,26 @@ public class ProviderController {
 			System.out.format("Example Service C", "000002\n");
 			System.out.format("Example Service D", "000003\n");
 	}
+
+	public boolean validateMember() {
+        System.out.print("Enter Member Number:");
+		Scanner input = new Scanner(System.in);
+        int memberNum = input.nextInt();
+
+        if (Objects.equals(member.getMemberStatus(), "Valid")) {
+			System.out.println("Validated");
+			return true;
+		}
+		else if (Objects.equals(member.getMemberStatus(), "Invalid number")) {
+			System.out.println("Invalid number");
+			return false;
+		}
+		else if (Objects.equals(member.getMemberStatus(), "Suspended")) {
+			System.out.println("Suspended");
+			return false;
+		}
+		else {
+			return false;
+		}
+    }
 }
