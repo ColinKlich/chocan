@@ -12,9 +12,11 @@ public class MainTerminal {
     public static void main(String[] args) throws ParseException, IOException {
         //accounts.readMemberData();
         //accounts.readProviderData();
+        Scanner terminalInput = new Scanner(System.in);
+
         boolean running = true;
+
         while (running) {
-            Scanner terminalInput = new Scanner(System.in);
             System.out.println("Welcome to ChocAn!");
             System.out.println("Please Choose a Terminal:");
             System.out.println("[1] Provider Terminal");
@@ -39,8 +41,8 @@ public class MainTerminal {
                 System.out.println("Have a Great Day!!!");
             }
             
-            terminalInput.close();
         }
+        terminalInput.close();
 
 
     }
