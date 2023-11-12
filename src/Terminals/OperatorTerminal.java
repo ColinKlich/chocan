@@ -39,7 +39,6 @@ public class OperatorTerminal {
             } else {
             	running = false;
             }
-            myObj.close();
         }
     }
 
