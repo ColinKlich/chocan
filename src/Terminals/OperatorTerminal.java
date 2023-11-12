@@ -1,4 +1,4 @@
-package Terminals;
+package terminals;
 
 import accounts.Operator;
 import controllers.AccountsController;
@@ -39,7 +39,6 @@ public class OperatorTerminal {
             } else {
             	running = false;
             }
-            myObj.close();
         }
     }
 
