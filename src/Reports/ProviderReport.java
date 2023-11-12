@@ -1,4 +1,4 @@
-package Reports;
+package reports;
 import accounts.Provider;
 import services.ServiceProvided;
 import java.io.*;
