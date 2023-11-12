@@ -21,6 +21,7 @@ public class ProviderController {
     public void billChocAn(int amount) {
 
 		validateMember(member);
+		/*add in providerTerminal */
 
 		
 		Scanner scanner = new Scanner(System.in);
@@ -33,7 +34,7 @@ public class ProviderController {
 			String serviceName = service.getServiceName();
 
 			for (int i = 0; i < 20; i++)
-				System.out.print(serviceName.charAt(i)));
+				System.out.print(serviceName.charAt(i));
 		}
 
 		System.out.println("Enter comments");
@@ -55,9 +56,12 @@ public class ProviderController {
 		}
 
 	}
-	
 
 	public void requestProviderDirectory() {
-
+			System.out.println("Provider Directory:");
+			System.out.format("Example Service A", "000000\n");
+			System.out.format("Example Service B", "000001\n");
+			System.out.format("Example Service C", "000002\n");
+			System.out.format("Example Service D", "000003\n");
 	}
 }
