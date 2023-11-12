@@ -18,7 +18,7 @@ public class ManagerTerminal {
     Scanner scanner = new Scanner(System.in);
     Manager admin = new Manager("admin", "admin", "testing123");
 
-    ManagerTerminal(AccountsController accounts){
+    ManagerTerminal(ManagerController accounts){
         boolean running = true;
         while (running) {
             System.out.println("Operator Terminal");
@@ -76,17 +76,32 @@ public class ManagerTerminal {
 
             // Get user input
             String choice = scanner.nextLine();
+            int num; //REPORT NUMBER
 
             switch(choice){
                 case "1":
+                    System.out.println("Enter Report Number [1-4]:");
+                    num = Integer.valueOf(scanner.nextLine());
+                    reportInformation.getAllReports(num);
                     break;
                 case "2":
+                    System.out.println("Enter Report Number [1-4]:");
+                    num = Integer.valueOf(scanner.nextLine());
+                    reportInformation.getProviderReport(num);
                     break;
                 case "3":
+                    System.out.println("Enter Report Number [1-4]:");
+                    num = Integer.valueOf(scanner.nextLine());
+
+                    reportInformation.getMemberReport(num);
                     break;
                 case "4":
+                    System.out.println("Enter Report Number [1-4]:");
+                    num = Integer.valueOf(scanner.nextLine());
+                    reportInformation.getSummaryReport(num);
                     break;
                 case "Quit":
+                    running = false;
                     break;
             }
 
