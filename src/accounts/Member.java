@@ -23,13 +23,15 @@ public class Member  {
         this.zipCode = zipCode;
         this.setMemberStatus("Valid");
         try {
-        File memberFile = new File("\\src\\accounts\\accounts_storage\\"+name+".txt");
+        @SuppressWarnings("unused")
+        File dirFile = new File(System.getProperty("user.dir")+"\\src\\accounts\\accounts_storage\\Member_accounts");
+		File memberFile = new File(dirFile,name+".txt");
         FileWriter memberWrite;
-			memberWrite = new FileWriter("\\src\\accounts\\accounts_storage\\"+name+".txt");
+			memberWrite = new FileWriter(memberFile);
 	        memberWrite.write("Member name: "+name+"\n"); 
 	        memberWrite.write("Member number: "+ memberNumber+"\n"); 
 	        memberWrite.write("Address: "+address+"\n");
-	        memberWrite.write("State: "+state); 
+	        memberWrite.write("State: "+state+"\n"); 
 	        memberWrite.write("Zipcode: "+zipCode+"\n");
 	        memberWrite.write("Status: "+memberStatus+"\n"); 
 	        memberWrite.close();
@@ -92,15 +94,16 @@ public class Member  {
         this.zipCode = zipCode;
         this.setMemberStatus(status);
         try {
-            File memberFile = new File("\\src\\accounts\\accounts_storage\\"+memberName+".txt");
+            File dirFile = new File(System.getProperty("user.dir")+"\\Member_accounts");
+     		File memberFile = new File(dirFile,this.memberName+".txt");
             memberFile.delete();
-            memberFile = new File("\\src\\accounts\\accounts_storage\\"+name+".txt");
+            memberFile = new File(dirFile,name+".txt");
             FileWriter memberWrite;
-    			memberWrite = new FileWriter("\\src\\accounts\\accounts_storage\\"+name+".txt");
+    			memberWrite = new FileWriter(memberFile);
     	        memberWrite.write("Member name: "+name+"\n"); 
     	        memberWrite.write("Member number: "+ memberNumber+"\n"); 
     	        memberWrite.write("Address: "+address+"\n");
-    	        memberWrite.write("State: "+state); 
+    	        memberWrite.write("State: "+state+"\n"); 
     	        memberWrite.write("Zipcode: "+zipCode+"\n");
     	        memberWrite.write("Status: "+memberStatus+"\n"); 
     	        memberWrite.close();
@@ -111,7 +114,8 @@ public class Member  {
 	}
 	
 	public void deleteMember (Member memberDelete) {
-		File memberFile = new File("\\src\\accounts\\accounts_storage\\"+memberName+".txt");
+        File dirFile = new File(System.getProperty("user.dir")+"\\Member_accounts");
+		File memberFile = new File(dirFile,this.memberName+".txt");
         memberFile.delete();
 		memberDelete = new Member();
 		memberDelete = null;
