@@ -60,7 +60,6 @@ public class ProviderController {
 			else if (Objects.equals(verification, 2)) {
 				System.out.print("Reenter service code:");
 				unverified = true;
-		
 			}
 		}
 
@@ -86,9 +85,6 @@ public class ProviderController {
 			System.out.println("Invalid input");
 			return;
 		}
-
-
-
 	}
 
 	public void requestProviderDirectory() {
