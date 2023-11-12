@@ -27,9 +27,9 @@ public class MainTerminal {
             if (Objects.equals(terminal, "1")) {
                 new ProviderTerminal(accounts);
             } else if (Objects.equals(terminal, "2")) {
-                //new ManagerTerminal(accounts);
+                new ManagerTerminal(accounts);
             } else if (Objects.equals(terminal, "3")) {
-                //OperatorTerminal(accounts);
+                new OperatorTerminal(accounts);
             } else if (Objects.equals(terminal, "4")) {
                 runMainAccountingProcedure(accounts);
             } else {

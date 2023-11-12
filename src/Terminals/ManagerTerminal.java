@@ -1,7 +1,8 @@
 package terminals;
 
 import accounts.Manager;
-import controllers.ManagerController;
+
+import controllers.*;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -11,13 +12,17 @@ public class ManagerTerminal {
     Scanner scanner = new Scanner(System.in);
     Manager admin = new Manager("admin", "admin", "testing123");
 
-    ManagerTerminal(ManagerController accounts){
+    ManagerTerminal(AccountsController accounts){
         boolean running = true;
         while (running) {
             System.out.println("Operator Terminal");
             System.out.println("[1] Login");
             System.out.println("[Quit] Return to Main Menu");
             String terminal = scanner.nextLine();
+
+            if(Objects.equals(terminal.toLowerCase(), "quit")){ //QUIT
+                running = false;
+            }
 
             if (Objects.equals(terminal, "1")) { //LOGIN
                 verified = verifyManager(admin);
@@ -29,16 +34,17 @@ public class ManagerTerminal {
                     String choice = scanner.nextLine();
 
                     if (Objects.equals(choice, "1")) { //GENERATE REPORTS
-                        generateReports(accounts);
-                    } else {
+                        //generateReports(accounts);
+                    }
+
+                    if(Objects.equals(terminal.toLowerCase(), "quit")){ //QUIT
                         running = false;
                     }
                 }
-            }else if(Objects.equals(terminal.toLowerCase(), "quit")){ //QUIT
-                running = false;;
+            }
             }
         }
-    }
+
 
     public boolean verifyManager(Manager admin) {
         System.out.println("Enter Username:");
