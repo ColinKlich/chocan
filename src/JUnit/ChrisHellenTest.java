@@ -2,7 +2,7 @@ package JUnit;
 import reports.*;
 import services.ServiceProvided;
 import accounts.*;
-import org.junit.Assert.*;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,7 +18,7 @@ public class ChrisHellenTest {
         member = new Member("John Doe", 99999, "1234 Meadow Ln", "Chicago", "IL", 60031);
         memberReport = new MemberReport(member);
         provider = new Provider("John Doe", 99999, "1234 Meadow Ln", "Chicago", "IL", 60031);
-        providerReport = new providerReport(provider);
+        providerReport = new ProviderReport(provider);
     }
 
     @Test
