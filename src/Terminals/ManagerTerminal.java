@@ -43,7 +43,7 @@ public class ManagerTerminal {
             }
             }
         }
-    }
+
 
     public boolean verifyManager(Manager admin) {
         System.out.println("Enter Username:");
