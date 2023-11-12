@@ -36,7 +36,10 @@ public class OperatorTerminal {
                         running = false;
                     }
                 }
+            } else {
+            	running = false;
             }
+            myObj.close();
         }
     }
 

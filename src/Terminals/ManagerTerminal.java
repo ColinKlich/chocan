@@ -19,6 +19,10 @@ public class ManagerTerminal {
             System.out.println("[Quit] Return to Main Menu");
             String terminal = scanner.nextLine();
 
+            if(Objects.equals(terminal.toLowerCase(), "quit")){ //QUIT
+                running = false;
+            }
+
             if (Objects.equals(terminal, "1")) { //LOGIN
                 verified = verifyManager(admin);
                 if (verified) {
@@ -30,15 +34,16 @@ public class ManagerTerminal {
 
                     if (Objects.equals(choice, "1")) { //GENERATE REPORTS
                         generateReports(accounts);
-                    } else {
+                    }
+
+                    if(Objects.equals(terminal.toLowerCase(), "quit")){ //QUIT
                         running = false;
                     }
                 }
-            }else if(Objects.equals(terminal.toLowerCase(), "quit")){ //QUIT
-                running = false;;
+            }
             }
         }
-    }
+
 
     public boolean verifyManager(Manager admin) {
         System.out.println("Enter Username:");
