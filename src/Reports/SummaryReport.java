@@ -42,17 +42,19 @@ public class SummaryReport {
         "Overall Total Fee: " + overallFeeTotal;
     }
 
-    public void print(){
+    public boolean print(){
         File report = new File("SummaryReport" + currDate + ".txt");
 
         try {
             FileWriter writer = new FileWriter(report.getName());
             writer.write(formattedReport);
             writer.close();
+			return true;
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+		return false;
 	}
     
     public void getSummaryReport(int reportNumber) {
