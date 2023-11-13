@@ -20,23 +20,32 @@ public class AccountsController {
         return members;
     }
 
+    public Member getMember(int memberNumber){
+        for(Member member: members){
+            if(member.getNumber() == memberNumber){
+                return member;
+            }
+        }
+        return new Member();
+    }
+
     public List<Provider> getProviders() {
         return providers;
     }
 
-    // public void addMember(String memberName, int memberNumber, String address, String city,
-    // String state, int zipCode){
-    // Member member = new Member(memberName, memberNumber, address, city, state, zipCode);
-    // this.members.add(member);
-    // }
+    public void addMember(String memberName, int memberNumber, String address, String city,
+    String state, int zipCode){
+    Member member = new Member(memberName, memberNumber, address, city, state, zipCode);
+    this.members.add(member);
+    }
 
-    // public void addProvider(String providerName, int providerNumber, String address, String city,
-    // String state,
-    // int zipCode){
-    // Provider provider = new Provider(providerName, providerNumber, address, city, state,
-    // zipCode);
-    // this.providers.add(provider);
-    // }
+    public void addProvider(String providerName, int providerNumber, String address, String city,
+    String state,
+    int zipCode){
+    Provider provider = new Provider(providerName, providerNumber, address, city, state,
+    zipCode);
+    this.providers.add(provider);
+    }
 
     public void deleteMember(String name) {
         members.removeIf(member -> member.getName().equals(name));
@@ -46,7 +55,7 @@ public class AccountsController {
         providers.removeIf(provider -> provider.getName().equals(name));
     }
 
-    public void addMember() {
+    public void createMember() {
         System.out.println("Member Name: ");
         String name = myObj.nextLine();
         System.out.println("Member Number: ");
@@ -66,10 +75,10 @@ public class AccountsController {
 
     public void updateMember(String memberName) throws ParseException {
         deleteMember(memberName);
-        addMember();
+        createMember();
     }
 
-    public void addProvider() {
+    public void createProvider() {
         System.out.println("Provider Name: ");
         String name = myObj.nextLine();
         System.out.println("Provider Number: ");
@@ -89,7 +98,7 @@ public class AccountsController {
 
     public void updateProvider(String providerName) throws ParseException {
         deleteProvider(providerName);
-        addProvider();
+        createProvider();
     }
 
 }
