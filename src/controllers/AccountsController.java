@@ -20,23 +20,40 @@ public class AccountsController {
         return members;
     }
 
+    public Member getMember(int memberNumber) {
+        for (Member member : members) {
+            if (member.getNumber() == memberNumber) {
+                return member;
+            }
+        }
+        return new Member();
+    }
+
+    public Provider getProvider(int providerNumber) {
+        for (Provider provider : providers) {
+            if (provider.getNumber() == providerNumber) {
+                return provider;
+            }
+        }
+        return new Provider();
+    }
+
     public List<Provider> getProviders() {
         return providers;
     }
 
-    // public void addMember(String memberName, int memberNumber, String address, String city,
-    // String state, int zipCode){
-    // Member member = new Member(memberName, memberNumber, address, city, state, zipCode);
-    // this.members.add(member);
-    // }
+    public void addMember(String memberName, int memberNumber, String address, String city,
+            String state, int zipCode) {
+        Member member = new Member(memberName, memberNumber, address, city, state, zipCode);
+        this.members.add(member);
+    }
 
-    // public void addProvider(String providerName, int providerNumber, String address, String city,
-    // String state,
-    // int zipCode){
-    // Provider provider = new Provider(providerName, providerNumber, address, city, state,
-    // zipCode);
-    // this.providers.add(provider);
-    // }
+    public void addProvider(String providerName, int providerNumber, String address, String city,
+            String state, int zipCode) {
+        Provider provider =
+                new Provider(providerName, providerNumber, address, city, state, zipCode);
+        this.providers.add(provider);
+    }
 
     public void deleteMember(String name) {
         members.removeIf(member -> member.getName().equals(name));
@@ -46,11 +63,11 @@ public class AccountsController {
         providers.removeIf(provider -> provider.getName().equals(name));
     }
 
-    public void addMember() {
+    public void createMember() {
         System.out.println("Member Name: ");
         String name = myObj.nextLine();
         System.out.println("Member Number: ");
-        int number = Integer.valueOf(myObj.nextLine()) ;
+        int number = Integer.valueOf(myObj.nextLine());
         System.out.println("Member Street Address: ");
         String address = myObj.nextLine();
         System.out.println("Member City: ");
@@ -58,7 +75,7 @@ public class AccountsController {
         System.out.println("Member State(XX): ");
         String state = myObj.nextLine();
         System.out.println("Member Zip Code: ");
-        int zipCode = Integer.valueOf(myObj.nextLine()) ;
+        int zipCode = Integer.valueOf(myObj.nextLine());
         Member member = new Member(name, number, address, city, state, zipCode);
         this.members.add(member);
         System.out.println("Member Added!" + "\n");
@@ -66,14 +83,14 @@ public class AccountsController {
 
     public void updateMember(String memberName) throws ParseException {
         deleteMember(memberName);
-        addMember();
+        createMember();
     }
 
-    public void addProvider() {
+    public void createProvider() {
         System.out.println("Provider Name: ");
         String name = myObj.nextLine();
         System.out.println("Provider Number: ");
-        int number = Integer.valueOf(myObj.nextLine()) ;
+        int number = Integer.valueOf(myObj.nextLine());
         System.out.println("Provider Street Address: ");
         String address = myObj.nextLine();
         System.out.println("Provider City: ");
@@ -81,7 +98,7 @@ public class AccountsController {
         System.out.println("Provider State(XX): ");
         String state = myObj.nextLine();
         System.out.println("Provider Zip Code: ");
-        int zipCode = Integer.valueOf(myObj.nextLine()) ;
+        int zipCode = Integer.valueOf(myObj.nextLine());
         Provider provider = new Provider(name, number, address, city, state, zipCode);
         this.providers.add(provider);
         System.out.println("Provider Added!" + "\n");
@@ -89,7 +106,7 @@ public class AccountsController {
 
     public void updateProvider(String providerName) throws ParseException {
         deleteProvider(providerName);
-        addProvider();
+        createProvider();
     }
 
 }

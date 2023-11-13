@@ -1,5 +1,6 @@
 package controllers;
 
+import services.ProviderDirectory;
 //import java.io.BufferedReader;
 //import java.io.InputStreamReader;
 /*import java.lang.reflect.Member;*/
@@ -8,7 +9,7 @@ import java.util.Objects;
 import java.util.Scanner;
 import accounts.Member;
 
-public class ProviderController {
+public class ProviderController{
 
     public static int DEFAULT_FEE = 0;
     public static int DEFAULT_MEMBER_NUMBER = 000000000;
@@ -16,13 +17,12 @@ public class ProviderController {
 	ServiceProvided service = new ServiceProvided("Example Service A", "00-00-0000", 000000, "provider name", 000000, 000000000, "member name", 100, "example comments");
         
     public ProviderController() {
-
     }
 
-    public void billChocAn() {
+    public void billChocAn(AccountsController accounts) {
 
 		// ensure membership status is valid
-		if (Objects.equals(validateMember(), false)) {
+		if (Objects.equals(validateMember(accounts), false)) {
 			return;
 		}
 
@@ -88,17 +88,18 @@ public class ProviderController {
 		}
 	}
 
-	public void requestProviderDirectory() {
+	public void requestProviderDirectory(ProviderDirectory providerDirectory) {
 		// print services from providerDirectory
 
 	}
 
-	public boolean validateMember() {
+	public boolean validateMember(AccountsController accounts) {
         System.out.print("Enter Member Number:");
 		Scanner input = new Scanner(System.in);
 		input.close();
         int memberNum = input.nextInt();
 		// do what with memberNum?
+		member = accounts.getMember(memberNum);
 
         if (Objects.equals(member.getMemberStatus(), "Valid")) {
 			System.out.println("Validated");

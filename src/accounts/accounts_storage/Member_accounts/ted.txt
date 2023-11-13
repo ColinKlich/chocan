@@ -1,0 +1,6 @@
+Member name: ted
+Member number: 123
+Address: eee
+State: al
+Zipcode: 343
+Status: Valid
