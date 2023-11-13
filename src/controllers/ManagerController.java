@@ -15,7 +15,7 @@ public class ManagerController{
 	 * EDIT: Not using the current state of a dynamic report, instead I am using static dummy data gained through the get Method
 	 */
 	private List<Provider> providerList;
-	private List<Member> memberList;
+	public List<Member> memberList;
 	
 //	MemberReport memberReport;
 //	ProviderReport providerReport;
@@ -28,13 +28,13 @@ public class ManagerController{
 	}
 	
 	
-	private void printSummaryReport() {
+	public void printSummaryReport() {
 		SummaryReport summary = new SummaryReport(providerList);
 		summary.print();
 	}
 
 
-	private void printAllProviderReports() {
+	public void printAllProviderReports() {
 		//List<Provider> providerList = accounts.getProviders();
 		for(Provider provider: providerList) {
 			printProviderReport(provider);
@@ -43,13 +43,13 @@ public class ManagerController{
 	}
 
 
-	private void printProviderReport(Provider provider) {
+	public void printProviderReport(Provider provider) {
 		ProviderReport report = new ProviderReport(provider);
 		report.print();
 	}
 
 
-	private void printAllMemberReports() {
+	public void printAllMemberReports() {
 		//List<Member> memberList = accounts.getMembers();
 		for(Member member: memberList) {
 			printMemberReport(member);
@@ -58,7 +58,7 @@ public class ManagerController{
 	}
 
 
-	private void printMemberReport(Member member) {
+	public void printMemberReport(Member member) {
 		MemberReport report = new MemberReport(member);
 		report.print();
 	}

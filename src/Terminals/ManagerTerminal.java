@@ -1,6 +1,6 @@
 package terminals;
 
-import accounts.Manager;
+import accounts.*;
 
 import controllers.*;
 import java.util.Objects;
@@ -8,12 +8,13 @@ import java.util.Scanner;
 
 public class ManagerTerminal {
     private boolean verified = false;
+    private ManagerController reports;
 
     Scanner scanner = new Scanner(System.in);
     Manager admin = new Manager("admin", "admin", "testing123");
 
     ManagerTerminal(AccountsController accounts){
-        ManagerController reports = new ManagerController(accounts);
+        reports = new ManagerController(accounts);
         boolean running = true;
         while (running) {
             System.out.println("Manager Terminal");
@@ -61,7 +62,7 @@ public class ManagerTerminal {
         }
     }
 
-    public void generateReports(ManagerController reportInformation) {
+    public void generateReports(ManagerController reportInformation, AccountsController accounts) {
         boolean running = true;
         while (running) {
             // Display report options
@@ -78,14 +79,14 @@ public class ManagerTerminal {
 
             switch(choice.toLowerCase()){
                 case "1":
-                    System.out.println("Enter Report Number [1-4]:");
-                    num = Integer.valueOf(scanner.nextLine());
+
                     reportInformation.getAllReports(num);
                     break;
                 case "2":
-                    System.out.println("Enter Report Number [1-4]:");
+                    System.out.println("Enter Provider Number");
                     num = Integer.valueOf(scanner.nextLine());
-                    reportInformation.getProviderReport(num);
+                    Provider provider = accounts.getProvider(num);
+                    reportInformation.printProviderReport(provider);
                     break;
                 case "3":
                     System.out.println("Enter Report Number [1-4]:");

@@ -3,6 +3,7 @@ package terminals;
 import accounts.Provider;
 import controllers.AccountsController;
 import controllers.ProviderController;
+import services.ProviderDirectory;
 import java.util.Objects;
 import java.util.Scanner;
 //GOAL: Need to create a validate member function for the provider terminal
@@ -12,7 +13,7 @@ public class ProviderTerminal {
     Scanner scanner = new Scanner(System.in);
     Provider admin = new Provider("admin", 123456789, "address", "city", "state", 12345);
 
-    ProviderTerminal(AccountsController accounts){
+    ProviderTerminal(AccountsController accounts, ProviderDirectory providerDirectory){
         boolean running = true;
         while (running) {
             System.out.println("Provider Terminal");
@@ -35,12 +36,12 @@ public class ProviderTerminal {
                     	//int billingAmount = 0;
                     	//System.out.println("How much would you like to Bill ChocAn? (Input a valid integer amount.)");
                     	//billingAmount = scanner.nextInt();
-                        controller.billChocAn();
+                        controller.billChocAn(accounts);
                     } else if (Objects.equals(choice, "2")) {
-                       controller.validateMember();
+                       controller.validateMember(accounts);
                     }
                     else if (Objects.equals(choice, "3")) {
-                        controller.requestProviderDirectory();
+                        controller.requestProviderDirectory(providerDirectory);
                     }
                      else if (Objects.equals(choice.toLowerCase(), "quit")){
                         running = false;
