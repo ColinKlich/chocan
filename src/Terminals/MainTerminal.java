@@ -1,9 +1,14 @@
 package terminals;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
+import accounts.Member;
+import accounts.Provider;
 import controllers.AccountsController;
 import services.ProviderDirectory;
 
@@ -12,7 +17,7 @@ public class MainTerminal {
     public static ProviderDirectory providerDirectory = new ProviderDirectory();
 
     public static void main(String[] args) throws ParseException, IOException {
-        createData();
+        importData();
         Scanner terminalInput = new Scanner(System.in);
 
         boolean running = true;
@@ -37,23 +42,76 @@ public class MainTerminal {
                 runMainAccountingProcedure(accounts);
             } else {
                 running = false;
+                storeData();
                 System.out.println("Have a Great Day!!!");
             }
-            
+
         }
         terminalInput.close();
 
 
     }
 
-	private static void createData() {
-        //providerDirectory.addService("session with a dietician", 598470, 50);
-        //providerDirectory.addService("aerobics exercise session", 88394, 30);
+    private static void storeData() {
+        List<Member> members = accounts.getMembers();
+        for (Member member : members) {
+            member.writeToFile();
+        }
+        List<Provider> providers = accounts.getProviders();
+        for (Provider provider : providers) {
+            provider.writeToFile();
+        }
+    }
+
+    private static void importData() {
+        File folder = new File("./../accounts/accounts_storage/Member_accounts/");
+        File[] listOfFiles = folder.listFiles();
+
+        for (File file : listOfFiles) {
+            try {
+                Scanner myReader = new Scanner(file);
+                String name = myReader.nextLine();
+                int number = myReader.nextInt();
+                String address = myReader.nextLine();
+                String city = myReader.nextLine();
+                String state = myReader.nextLine();
+                int zipCode = myReader.nextInt();
+
+                accounts.addMember(name, number, address, city, state, zipCode);
+                myReader.close();
+            } catch (FileNotFoundException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+            }
+        }
+
+        File folder2 = new File("./../accounts/accounts_storage/Provider_accounts/");
+        File[] listOfFiles2 = folder2.listFiles();
+
+        for (File file : listOfFiles2) {
+            try {
+                Scanner myReader = new Scanner(file);
+                String name = myReader.nextLine();
+                int number = myReader.nextInt();
+                String address = myReader.nextLine();
+                String city = myReader.nextLine();
+                String state = myReader.nextLine();
+                int zipCode = myReader.nextInt();
+
+                accounts.addProvider(name, number, address, city, state, zipCode);
+                myReader.close();
+            } catch (FileNotFoundException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+            }
+        }
+
+
     }
 
     private static void runMainAccountingProcedure(AccountsController accounts) {
-		// TODO Auto-generated method stub
-		
-	}
+        // TODO Auto-generated method stub
+
+    }
 }
 
