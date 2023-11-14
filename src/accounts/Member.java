@@ -3,6 +3,10 @@ package accounts;
 import java.io.File;  
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import services.ServiceProvided;
 
 
 public class Member  {
@@ -13,6 +17,8 @@ public class Member  {
     private String state;
     private int zipCode;
     private String memberStatus;
+    private List<ServiceProvided> servicesUsed;
+
 
     public Member(String name, int memberNumber, String address, String city,  String state, int zipCode){
         this.memberName = name;
@@ -22,6 +28,7 @@ public class Member  {
         this.state = state;
         this.zipCode = zipCode;
         this.setMemberStatus("Valid");
+        this.servicesUsed = new ArrayList<ServiceProvided>();
     }
 
     public Member(){
@@ -32,6 +39,7 @@ public class Member  {
         this.state = null;
         this.zipCode = -1;
         this.setMemberStatus(null);
+        this.servicesUsed = null;
     }
 
     public String getName() {
@@ -65,9 +73,19 @@ public class Member  {
 	public void setMemberStatus(String memberStatus) {
 		this.memberStatus = memberStatus;
 	}
-	public void setMemberNumber( int memberNumber) {
+	
+	public void setMemberNumber(int memberNumber) {
         this.memberNumber = memberNumber;
 	}
+	
+	public void addServiceUsed(ServiceProvided service) {
+        this.servicesUsed.add(service);
+	}
+	
+	public void deleteAllServiceUsed() {
+		this.servicesUsed = new ArrayList<ServiceProvided>();
+	}
+	
 	public void setMemberInformation(String name, String address, String city,  String state, int zipCode, String status) {
 		this.memberName = name;
         this.address = address;
@@ -88,6 +106,7 @@ public class Member  {
 	    	        memberWrite.write(this.memberName+"\n"); 
 	    	        memberWrite.write(this.memberNumber+"\n"); 
 	    	        memberWrite.write(this.address+"\n");
+	    	        memberWrite.write(this.city+"\n");
 	    	        memberWrite.write(this.state+"\n"); 
 	    	        memberWrite.write(this.zipCode+"\n");
 	    	        memberWrite.write(this.memberStatus+"\n"); 

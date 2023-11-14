@@ -105,13 +105,5 @@ public class MainTerminal {
 
 
     }
-<<<<<<< HEAD
-
-    private static void runMainAccountingProcedure(AccountsController accounts) {
-        // TODO Auto-generated method stub
-
-    }
-=======
->>>>>>> 9008e7adedc43f2277b19723cbaa62e9955d0ef2
 }
 
