@@ -22,24 +22,6 @@ public class Member  {
         this.state = state;
         this.zipCode = zipCode;
         this.setMemberStatus("Valid");
-        try {
-        @SuppressWarnings("unused")
-        File dirFile = new File(System.getProperty("user.dir")+"\\src\\accounts\\accounts_storage\\Member_accounts");
-		File memberFile = new File(dirFile,name+".txt");
-        FileWriter memberWrite;
-			memberWrite = new FileWriter(memberFile);
-	        memberWrite.write("Member name: "+name+"\n"); 
-	        memberWrite.write("Member number: "+ memberNumber+"\n"); 
-	        memberWrite.write("Address: "+address+"\n");
-	        memberWrite.write("State: "+state+"\n"); 
-	        memberWrite.write("Zipcode: "+zipCode+"\n");
-	        memberWrite.write("Status: "+memberStatus+"\n"); 
-	        memberWrite.close();
-		} catch (IOException e) {
-			System.out.println("Error");
-			e.printStackTrace();
-		}
-
     }
 
     public Member(){
@@ -93,30 +75,33 @@ public class Member  {
         this.state = state;
         this.zipCode = zipCode;
         this.setMemberStatus(status);
-        try {
-            File dirFile = new File(System.getProperty("user.dir")+"\\Member_accounts");
-     		File memberFile = new File(dirFile,this.memberName+".txt");
-            memberFile.delete();
-            memberFile = new File(dirFile,name+".txt");
-            FileWriter memberWrite;
-    			memberWrite = new FileWriter(memberFile);
-    	        memberWrite.write("Member name: "+name+"\n"); 
-    	        memberWrite.write("Member number: "+ memberNumber+"\n"); 
-    	        memberWrite.write("Address: "+address+"\n");
-    	        memberWrite.write("State: "+state+"\n"); 
-    	        memberWrite.write("Zipcode: "+zipCode+"\n");
-    	        memberWrite.write("Status: "+memberStatus+"\n"); 
-    	        memberWrite.close();
-    		} catch (IOException e) {
-    			System.out.println("Error");
-    			e.printStackTrace();
-    		}
 	}
 	
+	public void writeToFile() {
+		   try {
+	            File dirFile = new File(System.getProperty("user.dir")+"\\Member_accounts");
+	     		File memberFile = new File(dirFile,this.memberName+".txt");
+	            memberFile.delete();
+	            memberFile = new File(dirFile,this.memberName+".txt");
+	            FileWriter memberWrite;
+	    			memberWrite = new FileWriter(memberFile);
+	    	        memberWrite.write("Member name: "+this.memberName+"\n"); 
+	    	        memberWrite.write("Member number: "+ this.memberNumber+"\n"); 
+	    	        memberWrite.write("Address: "+this.address+"\n");
+	    	        memberWrite.write("State: "+this.state+"\n"); 
+	    	        memberWrite.write("Zipcode: "+this.zipCode+"\n");
+	    	        memberWrite.write("Status: "+this.memberStatus+"\n"); 
+	    	        memberWrite.close();
+	    		} catch (IOException e) {
+	    			System.out.println("Error");
+	    			e.printStackTrace();
+	    		}
+	}
 	public void deleteMember () {
         File dirFile = new File(System.getProperty("user.dir")+"\\Member_accounts");
 		File memberFile = new File(dirFile,this.memberName+".txt");
         memberFile.delete();
-        
-        }
+		memberDelete = new Member();
+		memberDelete = null;
+	}
 }

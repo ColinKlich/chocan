@@ -23,7 +23,6 @@ public class MainTerminal {
             System.out.println("[1] Provider Terminal");
             System.out.println("[2] Manager Terminal");
             System.out.println("[3] Operator Terminal");
-            System.out.println("[4] Run Main Accounting Procedure");
             System.out.println("[End] Close ChocAn");
             String terminal = terminalInput.nextLine();
 
@@ -33,8 +32,6 @@ public class MainTerminal {
                 new ManagerTerminal(accounts);
             } else if (Objects.equals(terminal, "3")) {
                 new OperatorTerminal(accounts);
-            } else if (Objects.equals(terminal, "4")) {
-                runMainAccountingProcedure(accounts);
             } else {
                 running = false;
                 System.out.println("Have a Great Day!!!");
@@ -50,10 +47,5 @@ public class MainTerminal {
         //providerDirectory.addService("session with a dietician", 598470, 50);
         //providerDirectory.addService("aerobics exercise session", 88394, 30);
     }
-
-    private static void runMainAccountingProcedure(AccountsController accounts) {
-		// TODO Auto-generated method stub
-		
-	}
 }
 
