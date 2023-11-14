@@ -9,9 +9,7 @@ import accounts.Member;
 
 public class ProviderController {
 
-    Member member;
-	ServiceProvided service = new ServiceProvided("Example Service A", "00-00-0000", 000000, "provider name", 000000, 000000000, "member name", 100, "example comments");
-        
+    Member member;        
     public ProviderController() {
 		
     }

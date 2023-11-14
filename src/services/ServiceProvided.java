@@ -14,7 +14,7 @@ public class ServiceProvided {
     private String memberName;
     public int fee;
 
-    public ServiceProvided(String serviceName, String serviceDate, int serviceCode, String providerName, int providerNum, int memberNum, String memberName, int fee, String comments){
+    public ServiceProvided(Service service, String serviceDate, String providerName, int providerNum, int memberNum, String memberName, String comments){
         LocalDateTime date = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy kk:mm:ss");
         this.currentDateTime = date.format(formatter);
@@ -22,11 +22,11 @@ public class ServiceProvided {
         this.providerNumber = providerNum;
         this.memberNumber = memberNum;
         this.memberName = memberName;
-        this.serviceCode = serviceCode;
-        this.serviceName = serviceName;
+        this.serviceCode = service.getCode();
+        this.serviceName = service.getName();
         this.providerName = providerName;
         this.comments = null;
-        this.fee = fee;
+        this.fee = service.getFee();
     }
 
     public String getServiceDate() {

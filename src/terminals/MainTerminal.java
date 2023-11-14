@@ -5,25 +5,20 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
 import accounts.Member;
 import accounts.Provider;
 import controllers.AccountsController;
-import services.Service;
+import services.*;
 
 public class MainTerminal {
     public static AccountsController accounts = new AccountsController();
-    public static List<Service> providerDirectory = new ArrayList<>();
+    ProviderDirectory pd = new ProviderDirectory();
 
-    public static void main(String[] args) throws ParseException, IOException {
+    public void main(String[] args) throws ParseException, IOException {
         //imports user accounts
         importData();
         //create services in directory
-        providerDirectory.add(new Service("session with a dietician", 598470, 50));
-        providerDirectory.add(new Service("aerobics exercise session", 883948, 30));
         Scanner terminalInput = new Scanner(System.in);
 
         boolean running = true;
@@ -38,7 +33,7 @@ public class MainTerminal {
             String terminal = terminalInput.nextLine();
 
             if (Objects.equals(terminal, "1")) {
-                new ProviderTerminal(accounts, providerDirectory);
+                new ProviderTerminal(accounts, pd.services);
             } else if (Objects.equals(terminal, "2")) {
                 new ManagerTerminal(accounts);
             } else if (Objects.equals(terminal, "3")) {
