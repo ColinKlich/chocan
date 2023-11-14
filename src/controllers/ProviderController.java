@@ -1,7 +1,9 @@
 package controllers;
 
 import services.ProviderDirectory;
+import services.Service;
 import services.ServiceProvided;
+import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 import accounts.Member;
@@ -97,9 +99,9 @@ public class ProviderController {
 		}
 	}
 
-	public void requestProviderDirectory(ProviderDirectory providerDirectory) {
+	public void requestProviderDirectory(List<Service> providerDirectory) {
 		// print providerDirectory service list
-		providerDirectory.printDirectory();
+		System.out.print(providerDirectory);
 
 	}
 
