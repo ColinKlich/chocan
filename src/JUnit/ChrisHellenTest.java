@@ -13,6 +13,7 @@ public class ChrisHellenTest {
     MemberReport memberReport;
     ProviderReport providerReport;
     SummaryReport summaryReport;
+    EFTReport eftReport;
     Providers providers;
     Members members;
     
@@ -25,6 +26,7 @@ public class ChrisHellenTest {
         provider = providers.providerList.get(0);
         providerReport = new ProviderReport(provider);
         summaryReport = new SummaryReport(providers.providerList);
+        eftReport =  new EFTReport(providers.providerList);
     }
 
     @Test
@@ -40,6 +42,11 @@ public class ChrisHellenTest {
     @Test
     public void summaryFormatReportTest() {
         assertEquals(true, summaryReport.print());
+    }
+
+    @Test
+    public void eftFormatReportTest() {
+        assertEquals(true, eftReport.print());
     }
 
     @Test 
