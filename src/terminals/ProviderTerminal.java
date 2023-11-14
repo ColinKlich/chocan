@@ -15,7 +15,7 @@ public class ProviderTerminal {
     Provider provider;
     ProviderController controller = new ProviderController();
 
-    ProviderTerminal(AccountsController accounts, List<Service> providerDirectory) {
+    public ProviderTerminal(AccountsController accounts, List<Service> providerDirectory) {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
         while (running) {
