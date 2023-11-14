@@ -129,9 +129,4 @@ public class Provider {
    			e.printStackTrace();
    		}
    }
-   public void deleteProvider() {
-	   File dirFile = new File(System.getProperty("user.dir")+"\\Provider_accounts");
-	   File providerFile = new File(dirFile,this.providerName+".txt");
-       providerFile.delete();
-   }
 }

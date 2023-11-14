@@ -3,6 +3,7 @@ package controllers;
 import utilities.*;
 import accounts.*;
 import java.util.List;
+import java.io.File;
 import java.text.ParseException;
 import java.util.Scanner;
 
@@ -56,11 +57,37 @@ public class AccountsController {
     }
 
     public void deleteMember(String name) {
+       	for (Member member: members.memberList) {
+    		if (member.getName() == name) {
+    	        System.out.println("Member Deleted!" + "\n");
+    		}
+    	}
         members.memberList.removeIf(memberList -> memberList.getName().equals(name));
+        String path = System.getProperty("user.dir")+File.separator+"src\\accounts\\accounts_storage\\Member_accounts";
+        File memberDir = new File(path);
+    	for(File memberFile: memberDir.listFiles()) {
+    	    if (memberFile.getName()== name+".txt") { 
+    	        memberFile.delete();
+    	        break;
+    	    }
+    	}
     }
 
     public void deleteProvider(String name) {
+    	for (Provider provider: providers.providerList) {
+    		if (provider.getName() == name) {
+    	        System.out.println("Provider Deleted!" + "\n");
+    		}
+    	}
         providers.providerList.removeIf(providersList -> providersList.getName().equals(name));
+        String path = System.getProperty("user.dir")+File.separator+"src\\accounts\\accounts_storage\\Provider_accounts";
+        File providerDir = new File(path);
+    	for(File providerFile: providerDir.listFiles()) {
+    	    if (providerFile.getName()== name+".txt") { 
+    	        providerFile.delete();
+    	        break;
+    	    }
+    	}
     }
 
     public void createMember() {
