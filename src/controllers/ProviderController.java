@@ -39,11 +39,18 @@ public class ProviderController {
 			int serviceCode = readCode.nextInt();
 			readCode.close();
 
-			if (Objects.equals(serviceCode, 000000)) {
+			if (serviceCode == 000000) {
 				String serviceName = service.getServiceName();
+				int length = serviceName.length();
 
-				for (int i = 0; i < 20; i++)
-					System.out.print(serviceName.charAt(i));
+				if (length < 20) {
+					System.out.println(serviceName);
+				}
+				else {
+					for (int i = 0; i < 20; i++) {
+						System.out.print(serviceName.charAt(i));
+					}
+				}
 			}
 
 			System.out.print("Verify service:");
@@ -59,6 +66,10 @@ public class ProviderController {
 			}
 			else if (Objects.equals(verification, 2)) {
 				System.out.print("Reenter service code:");
+				unverified = true;
+			}
+			else {
+				System.out.print("Invalid input");
 				unverified = true;
 			}
 		}
@@ -104,15 +115,15 @@ public class ProviderController {
 		member = accounts.getMember(memberNum);
 
 		//print member status and return boolean value for valid status or invalid and reason
-        if (Objects.equals(member.getMemberStatus(), "Valid")) {
+        if (member.getMemberStatus().equals("Valid")) {
 			System.out.println("Validated");
 			return true;
 		}
-		else if (Objects.equals(member.getMemberStatus(), "Invalid number")) {
+		else if (member.getMemberStatus().equals("Invalid number")) {
 			System.out.println("Invalid number");
 			return false;
 		}
-		else if (Objects.equals(member.getMemberStatus(), "Suspended")) {
+		else if (member.getMemberStatus().equals("Suspended")) {
 			System.out.println("Suspended");
 			return false;
 		}
