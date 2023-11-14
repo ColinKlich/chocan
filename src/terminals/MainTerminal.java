@@ -86,6 +86,12 @@ public class MainTerminal {
                 e.printStackTrace();
             }
         }
+        for (File file : listOfFiles) {
+        	if(!file.isDirectory()) {
+        		file.delete();
+        		}
+        }
+
         
 
         String path2 = System.getProperty("user.dir")+File.separator+"src\\accounts\\accounts_storage\\Provider_accounts";
@@ -106,6 +112,11 @@ public class MainTerminal {
                 System.out.println("An error occurred.");
                 e.printStackTrace();
             }
+        }
+        for (File file : listOfFiles2) {
+        	if(!file.isDirectory()) {
+        		file.delete();
+        		}
         }
 
 

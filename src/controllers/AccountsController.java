@@ -4,7 +4,6 @@ package controllers;
 import utilities.*;
 import accounts.*;
 import java.util.List;
-import java.io.File;
 import java.text.ParseException;
 import java.util.Scanner;
 
@@ -58,6 +57,7 @@ public class AccountsController {
     }
 
     public void deleteMember(String name) {
+<<<<<<< HEAD
         members.memberList.removeIf(memberList -> memberList.getName().equals(name));
         String path = System.getProperty("user.dir")+File.separator+"src\\accounts\\accounts_storage\\Member_accounts";
         File memberDir = new File(path);
@@ -81,6 +81,23 @@ public class AccountsController {
     	    }
     	}
         System.out.println("Provider Deleted!" + "\n");
+=======
+    	 for (Member member : members.memberList) {
+             if (member.getName().equals(name)) {
+             	System.out.print("Member Deleted! \n");
+             }
+         }
+        members.memberList.removeIf(memberList -> memberList.getName().equals(name));
+    }
+
+    public void deleteProvider(String name) {
+      	 for (Provider provider : providers.providerList) {
+             if (provider.getName().equals(name)) {
+             	System.out.print("provider Deleted! \n");
+             }
+         }
+        providers.providerList.removeIf(providersList -> providersList.getName().equals(name));
+>>>>>>> d793844 (no message)
     }
 
     public void createMember() {
