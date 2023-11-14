@@ -12,6 +12,7 @@ import java.util.Scanner;
 // GOAL: Need to create a validate member function for the provider terminal
 public class ProviderTerminal {
     private boolean verified = false;
+    Provider provider;
 
     Scanner scanner = new Scanner(System.in);
     ProviderController controller = new ProviderController();
@@ -29,7 +30,7 @@ public class ProviderTerminal {
             if (Objects.equals(terminal, "1")) {
                 verified = verifyProvider(accounts);
                 if (verified) {
-                    controller.billChocAn(accounts);
+                    controller.billChocAn(accounts, provider);
                 }
             } else if (Objects.equals(terminal, "2")) {
                 verified = verifyProvider(accounts);
@@ -51,6 +52,7 @@ public class ProviderTerminal {
         for(Provider temp: providers){
             if(temp.getNumber() == providerNum){
                 found = true;
+                provider = temp;
             }
         }
         if (found) {

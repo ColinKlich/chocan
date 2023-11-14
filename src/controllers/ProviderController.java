@@ -1,6 +1,7 @@
 package controllers;
 
 import services.*;
+import accounts.*;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
@@ -10,17 +11,18 @@ public class ProviderController {
 
 	ProviderDirectory providerDirectory;
 	List<Service> serviceList;
-    Member member;        
+	Service service;
+	ServiceProvided serviceProvided;
+    Member member;    
+	String serviceDate, comments, serviceName;
+	int fee, code;    
 
     public ProviderController() {
 		providerDirectory = new ProviderDirectory();
 		serviceList = providerDirectory.services;
     }
 
-    public void billChocAn(AccountsController accounts) {
-		Service service;
-		String serviceDate;
-		String comments;
+    public void billChocAn(AccountsController accounts, Provider provider) {
 
 		// ensure membership status is valid
 		if (!validateMember(accounts)) {
@@ -47,17 +49,18 @@ public class ProviderController {
 			for(Service curr : serviceList){
 				if (curr.getCode() == serviceCode){
 					service = curr;
+					if (curr.getName().length() < 20) {
+						System.out.println(curr.getName());
+					}
+					else {
+						for (int i = 0; i < 20; i++) {
+							System.out.print(curr.getName().charAt(i));
+						}
+					}
+					break;
 				}
-			}
-
-			if (service.getName().length() < 20) {
-				System.out.println(service.getName());
-			}
-			else {
-				for (int i = 0; i < 20; i++) {
-					System.out.print(service.getName().charAt(i));
-				}
-			}
+				System.out.print("Service Code not Found");
+				return;
 			}
 
 			System.out.print("Verify service:");
@@ -82,7 +85,7 @@ public class ProviderController {
 		}
 
 		//prints fee associated with input serviceCode's service
-		System.out.print("Amount billed to ChocAn: $" + service.fee);
+		System.out.print("Amount billed to ChocAn: $" + fee);
 
 		//gives provider option to enter comments
 		System.out.println("Enter comments");
@@ -106,6 +109,10 @@ public class ProviderController {
 			System.out.println("Invalid input");
 			return;
 		}
+		
+		serviceProvided = new ServiceProvided(service, serviceDate, provider.getName(), provider.getNumber(), member.getNumber(), member.getName(), comments);
+		member.addServiceUsed(serviceProvided);
+		provider.addServicesProvided(serviceProvided);
 	}
 
 	public void requestProviderDirectory(List<Service> providerDirectory) {
