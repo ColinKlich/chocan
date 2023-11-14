@@ -2,15 +2,14 @@ package JUnit;
 
 import org.junit.Test;
 
+import accounts.Member;
 import accounts.Provider;
 import controllers.AccountsController;
 import controllers.ProviderController;
 import services.Service;
 import services.ProviderDirectory;
-import terminals.ProviderTerminal;
 import org.junit.Before;
 import static org.junit.Assert.*;
-import java.util.List;
 
 public class KaraMoranTest {
     //ProviderController providerController;
@@ -23,12 +22,15 @@ public class KaraMoranTest {
 
     // create service to test
 
+    @Before
     public void setUp() {
         //ProviderController providerController = new ProviderController();
 
         //ProviderDirectory services = new ProviderDirectory();
        // services.addService("Chocolate Web Addiction", 909090, 50);
         //int listSize = services.size();
+
+        accounts.addMember("Kara Moran", 123456, "myAddress", "myCity", "myState", 35404);
 
     }
 
@@ -44,7 +46,7 @@ public class KaraMoranTest {
     }
 
     @Test 
-    public void serviceGetNameTest(){
+    public void testServiceGetName(){
         Service service = new Service("Service 1", 123456, 100);
         assertEquals("Service1", service.getName());
     }

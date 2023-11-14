@@ -31,12 +31,9 @@ public class ProviderController {
 
 		// while loops takes service code from input until provider verifies correct service is displayed
 		boolean unverified = true;
+		System.out.println("Enter service code: ");
 
 		while (unverified) {
-			
-			Scanner getVerification = new Scanner(System.in);
-			int verification = getVerification.nextInt();
-			getVerification.close();
 
 			Scanner readCode = new Scanner(System.in);
 			int serviceCode = readCode.nextInt();
@@ -49,10 +46,13 @@ public class ProviderController {
 					System.out.print(serviceName.charAt(i));
 			}
 
-
 			System.out.print("Verify service:");
 			System.out.print("[1] Correct");
-			System.out.print("[2] Incorrect");		
+			System.out.print("[2] Incorrect");	
+			
+			Scanner getVerification = new Scanner(System.in);
+			int verification = getVerification.nextInt();
+			getVerification.close();
 
 			if (Objects.equals(verification, 1)) {
 				unverified = false;
@@ -64,7 +64,6 @@ public class ProviderController {
 		}
 
 		System.out.print("Amount billed to ChocAn: $" + service.fee);
-
 
 		System.out.println("Enter comments");
 		System.out.println("[1] Yes");
@@ -94,13 +93,17 @@ public class ProviderController {
 	}
 
 	public boolean validateMember(AccountsController accounts) {
+		// take member number input from provider
         System.out.print("Enter Member Number:");
+
 		Scanner input = new Scanner(System.in);
-		input.close();
         int memberNum = input.nextInt();
-		// do what with memberNum?
+		input.close();
+
+		// set member equal to Member object with that memberNum
 		member = accounts.getMember(memberNum);
 
+		//print member status and return boolean value for valid status or invalid and reason
         if (Objects.equals(member.getMemberStatus(), "Valid")) {
 			System.out.println("Validated");
 			return true;
@@ -116,5 +119,6 @@ public class ProviderController {
 		else {
 			return false;
 		}
+
     }
 }
