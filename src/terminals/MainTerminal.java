@@ -1,18 +1,10 @@
 package terminals;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.*;
+import java.nio.file.*;
 import java.text.ParseException;
-import java.util.List;
-import java.util.Objects;
-import java.util.Scanner;
-import java.util.stream.Collectors;
-import accounts.Member;
-import accounts.Provider;
+import java.util.*;
+import accounts.*;
 import controllers.AccountsController;
 import services.ProviderDirectory;
 
