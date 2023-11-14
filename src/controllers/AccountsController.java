@@ -58,11 +58,6 @@ public class AccountsController {
     }
 
     public void deleteMember(String name) {
-       	for (Member member: members.memberList) {
-    		if (member.getName() == name) {
-    	        System.out.println("Member Deleted!" + "\n");
-    		}
-    	}
         members.memberList.removeIf(memberList -> memberList.getName().equals(name));
         String path = System.getProperty("user.dir")+File.separator+"src\\accounts\\accounts_storage\\Member_accounts";
         File memberDir = new File(path);
@@ -72,14 +67,10 @@ public class AccountsController {
     	        break;
     	    }
     	}
+        System.out.println("Member Deleted!" + "\n");
     }
 
     public void deleteProvider(String name) {
-    	for (Provider provider: providers.providerList) {
-    		if (provider.getName() == name) {
-    	        System.out.println("Provider Deleted!" + "\n");
-    		}
-    	}
         providers.providerList.removeIf(providersList -> providersList.getName().equals(name));
         String path = System.getProperty("user.dir")+File.separator+"src\\accounts\\accounts_storage\\Provider_accounts";
         File providerDir = new File(path);
@@ -89,6 +80,7 @@ public class AccountsController {
     	        break;
     	    }
     	}
+        System.out.println("Provider Deleted!" + "\n");
     }
 
     public void createMember() {
