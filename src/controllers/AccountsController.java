@@ -57,39 +57,14 @@ public class AccountsController {
     }
 
     public void deleteMember(String name) {
-<<<<<<< HEAD
-        members.memberList.removeIf(memberList -> memberList.getName().equals(name));
-        String path = System.getProperty("user.dir")+File.separator+"src\\accounts\\accounts_storage\\Member_accounts";
-        File memberDir = new File(path);
-    	for(File memberFile: memberDir.listFiles()) {
-    	    if (memberFile.getName()== name+".txt") { 
-    	        memberFile.delete();
-    	        break;
-    	    }
-    	}
-        System.out.println("Member Deleted!" + "\n");
-    }
-
-    public void deleteProvider(String name) {
-        providers.providerList.removeIf(providersList -> providersList.getName().equals(name));
-        String path = System.getProperty("user.dir")+File.separator+"src\\accounts\\accounts_storage\\Provider_accounts";
-        File providerDir = new File(path);
-    	for(File providerFile: providerDir.listFiles()) {
-    	    if (providerFile.getName()== name+".txt") { 
-    	        providerFile.delete();
-    	        break;
-    	    }
-    	}
-        System.out.println("Provider Deleted!" + "\n");
-=======
     	 for (Member member : members.memberList) {
              if (member.getName().equals(name)) {
-             	System.out.print("Member Deleted! \n");
+             	System.out.print("provider Deleted! \n");
              }
          }
         members.memberList.removeIf(memberList -> memberList.getName().equals(name));
     }
-
+    
     public void deleteProvider(String name) {
       	 for (Provider provider : providers.providerList) {
              if (provider.getName().equals(name)) {
@@ -97,7 +72,6 @@ public class AccountsController {
              }
          }
         providers.providerList.removeIf(providersList -> providersList.getName().equals(name));
->>>>>>> d793844 (no message)
     }
 
     public void createMember() {
