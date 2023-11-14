@@ -19,6 +19,8 @@ public class ProviderDirectory {
     }
 
     public void printDirectory() {
-        System.out.println(services);
+        for (int i = 0; i < services.size(); i++) {
+            System.out.println(services.get(i).getName());
+        }
     }
 }
