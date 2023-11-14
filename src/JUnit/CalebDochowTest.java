@@ -1,27 +1,45 @@
+//@Author Caleb Dochow
 package JUnit;
 
 import static org.junit.Assert.*;
+
+import java.util.Scanner;
+
 import accounts.*;
+import controllers.AccountsController;
+import terminals.*;
+import utilities.Providers;
+
 import org.junit.Before;
 import org.junit.Test;
 
 public class CalebDochowTest {
-
-	Member member;
 	
+	Manager admin;
+	ManagerTerminal managerTerminal;
+	AccountsController accounts;
+	Provider provider;
+	ProviderTerminal providerTerminal;
+	Member member;
+	Providers providers;
+
 	@Before
 	public void setUp() throws Exception {
-		member = new Member("Jane Doe", 99999, "1234 Mt Tabor Rd", "Murfreesboro", "TN", 90210);
+		accounts = new AccountsController();
+        managerTerminal = new ManagerTerminal(accounts);
+		admin = new Manager("admin", "admin", "testing123");
+		providers = new Providers();
+		provider = providers.providerList.get(0);
 	}
 
 	@Test
-	public void getCity() {
-		assertEquals("Jane Doe", member.getCity());
+	public void verfiyManagerTest() {
+        assertTrue(managerTerminal.verifyManager(admin));
 	}
 
 	@Test
 	public void verifyProviderTest() {
-		assertEquals("Jane Doe", member.getState());
+		assertTrue(providerTerminal.verifyProvider(accounts));
 	}
 	
 	@Test

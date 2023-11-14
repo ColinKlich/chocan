@@ -1,3 +1,4 @@
+//@Author Caleb Dochow
 package terminals;
 
 import accounts.*;
@@ -13,7 +14,7 @@ public class ManagerTerminal {
     Scanner scanner = new Scanner(System.in);
     Manager admin = new Manager("admin", "admin", "testing123");
 
-    ManagerTerminal(AccountsController accounts){
+    public ManagerTerminal(AccountsController accounts){
         reports = new ManagerController(accounts);
         boolean running = true;
 
@@ -46,8 +47,8 @@ public class ManagerTerminal {
             }
         }
 
-
-    public boolean verifyManager(Manager admin) {
+    
+    public boolean verifyManager(Manager admin) { //Verifies Manager Status via Login
         System.out.println("Enter Username:");
         String username = scanner.nextLine();
 
@@ -63,39 +64,34 @@ public class ManagerTerminal {
         }
     }
 
-    public void generateReports(ManagerController reportInformation, AccountsController accounts) {
+    public void generateReports(ManagerController reportInformation, AccountsController accounts) { //Generates user specified reports
         boolean running = true;
         while (running) {
             // Display report options
             System.out.println("Generate Reports");
-            System.out.println("[1] Get ALL Reports");
-            System.out.println("[2] Get Provider Report");
-            System.out.println("[3] Get Member Report");
-            System.out.println("[4] Get Summary Report");
+            System.out.println("[1] Get Provider Report");
+            System.out.println("[2] Get Member Report");
+            System.out.println("[3] Get Summary Report");
             System.out.println("[Quit] Return to Manager Menu");
 
             // Get user input
             String choice = scanner.nextLine();
-            int num; //REPORT NUMBER
+            int num; // Holds value of provider number or member number
 
-            switch(choice.toLowerCase()){
+            switch(choice.toLowerCase()){ //switch for each report
                 case "1":
-                    reportInformation.printSummaryReport();
-                    break;
-                case "2":
                     System.out.println("Enter Provider Number");
                     num = Integer.valueOf(scanner.nextLine());
                     Provider provider = accounts.getProvider(num);
                     reportInformation.printProviderReport(provider);
                     break;
-                case "3":
+                case "2":
                     System.out.println("Enter Member Number");
                     num = Integer.valueOf(scanner.nextLine());
                     Member member = accounts.getMember(num);
                     reportInformation.printMemberReport(member);
                     break;
-                case "4":
-                    //System.out.println("Enter Report Number [1-4]:");
+                case "3":
                     reportInformation.printSummaryReport();
                     break;
                 case "Quit":

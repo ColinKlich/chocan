@@ -1,7 +1,8 @@
 package controllers;
 
-import services.ProviderDirectory;
+import services.Service;
 import services.ServiceProvided;
+import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 import accounts.Member;
@@ -18,7 +19,7 @@ public class ProviderController {
     public void billChocAn(AccountsController accounts) {
 
 		// ensure membership status is valid
-		if (Objects.equals(validateMember(accounts), false)) {
+		if (!validateMember(accounts)) {
 			return;
 		}
 
@@ -31,28 +32,35 @@ public class ProviderController {
 
 		// while loops takes service code from input until provider verifies correct service is displayed
 		boolean unverified = true;
+		System.out.println("Enter service code: ");
 
 		while (unverified) {
-			
-			Scanner getVerification = new Scanner(System.in);
-			int verification = getVerification.nextInt();
-			getVerification.close();
 
 			Scanner readCode = new Scanner(System.in);
 			int serviceCode = readCode.nextInt();
 			readCode.close();
 
-			if (Objects.equals(serviceCode, 000000)) {
+			if (serviceCode == 000000) {
 				String serviceName = service.getServiceName();
+				int length = serviceName.length();
 
-				for (int i = 0; i < 20; i++)
-					System.out.print(serviceName.charAt(i));
+				if (length < 20) {
+					System.out.println(serviceName);
+				}
+				else {
+					for (int i = 0; i < 20; i++) {
+						System.out.print(serviceName.charAt(i));
+					}
+				}
 			}
-
 
 			System.out.print("Verify service:");
 			System.out.print("[1] Correct");
-			System.out.print("[2] Incorrect");		
+			System.out.print("[2] Incorrect");	
+			
+			Scanner getVerification = new Scanner(System.in);
+			int verification = getVerification.nextInt();
+			getVerification.close();
 
 			if (Objects.equals(verification, 1)) {
 				unverified = false;
@@ -61,60 +69,72 @@ public class ProviderController {
 				System.out.print("Reenter service code:");
 				unverified = true;
 			}
+			else {
+				System.out.print("Invalid input");
+				unverified = true;
+			}
 		}
 
+		//prints fee associated with input serviceCode's service
 		System.out.print("Amount billed to ChocAn: $" + service.fee);
 
-
+		//gives provider option to enter comments
 		System.out.println("Enter comments");
 		System.out.println("[1] Yes");
 		System.out.println("[2] No");
 
 		Scanner scanner2 = new Scanner(System.in);
-		String option = scanner2.nextLine();
+		int option = scanner2.nextInt();
 		scanner2.close();		
 
-		if (Objects.equals(option, "1")) {
+		//sets service's comments field equal to input from provider, else returns
+		if (option == 1) {
 			System.out.println("Enter comments:");
 			String enteredComments = scanner.nextLine();
 			service.comments = enteredComments;
 		}
-		else if (Objects.equals(option, "2"))
+		else if (option == 2) {
 			return;
+		}
 		else {
 			System.out.println("Invalid input");
 			return;
 		}
 	}
 
-	public void requestProviderDirectory(ProviderDirectory providerDirectory) {
+	public void requestProviderDirectory(List<Service> providerDirectory) {
 		// print providerDirectory service list
-		providerDirectory.printDirectory();
+		System.out.print(providerDirectory);
 
 	}
 
 	public boolean validateMember(AccountsController accounts) {
+		// take member number input from provider
         System.out.print("Enter Member Number:");
+
 		Scanner input = new Scanner(System.in);
-		input.close();
         int memberNum = input.nextInt();
-		// do what with memberNum?
+		input.close();
+
+		// set member equal to Member object with that memberNum
 		member = accounts.getMember(memberNum);
 
-        if (Objects.equals(member.getMemberStatus(), "Valid")) {
+		//print member status and return boolean value for valid status or invalid and reason
+        if (member.getMemberStatus().equals("Valid")) {
 			System.out.println("Validated");
 			return true;
 		}
-		else if (Objects.equals(member.getMemberStatus(), "Invalid number")) {
+		else if (member.getMemberStatus().equals("Invalid number")) {
 			System.out.println("Invalid number");
 			return false;
 		}
-		else if (Objects.equals(member.getMemberStatus(), "Suspended")) {
+		else if (member.getMemberStatus().equals("Suspended")) {
 			System.out.println("Suspended");
 			return false;
 		}
 		else {
 			return false;
 		}
+
     }
 }
