@@ -1,3 +1,0 @@
-nullTotal number of Providers: 0
-Total number of Consultations: 0
-Overall Total Fee: 0

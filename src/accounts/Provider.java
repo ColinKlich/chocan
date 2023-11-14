@@ -26,8 +26,8 @@ public class Provider {
         this.state = state;
         this.zipCode = zipCode;
         this.servicesProvided = new ArrayList<ServiceProvided>();
-        this.numberOfConsultations = 0;
-        this.totalFees = 0;    
+        this.numberOfConsultations = 0;    
+        this.totalFees = 0;
     }
     public Provider() {
     	this.providerName = null;
@@ -101,6 +101,8 @@ public class Provider {
 
    public void addServicesProvided(ServiceProvided service) {
         this.servicesProvided.add(service);
+        numberOfConsultations += 1;
+        totalFees += service.fee;
     }
 
    public void deleteAllServiceProvided() {

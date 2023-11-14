@@ -1,27 +1,27 @@
 package controllers;
 
+import utilities.*;
 import accounts.*;
 import java.util.List;
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AccountsController {
-    private List<Member> members;
-    private List<Provider> providers;
+    Members members;
+    Providers providers;
     Scanner myObj = new Scanner(System.in);
 
     public AccountsController() {
-        this.members = new ArrayList<Member>();
-        this.providers = new ArrayList<Provider>();
+        members = new Members();
+        providers = new Providers();
     }
 
     public List<Member> getMembers() {
-        return members;
+        return members.memberList;
     }
 
     public Member getMember(int memberNumber) {
-        for (Member member : members) {
+        for (Member member : members.memberList) {
             if (member.getNumber() == memberNumber) {
                 return member;
             }
@@ -30,7 +30,7 @@ public class AccountsController {
     }
 
     public Provider getProvider(int providerNumber) {
-        for (Provider provider : providers) {
+        for (Provider provider : providers.providerList) {
             if (provider.getNumber() == providerNumber) {
                 return provider;
             }
@@ -39,28 +39,28 @@ public class AccountsController {
     }
 
     public List<Provider> getProviders() {
-        return providers;
+        return providers.providerList;
     }
 
     public void addMember(String memberName, int memberNumber, String address, String city,
             String state, int zipCode) {
         Member member = new Member(memberName, memberNumber, address, city, state, zipCode);
-        this.members.add(member);
+        members.memberList.add(member);
     }
 
     public void addProvider(String providerName, int providerNumber, String address, String city,
             String state, int zipCode) {
         Provider provider =
                 new Provider(providerName, providerNumber, address, city, state, zipCode);
-        this.providers.add(provider);
+        providers.providerList.add(provider);
     }
 
     public void deleteMember(String name) {
-        members.removeIf(member -> member.getName().equals(name));
+        members.memberList.removeIf(memberList -> memberList.getName().equals(name));
     }
 
     public void deleteProvider(String name) {
-        providers.removeIf(provider -> provider.getName().equals(name));
+        providers.providerList.removeIf(providersList -> providersList.getName().equals(name));
     }
 
     public void createMember() {
@@ -77,7 +77,7 @@ public class AccountsController {
         System.out.println("Member Zip Code: ");
         int zipCode = Integer.valueOf(myObj.nextLine());
         Member member = new Member(name, number, address, city, state, zipCode);
-        this.members.add(member);
+        members.memberList.add(member);
         System.out.println("Member Added!" + "\n");
     }
 
@@ -100,7 +100,7 @@ public class AccountsController {
         System.out.println("Provider Zip Code: ");
         int zipCode = Integer.valueOf(myObj.nextLine());
         Provider provider = new Provider(name, number, address, city, state, zipCode);
-        this.providers.add(provider);
+        providers.providerList.add(provider);
         System.out.println("Provider Added!" + "\n");
     }
 
