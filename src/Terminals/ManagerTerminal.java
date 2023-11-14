@@ -93,7 +93,7 @@ public class ManagerTerminal {
                 case "4":
                     reportInformation.printSummaryReport();
                     break;
-                case "Quit":
+                case "quit":
                     running = false;
                     break;
             }
