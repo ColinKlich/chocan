@@ -1,17 +1,9 @@
 Member Name: Hai Hoang
 Member Number: 12235
-Member Street Address: 1234 Meadow Ln
-Member City: Tuscaloosa
-Member State: AL
-Member Zip Code: 12345
-	Date of Service: 11-14-2023
-	Provider Name: Chris Hellen
-	Service Name: aerobics exercise
-
-	Date of Service: 11-14-2023
-	Provider Name: Chris Hellen
-	Service Name: dietician session
-
+Member Street Address: test
+Member City: test
+Member State: ll
+Member Zip Code: 0
 	Date of Service: 
 	Provider Name: Chris Hellen
 	Service Name: aerobics exercise

@@ -56,7 +56,7 @@ public class ProviderController {
 					
 					break;
 				}
-				System.out.print("Service Code not Found");
+				System.out.println("Service Code not Found");
 				return;
 			}
 

@@ -1,0 +1,15 @@
+Provider: Chris Hellen
+	Number of Consultations: 2
+	Total Fee: 80
+
+Provider: Caleb Dochow
+	Number of Consultations: 2
+	Total Fee: 80
+
+Provider: Kara Moran
+	Number of Consultations: 2
+	Total Fee: 80
+
+Total number of Providers: 3
+Total number of Consultations: 6
+Overall Total Fee: 240

@@ -3,8 +3,8 @@ package terminals;
 
 import java.io.IOException;
 import java.text.ParseException;
+import utilities.*;
 import java.util.*;
-import java.io.*;
 import accounts.*;
 import controllers.AccountsController;
 import services.*;
@@ -13,8 +13,14 @@ public class MainTerminal {
 
     public static AccountsController accounts = new AccountsController();
     static ProviderDirectory pd = new ProviderDirectory();
+    static Members members = new Members();
+    static List<Member> memberList = members.memberList;
+    static Providers providers = new Providers();
+    static List<Provider> providersList = providers.providerList;
+    static MainAccountingProcedure MAP = new MainAccountingProcedure(providersList, memberList);
 
     public static void main(String[] args) throws ParseException, IOException {
+        MAP.runProcedure();
         //imports user accounts
         //importData();
         //create services in directory

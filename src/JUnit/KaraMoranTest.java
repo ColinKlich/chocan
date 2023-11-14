@@ -11,12 +11,14 @@ import services.ProviderDirectory;
 import org.junit.Before;
 import static org.junit.Assert.*;
 
+import java.util.Scanner;
+
 public class KaraMoranTest {
     //ProviderController providerController;
     ProviderDirectory providerDirectory;
     AccountsController accounts;
     ProviderController providerController;
-
+    Scanner scanner = new Scanner(System.in);
     // test functions bill chocAn and request provider directory
     // test get service code
 
@@ -42,7 +44,7 @@ public class KaraMoranTest {
 
     @Test
     public void validateMemberTest(AccountsController accounts) {
-        assertEquals(true, providerController.validateMember(accounts));
+        assertEquals(true, providerController.validateMember(accounts, scanner));
     }
 
     @Test 

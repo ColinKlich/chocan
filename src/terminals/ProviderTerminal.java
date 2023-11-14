@@ -56,7 +56,7 @@ public class ProviderTerminal {
         if (found) {
             return true;
         } else {
-            System.out.print("Incorrect Provider Number.");
+            System.out.println("Incorrect Provider Number.");
             return false;
         }
     }
