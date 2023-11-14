@@ -26,12 +26,14 @@ public class ProviderController{
 			return;
 		}
 
+		// read date from input and store for service
 		Scanner scanner = new Scanner(System.in);
 		String date = scanner.nextLine();
 		scanner.close();
-		// do what with date?
-		// store in serviceProvided
 
+		service.serviceDate = date;
+
+		// while loops takes service code from input until provider verifies correct service is displayed
 		boolean unverified = true;
 
 		while (unverified) {
@@ -50,6 +52,7 @@ public class ProviderController{
 				for (int i = 0; i < 20; i++)
 					System.out.print(serviceName.charAt(i));
 			}
+
 
 			System.out.print("Verify service:");
 			System.out.print("[1] Correct");
@@ -89,7 +92,8 @@ public class ProviderController{
 	}
 
 	public void requestProviderDirectory(ProviderDirectory providerDirectory) {
-		// print services from providerDirectory
+		// print providerDirectory service list
+		providerDirectory.printDirectory();
 
 	}
 

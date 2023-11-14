@@ -16,6 +16,7 @@ public class ManagerTerminal {
     ManagerTerminal(AccountsController accounts){
         reports = new ManagerController(accounts);
         boolean running = true;
+
         while (running) {
             System.out.println("Manager Terminal");
             System.out.println("[1] Login");
@@ -34,7 +35,7 @@ public class ManagerTerminal {
                     String choice = scanner.nextLine();
 
                     if (Objects.equals(choice, "1")) { //GENERATE REPORTS
-                        //generateReports(report);
+                        generateReports(reports, accounts);
                     }
 
                     if(Objects.equals(terminal.toLowerCase(), "quit")){ //QUIT
@@ -75,16 +76,13 @@ public class ManagerTerminal {
 
             // Get user input
             String choice = scanner.nextLine();
-            int num; //REPORT NUMBER
 
             switch(choice.toLowerCase()){
                 case "1":
+                    //ALL REPORTS
                     break;
                 case "2":
-                    System.out.println("Enter Provider Number");
-                    num = Integer.valueOf(scanner.nextLine());
-                    Provider provider = accounts.getProvider(num);
-                    reportInformation.printProviderReport(provider);
+                    reportInformation.printAllProviderReports();
                     break;
                 case "3":
                     reportInformation.printAllMemberReports();
@@ -92,7 +90,7 @@ public class ManagerTerminal {
                 case "4":
                     reportInformation.printSummaryReport();
                     break;
-                case "Quit":
+                case "quit":
                     running = false;
                     break;
             }

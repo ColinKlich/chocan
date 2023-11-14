@@ -28,7 +28,6 @@ public class MainTerminal {
             System.out.println("[1] Provider Terminal");
             System.out.println("[2] Manager Terminal");
             System.out.println("[3] Operator Terminal");
-            System.out.println("[4] Run Main Accounting Procedure");
             System.out.println("[End] Close ChocAn");
             String terminal = terminalInput.nextLine();
 
@@ -38,8 +37,6 @@ public class MainTerminal {
                 new ManagerTerminal(accounts);
             } else if (Objects.equals(terminal, "3")) {
                 new OperatorTerminal(accounts);
-            } else if (Objects.equals(terminal, "4")) {
-                runMainAccountingProcedure(accounts);
             } else {
                 running = false;
                 storeData();
@@ -52,66 +49,14 @@ public class MainTerminal {
 
     }
 
-    private static void storeData() {
-        List<Member> members = accounts.getMembers();
-        for (Member member : members) {
-            member.writeToFile();
-        }
-        List<Provider> providers = accounts.getProviders();
-        for (Provider provider : providers) {
-            provider.writeToFile();
-        }
-    }
-
-    private static void importData() {
-        File folder = new File("./../accounts/accounts_storage/Member_accounts/");
-        File[] listOfFiles = folder.listFiles();
-
-        for (File file : listOfFiles) {
-            try {
-                Scanner myReader = new Scanner(file);
-                String name = myReader.nextLine();
-                int number = myReader.nextInt();
-                String address = myReader.nextLine();
-                String city = myReader.nextLine();
-                String state = myReader.nextLine();
-                int zipCode = myReader.nextInt();
-
-                accounts.addMember(name, number, address, city, state, zipCode);
-                myReader.close();
-            } catch (FileNotFoundException e) {
-                System.out.println("An error occurred.");
-                e.printStackTrace();
-            }
-        }
-
-        File folder2 = new File("./../accounts/accounts_storage/Provider_accounts/");
-        File[] listOfFiles2 = folder2.listFiles();
-
-        for (File file : listOfFiles2) {
-            try {
-                Scanner myReader = new Scanner(file);
-                String name = myReader.nextLine();
-                int number = myReader.nextInt();
-                String address = myReader.nextLine();
-                String city = myReader.nextLine();
-                String state = myReader.nextLine();
-                int zipCode = myReader.nextInt();
-
-                accounts.addProvider(name, number, address, city, state, zipCode);
-                myReader.close();
-            } catch (FileNotFoundException e) {
-                System.out.println("An error occurred.");
-                e.printStackTrace();
-            }
-        }
-
-
+	private static void createData() {
+        //providerDirectory.addService("session with a dietician", 598470, 50);
+        //providerDirectory.addService("aerobics exercise session", 88394, 30);
     }
 
     private static void runMainAccountingProcedure(AccountsController accounts) {
-        // TODO Auto-generated method stub
-
-    }
+		// TODO Auto-generated method stub
+		
+	}
 }
 

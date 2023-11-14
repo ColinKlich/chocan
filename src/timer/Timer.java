@@ -1,4 +1,7 @@
 package timer;
+
+import controllers.AccountsController;
+
 public class Timer {
     private int time;
     private String dotw;
@@ -8,18 +11,8 @@ public class Timer {
         this.dotw = dotw;
     }
 
-    public boolean runInteractiveMode() {
-        if (time > 9 || time < 17){
-            return true;
-        }
-        return false;
-    }
-
-    public void updateMemberRecords() {
-
-    }
-
-    public void printAllReports () {
-       
-    }
+    private static void runMainAccountingProcedure(AccountsController accounts) {
+		// TODO Auto-generated method stub
+		
+	}
 }

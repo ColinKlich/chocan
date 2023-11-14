@@ -17,4 +17,8 @@ public class ProviderDirectory {
     public void deleteService(String name){
         services.removeIf(service -> service.getName().equals(name));
     }
+
+    public void printDirectory() {
+        System.out.println(services);
+    }
 }

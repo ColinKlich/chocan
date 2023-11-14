@@ -1,5 +1,8 @@
 package accounts;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import services.ServiceProvided;
@@ -24,9 +27,8 @@ public class Provider {
         this.zipCode = zipCode;
         this.servicesProvided = new ArrayList<ServiceProvided>();
         this.numberOfConsultations = 0;
-        this.totalFees = 0;
+        this.totalFees = 0;    
     }
-
     public Provider() {
     	this.providerName = null;
         this.providerNumber = -1;
@@ -101,9 +103,29 @@ public class Provider {
         this.servicesProvided = servicesProvided;
     }
 
-   public void deleteProvider(Provider providerDelete) {
-	   providerDelete = new Provider();
-	   providerDelete = null;
-	  
+   public void writeToFile() {
+       try {
+            File dirFile = new File(System.getProperty("user.dir")+"\\src\\accounts\\accounts_storage\\Provider_accounts");
+   			File providerFile = new File(dirFile,this.providerName+".txt");
+            FileWriter providerWrite;
+   			providerWrite = new FileWriter(providerFile);
+   	        providerWrite.write(this.providerName+"\n"); 
+   	        providerWrite.write(this.providerNumber+"\n"); 
+   	        providerWrite.write(this.address+"\n");
+   	        providerWrite.write(this.state+"\n"); 
+   	        providerWrite.write(this.zipCode+"\n");
+   	        providerWrite.write("Service provided: ");
+   	        providerWrite.write(this.numberOfConsultations);
+   	        providerWrite.write(this.totalFees);
+   	        providerWrite.close();
+   		}   catch (IOException e) {
+   			System.out.println("Error");
+   			e.printStackTrace();
+   		}
+   }
+   public void deleteProvider() {
+	   File dirFile = new File(System.getProperty("user.dir")+"\\Provider_accounts");
+	   File providerFile = new File(dirFile,this.providerName+".txt");
+       providerFile.delete();
    }
 }
