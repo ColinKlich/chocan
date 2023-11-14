@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class ServiceProvided {
     private String currentDateTime;
-    private String serviceDate;
+    public String serviceDate;
     private int providerNumber;
     private String providerName;
     private int memberNumber;
