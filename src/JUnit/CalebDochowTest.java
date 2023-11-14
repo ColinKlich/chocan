@@ -2,14 +2,16 @@
 package JUnit;
 
 import static org.junit.Assert.*;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import services.*;
 import accounts.*;
 import controllers.AccountsController;
 import terminals.*;
-import utilities.Members;
 import utilities.Providers;
 import java.util.List;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -26,19 +28,23 @@ public class CalebDochowTest {
 
     @Before
     public void setUp() throws Exception {
-        member = new Member("John Doe",123456789,"123 1st Street","Tuscaloosa","AL",12345);
-
+		admin = new Manager("admin", "admin", "testing123");
         accounts = new AccountsController();
-        managerTerminal = new ManagerTerminal(accounts);
-        admin = new Manager("admin", "admin", "testing123");
+		member = new Member("John Doe",123456789,"123 1st Street","Tuscaloosa","AL",12345);
 
-        providers = new Providers();
-        provider = providers.providerList.get(0);
-        providerTerminal = new ProviderTerminal(accounts, services);
+       // managerTerminal = new ManagerTerminal(accounts);
+
     }
 
     @Test
     public void verifyManagerTest() {
+        // Set up System.in to provide the expected inputs
+        String input = "admin\n" + "testing123\n";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+
+        // Use setInputSource to provide the custom input source
+        managerTerminal.setInputSource(in);
+
         assertTrue(managerTerminal.verifyManager(admin));
     }
 
@@ -49,7 +55,8 @@ public class CalebDochowTest {
 
     @Test
     public void getZipCodeTest() {
-        // Assuming getZipCode() returns a String, you should compare it with a String value.
-        assertEquals("12345", member.getZipCode());
+        assertEquals(12345, member.getZipCode());
     }
+
+
 }
