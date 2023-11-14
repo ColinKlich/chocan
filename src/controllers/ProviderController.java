@@ -5,7 +5,6 @@ import accounts.*;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
-import accounts.Member;
 
 public class ProviderController {
 
@@ -22,21 +21,17 @@ public class ProviderController {
 		serviceList = providerDirectory.services;
     }
 
-    public void billChocAn(AccountsController accounts, Provider provider) {
+    public void billChocAn(AccountsController accounts, Provider provider, Scanner scanner) {
 
 		// ensure membership status is valid
-		if (!validateMember(accounts)) {
+		if (!validateMember(accounts, scanner)) {
 			return;
 		}
 
 		// read date from input and store for service
-		System.out.println("Enter Date (MM-DD-YYY)");
-		Scanner scanner = new Scanner(System.in);
-		String date = scanner.nextLine();
+		System.out.println("Enter Date (MM-DD-YYY): ");
 
-		serviceDate = date;
-
-		scanner.close();
+		String serviceDate = scanner.nextLine();
 
 		// while loops takes service code from input until provider verifies correct service is displayed
 		boolean unverified = true;
@@ -44,9 +39,7 @@ public class ProviderController {
 
 		while (unverified) {
 
-			Scanner readCode = new Scanner(System.in);
-			int serviceCode = readCode.nextInt();
-			readCode.close();
+			int serviceCode = scanner.nextInt();
 
 			for(Service curr : serviceList){
 				if (curr.getCode() == serviceCode){
@@ -58,45 +51,43 @@ public class ProviderController {
 						for (int i = 0; i < 20; i++) {
 							System.out.print(curr.getName().charAt(i));
 						}
+						System.out.print('\n');
 					}
+					
 					break;
 				}
 				System.out.print("Service Code not Found");
 				return;
 			}
 
-			System.out.print("Verify service:");
-			System.out.print("[1] Correct");
-			System.out.print("[2] Incorrect");	
-			
-			Scanner getVerification = new Scanner(System.in);
-			int verification = getVerification.nextInt();
+			System.out.println("Verify service:");
+			System.out.println("[1] Correct");
+			System.out.println("[2] Incorrect");	
+		
+			int verification = scanner.nextInt();
 
 			if (Objects.equals(verification, 1)) {
 				unverified = false;
 			}
 			else if (Objects.equals(verification, 2)) {
-				System.out.print("Reenter service code:");
+				System.out.println("Reenter service code:");
 				unverified = true;
 			}
 			else {
-				System.out.print("Invalid input");
+				System.out.println("Invalid input");
 				unverified = true;
 			}
-			getVerification.close();
 		}
 
 		//prints fee associated with input serviceCode's service
-		System.out.print("Amount billed to ChocAn: $" + fee);
+		System.out.println("Amount billed to ChocAn: $" + service.getFee());
 
 		//gives provider option to enter comments
 		System.out.println("Enter comments");
 		System.out.println("[1] Yes");
 		System.out.println("[2] No");
 
-		Scanner scanner2 = new Scanner(System.in);
-		int option = scanner2.nextInt();
-		scanner2.close();		
+		int option = scanner.nextInt();		
 
 		//sets service's comments field equal to input from provider, else returns
 		if (option == 1) {
@@ -105,11 +96,10 @@ public class ProviderController {
 			comments = enteredComments;
 		}
 		else if (option == 2) {
-			return;
+			comments = null;
 		}
 		else {
 			System.out.println("Invalid input");
-			return;
 		}
 		
 		serviceProvided = new ServiceProvided(service, serviceDate, provider.getName(), provider.getNumber(), member.getNumber(), member.getName(), comments);
@@ -117,24 +107,13 @@ public class ProviderController {
 		provider.addServicesProvided(serviceProvided);
 	}
 
-	public void requestProviderDirectory(List<Service> providerDirectory) {
-		// print providerDirectory service list
-		for (Service service: providerDirectory){
-			System.out.print("Service Name: " +service.getName()+"\n");
-			System.out.print("Service Code: "+service.getCode()+"\n");
-			System.out.print("Service Fee: "+service.getFee()+"\n");
-		}
-
+	public void requestProviderDirectory() {
+		providerDirectory.printDirectory();
 	}
 
-	public boolean validateMember(AccountsController accounts) {
-		// take member number input from provider
-		Scanner input = new Scanner(System.in);
-        System.out.print("Enter Member Number:");
-
-		
-        int memberNum = input.nextInt();
-		input.close();
+	public boolean validateMember(AccountsController accounts, Scanner scanner) {
+        System.out.println("Enter Member Number:");
+        int memberNum = scanner.nextInt();
 		// set member equal to Member object with that memberNum
 		member = accounts.getMember(memberNum);
 

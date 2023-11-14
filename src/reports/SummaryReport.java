@@ -13,7 +13,7 @@ public class SummaryReport {
     private int totalProviders;
     private int totalConsultations;
     private int overallFeeTotal;
-    private String formattedReport;
+    private String formattedReport = "";
     private String currDate;
 
     public SummaryReport (List<Provider> providerList){

@@ -4,6 +4,8 @@ package terminals;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.*;
+import java.io.*;
+import accounts.*;
 import controllers.AccountsController;
 import services.*;
 
@@ -30,7 +32,7 @@ public class MainTerminal {
             String terminal = terminalInput.nextLine();
 
             if (Objects.equals(terminal, "1")) {
-                new ProviderTerminal(accounts, pd.services);
+                new ProviderTerminal(accounts, pd.services, terminalInput);
             } else if (Objects.equals(terminal, "2")) {
                 new ManagerTerminal(accounts);
             } else if (Objects.equals(terminal, "3")) {
@@ -40,11 +42,8 @@ public class MainTerminal {
                 //storeData();
                 System.out.println("Have a Great Day!!!");
             }
-
         }
         terminalInput.close();
-
-
     }
 
     /*private static void storeData() {
@@ -56,9 +55,9 @@ public class MainTerminal {
         for (Provider provider : providers) {
             provider.writeToFile();
         }
-    }*/
+    }
 
-    /*private static void importData() throws IOException {
+    private static void importData() throws IOException {
     	String path = System.getProperty("user.dir")+File.separator+"src\\accounts\\accounts_storage\\Member_accounts";
         File dirFile = new File(path);
         File listOfFiles[] = dirFile.listFiles();    	
