@@ -11,11 +11,11 @@ import java.util.stream.Collectors;
 import accounts.Member;
 import accounts.Provider;
 import controllers.AccountsController;
-import services.ProviderDirectory;
+import services.Service;
 
 public class MainTerminal {
     public static AccountsController accounts = new AccountsController();
-    public static ProviderDirectory providerDirectory = new ProviderDirectory();
+    public static List<Service> providerDirectory;
 
     public static void main(String[] args) throws ParseException, IOException {
         importData();
