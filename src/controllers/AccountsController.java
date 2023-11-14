@@ -1,9 +1,9 @@
 package controllers;
 
+import utilities.*;
 import accounts.*;
 import java.util.List;
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AccountsController {
@@ -12,8 +12,10 @@ public class AccountsController {
     Scanner myObj = new Scanner(System.in);
 
     public AccountsController() {
-        this.members = new ArrayList<Member>();
-        this.providers = new ArrayList<Provider>();
+        Members members = new Members();
+        Providers providers = new Providers();
+        this.members = members.memberList;
+        this.providers = providers.providerList;
     }
 
     public List<Member> getMembers() {
