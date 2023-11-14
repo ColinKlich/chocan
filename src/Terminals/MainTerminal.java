@@ -3,10 +3,14 @@ package terminals;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.ParseException;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 import accounts.Member;
 import accounts.Provider;
 import controllers.AccountsController;
@@ -17,7 +21,7 @@ public class MainTerminal {
     public static ProviderDirectory providerDirectory = new ProviderDirectory();
 
     public static void main(String[] args) throws ParseException, IOException {
-        importData();
+        //importData();
         Scanner terminalInput = new Scanner(System.in);
 
         boolean running = true;
@@ -60,9 +64,10 @@ public class MainTerminal {
         }
     }
 
-    private static void importData() {
-        File folder = new File("./../accounts/accounts_storage/Member_accounts/");
-        File[] listOfFiles = folder.listFiles();
+    private static void importData() throws IOException {
+        List<File> listOfFiles = Files
+                .walk(Paths.get(".\\..\\accounts\\accounts_storage\\Member_accounts\\"))
+                .filter(Files::isRegularFile).map(Path::toFile).collect(Collectors.toList());
 
         for (File file : listOfFiles) {
             try {
@@ -82,8 +87,9 @@ public class MainTerminal {
             }
         }
 
-        File folder2 = new File("./../accounts/accounts_storage/Provider_accounts/");
-        File[] listOfFiles2 = folder2.listFiles();
+        List<File> listOfFiles2 = Files
+                .walk(Paths.get(".\\..\\accounts\\accounts_storage\\Provider_accounts\\"))
+                .filter(Files::isRegularFile).map(Path::toFile).collect(Collectors.toList());
 
         for (File file : listOfFiles2) {
             try {
