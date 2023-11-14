@@ -15,7 +15,7 @@ public class HaiHoangTest {
 
 	@Test
 	public void testMemberCreate() {
-		Member x = new Member();
+		Member x = new Member("John Doe",123456789,);
 	}
 
 	@Test
