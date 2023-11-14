@@ -104,7 +104,11 @@ public class ProviderController {
 
 	public void requestProviderDirectory(List<Service> providerDirectory) {
 		// print providerDirectory service list
-		System.out.print(providerDirectory);
+		for (Service service: providerDirectory){
+			System.out.print("Service Name: " +service.getName()+"\n");
+			System.out.print("Service Code: "+service.getCode()+"\n");
+			System.out.print("Service Fee: "+service.getFee()+"\n");
+		}
 
 	}
 
