@@ -120,9 +120,4 @@ public class Member  {
 	    			e.printStackTrace();
 	    		}
 	}
-	public void deleteMember () {
-        File dirFile = new File(System.getProperty("user.dir")+"\\Member_accounts");
-		File memberFile = new File(dirFile,this.memberName+".txt");
-        memberFile.delete();
-	}
 }

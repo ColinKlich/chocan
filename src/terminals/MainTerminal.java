@@ -37,7 +37,7 @@ public class MainTerminal {
             String terminal = terminalInput.nextLine();
 
             if (Objects.equals(terminal, "1")) {
-                new ProviderTerminal(accounts, providerDirectory);
+               // new ProviderTerminal(accounts, providerDirectory);
             } else if (Objects.equals(terminal, "2")) {
                 new ManagerTerminal(accounts);
             } else if (Objects.equals(terminal, "3")) {
@@ -66,7 +66,7 @@ public class MainTerminal {
     }
 
     private static void importData() throws IOException {
-    	String path = System.getProperty("user.dir")+File.separator+File.separator+"src\\accounts\\accounts_storage\\Member_accounts";
+    	String path = System.getProperty("user.dir")+File.separator+"src\\accounts\\accounts_storage\\Member_accounts";
         File dirFile = new File(path);
         File listOfFiles[] = dirFile.listFiles();    	
         for (File file : listOfFiles) {
@@ -87,7 +87,7 @@ public class MainTerminal {
         }
         
 
-        String path2 = System.getProperty("user.dir")+File.separator+File.separator+"src\\accounts\\accounts_storage\\Provider_accounts";
+        String path2 = System.getProperty("user.dir")+File.separator+"src\\accounts\\accounts_storage\\Provider_accounts";
         File dirFile2 = new File(path2);
         File listOfFiles2[] = dirFile2.listFiles();    	
         for (File file : listOfFiles2) {
