@@ -37,7 +37,7 @@ public class MainTerminal {
             String terminal = terminalInput.nextLine();
 
             if (Objects.equals(terminal, "1")) {
-               // new ProviderTerminal(accounts, providerDirectory);
+                new ProviderTerminal(accounts, providerDirectory);
             } else if (Objects.equals(terminal, "2")) {
                 new ManagerTerminal(accounts);
             } else if (Objects.equals(terminal, "3")) {
