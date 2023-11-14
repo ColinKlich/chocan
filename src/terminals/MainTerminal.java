@@ -1,23 +1,20 @@
 //Colin Klich
 package terminals;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.*;
-import accounts.Member;
-import accounts.Provider;
 import controllers.AccountsController;
 import services.*;
 
 public class MainTerminal {
-    public static AccountsController accounts = new AccountsController();
-    ProviderDirectory pd = new ProviderDirectory();
 
-    public void main(String[] args) throws ParseException, IOException {
+    public static AccountsController accounts = new AccountsController();
+    static ProviderDirectory pd = new ProviderDirectory();
+
+    public static void main(String[] args) throws ParseException, IOException {
         //imports user accounts
-        importData();
+        //importData();
         //create services in directory
         Scanner terminalInput = new Scanner(System.in);
 
@@ -40,7 +37,7 @@ public class MainTerminal {
                 new OperatorTerminal(accounts);
             } else {
                 running = false;
-                storeData();
+                //storeData();
                 System.out.println("Have a Great Day!!!");
             }
 
@@ -50,7 +47,7 @@ public class MainTerminal {
 
     }
 
-    private static void storeData() {
+    /*private static void storeData() {
         List<Member> members = accounts.getMembers();
         for (Member member : members) {
             member.writeToFile();
@@ -59,9 +56,9 @@ public class MainTerminal {
         for (Provider provider : providers) {
             provider.writeToFile();
         }
-    }
+    }*/
 
-    private static void importData() throws IOException {
+    /*private static void importData() throws IOException {
     	String path = System.getProperty("user.dir")+File.separator+"src\\accounts\\accounts_storage\\Member_accounts";
         File dirFile = new File(path);
         File listOfFiles[] = dirFile.listFiles();    	
@@ -115,6 +112,6 @@ public class MainTerminal {
         }
 
 
-    }
+    }*/
 }
 

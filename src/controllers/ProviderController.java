@@ -30,11 +30,13 @@ public class ProviderController {
 		}
 
 		// read date from input and store for service
+		System.out.println("Enter Date (MM-DD-YYY)");
 		Scanner scanner = new Scanner(System.in);
 		String date = scanner.nextLine();
-		scanner.close();
 
 		serviceDate = date;
+
+		scanner.close();
 
 		// while loops takes service code from input until provider verifies correct service is displayed
 		boolean unverified = true;
@@ -127,22 +129,23 @@ public class ProviderController {
 
 	public boolean validateMember(AccountsController accounts) {
 		// take member number input from provider
+		Scanner input = new Scanner(System.in);
         System.out.print("Enter Member Number:");
 
-		Scanner input = new Scanner(System.in);
+		
         int memberNum = input.nextInt();
+		input.close();
 		// set member equal to Member object with that memberNum
 		member = accounts.getMember(memberNum);
-		input.close();
 
 		//print member status and return boolean value for valid status or invalid and reason
-        if (member.getMemberStatus().equals("Valid")) {
-			System.out.println("Validated");
-			return true;
-		}
-		else if (member.getMemberStatus().equals("Invalid number")) {
+		if (member.getMemberStatus() == null) {
 			System.out.println("Invalid number");
 			return false;
+		}
+        else if (member.getMemberStatus().equals("Valid")) {
+			System.out.println("Validated");
+			return true;
 		}
 		else if (member.getMemberStatus().equals("Suspended")) {
 			System.out.println("Suspended");
@@ -151,6 +154,5 @@ public class ProviderController {
 		else {
 			return false;
 		}
-
     }
 }

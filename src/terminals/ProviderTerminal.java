@@ -13,11 +13,10 @@ import java.util.Scanner;
 public class ProviderTerminal {
     private boolean verified = false;
     Provider provider;
-
-    Scanner scanner = new Scanner(System.in);
     ProviderController controller = new ProviderController();
 
     ProviderTerminal(AccountsController accounts, List<Service> providerDirectory) {
+        Scanner scanner = new Scanner(System.in);
         boolean running = true;
         while (running) {
             System.out.println("Provider Terminal");
@@ -26,6 +25,7 @@ public class ProviderTerminal {
             System.out.println("[3] Request Provider Directory");
             System.out.println("[Quit] Return to Main Menu");
             String terminal = scanner.nextLine();
+            scanner.close();
 
             if (Objects.equals(terminal, "1")) {
                 verified = verifyProvider(accounts);
@@ -47,7 +47,9 @@ public class ProviderTerminal {
     public boolean verifyProvider(AccountsController accounts) {
         boolean found = false;
         System.out.println("Enter Provider Number:");
+        Scanner scanner = new Scanner(System.in);
         int providerNum = scanner.nextInt();
+         scanner.close();
         List<Provider> providers = accounts.getProviders();
         for(Provider temp: providers){
             if(temp.getNumber() == providerNum){
@@ -62,5 +64,4 @@ public class ProviderTerminal {
             return false;
         }
     }
-    
 }
