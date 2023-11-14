@@ -4,6 +4,7 @@
 
 package reports;
 import accounts.Provider;
+import utilities.Providers;
 import java.io.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -15,8 +16,12 @@ public class SummaryReport {
     private int overallFeeTotal;
     private String formattedReport;
     private String currDate;
+	private Providers providers;
 
-    public SummaryReport (List<Provider> providerList){
+    public SummaryReport (){
+
+		providers = new Providers();
+		List <Provider> providerList = providers.providerList;
 
         LocalDate date = LocalDate.now(); 
         DateTimeFormatter format = DateTimeFormatter.ofPattern("MM-dd-yyyy");

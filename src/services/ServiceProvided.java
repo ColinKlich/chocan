@@ -17,13 +17,15 @@ public class ServiceProvided {
 
     public ServiceProvided(String serviceName, String serviceDate, int serviceCode, String providerName, int providerNum, int memberNum, String memberName, int fee, String comments){
         LocalDate date = LocalDate.now();
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("MM-DD-YY HH:MM:SS");
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("MM-dd-yyyy");
         this.currentDateTime = date.format(format);
         this.serviceDate = serviceDate;
         this.providerNumber = providerNum;
         this.memberNumber = memberNum;
         this.memberName = memberName;
         this.serviceCode = serviceCode;
+        this.serviceName = serviceName;
+        this.providerName = providerName;
         this.comments = null;
         this.fee = fee;
     }

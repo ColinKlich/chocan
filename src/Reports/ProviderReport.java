@@ -50,12 +50,12 @@ public class ProviderReport {
 
         for (ServiceProvided service :  servicesProvided){
             this.formattedReport += 
-            "Date of Service: " + service.getServiceDate() + '\n' +
-            "Date and time data were recieved by the computer: " + service.getCurrentDate() + '\n' + 
-            "Member Name: " + service.getMemberName() + '\n' + 
-            "Member Number: " + service.getMemberNumber() + '\n' + 
-            "Service Code: " + service.getServiceCode() + '\n' +
-            "Fee to be paid: $" + service.getFee() + '\n';
+            "\tDate of Service: " + service.getServiceDate() + '\n' +
+            "\tDate and time data were recieved by the computer: " + service.getCurrentDate() + '\n' + 
+            "\tMember Name: " + service.getMemberName() + '\n' + 
+            "\tMember Number: " + service.getMemberNumber() + '\n' + 
+            "\tService Code: " + service.getServiceCode() + '\n' +
+            "\tFee to be paid: $" + service.getFee() + '\n';
         }
         
         this.formattedReport += 

@@ -1,0 +1,14 @@
+Provider Name: Chris Hellen
+Provider Number: 66979
+Provider Street Address: 1234 Meadow Ln
+Provider City: Tuscaloosa
+Provider State: AL
+Provider Zip Code: 12345
+	Date of Service: 02-19-2003
+	Date and time data were recieved by the computer: 11-13-2023
+	Member Name: Hai Hoang
+	Member Number: 12345
+	Service Code: 12345
+	Fee to be paid: $12
+Total number of Consultations with Members: 1
+Total Fee for the Week: $12

@@ -70,6 +70,10 @@ public class Member  {
 		return memberStatus;
 	}
 
+    public List<ServiceProvided> getServicesUsed(){
+        return servicesUsed;
+    }
+
 	public void setMemberStatus(String memberStatus) {
 		this.memberStatus = memberStatus;
 	}

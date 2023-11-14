@@ -30,6 +30,7 @@ public class MemberReport{
         this.city = member.getCity();
         this.state = member.getState();
         this.zipCode = member.getZipCode();
+		this.servicesUsed = member.getServicesUsed();
         
         LocalDate date = LocalDate.now(); 
         DateTimeFormatter format = DateTimeFormatter.ofPattern("MM-dd-yyyy");
@@ -45,9 +46,9 @@ public class MemberReport{
 
         for (ServiceProvided service : servicesUsed){
             this.formattedReport +=
-            "Date of Service: " + service.getServiceDate() + '\n' +
-            "Provider Name: " + service.getProviderName() + '\n' + 
-            "Service Name: " + service.getServiceName() + '\n';
+            "\tDate of Service: " + service.getServiceDate() + '\n' +
+            "\tProvider Name: " + service.getProviderName() + '\n' + 
+            "\tService Name: " + service.getServiceName() + '\n';
         }
     }
 

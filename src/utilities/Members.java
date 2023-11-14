@@ -7,6 +7,7 @@ import services.ServiceProvided;
 public class Members {
     public List<Member> memberList;
     public Members(){
+        this.memberList = new ArrayList<Member>();
         Member mem1 = new Member("Hai Hoang", 12235, "1234 Meadow Ln", "Tuscaloosa", "AL", 12345);
         Member mem2 = new Member("Colin Klich", 12114, "1234 Meadow Ln", "Tuscaloosa", "AL", 12345);
         Member mem3 = new Member("Sam Wisnoff", 12345, "1234 Meadow Ln", "Tuscaloosa", "AL", 12345);
@@ -16,8 +17,8 @@ public class Members {
         mem1.addServiceUsed(service1);
         mem2.addServiceUsed(service2);
         mem3.addServiceUsed(service3);
-        memberList.add(mem1);
-        memberList.add(mem2);
-        memberList.add(mem3);
+        this.memberList.add(mem1);
+        this.memberList.add(mem2);
+        this.memberList.add(mem3);
     }
 }

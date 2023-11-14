@@ -9,6 +9,7 @@ public class Providers {
     public List<Provider> providerList;
 
     public Providers(){
+        this.providerList = new ArrayList<Provider>();
         Provider prov1 = new Provider("Chris Hellen", 66979, "1234 Meadow Ln", "Tuscaloosa", "AL", 12345);
         Provider prov2 = new Provider("Caleb Dochow", 12158, "1234 Meadow Ln", "Tuscaloosa", "AL", 12345);
         Provider prov3 = new Provider("Kara Moran", 60246, "1234 Meadow Ln", "Tuscaloosa", "AL", 12345);
@@ -18,8 +19,8 @@ public class Providers {
         prov1.addServicesProvided(service1);
         prov2.addServicesProvided(service2);
         prov3.addServicesProvided(service3);
-        providerList.add(prov1);
-        providerList.add(prov2);
-        providerList.add(prov3);
+        this. providerList.add(prov1);
+        this.providerList.add(prov2);
+        this.providerList.add(prov3);
     }
 }
