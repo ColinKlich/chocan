@@ -2,50 +2,36 @@
 package JUnit;
 
 import static org.junit.Assert.*;
-
-import java.util.Scanner;
-
 import accounts.*;
-import controllers.AccountsController;
-import terminals.*;
-import utilities.Providers;
-
 import org.junit.Before;
 import org.junit.Test;
 
 public class CalebDochowTest {
-	
-	Manager admin;
-	ManagerTerminal managerTerminal;
-	AccountsController accounts;
-	Provider provider;
-	ProviderTerminal providerTerminal;
-	Member member;
-	Providers providers;
+    Provider provider;
+    Member member;
+    
 
-	@Before
-	public void setUp() throws Exception {
-		accounts = new AccountsController();
-        managerTerminal = new ManagerTerminal(accounts);
-		admin = new Manager("admin", "admin", "testing123");
-		providers = new Providers();
-		provider = providers.providerList.get(0);
-	}
+    @Before
+    public void setUp() throws Exception {
+		provider = new Provider("Jane Doe", 123123123, "123 2nd Street", "Tuscaloosa", "AL", 35405);
+		member = new Member("John Doe",123456789,"123 1st Street","Tuscaloosa","AL",35405);
 
-	@Test
-	public void verfiyManagerTest() {
-        assertTrue(managerTerminal.verifyManager(admin));
-	}
+    }
 
-	@Test
-	public void verifyProviderTest() {
-		assertTrue(providerTerminal.verifyProvider(accounts));
-	}
-	
-	@Test
-	public void getZipCodeTest() {
-		assertEquals("Jane Doe", member.getZipCode());
-	}
-	
+    @Test
+    public void getCity() {
+        assertEquals("Tuscaloosa", provider.getCity());
+    }
+
+    @Test
+    public void getState() {
+        assertEquals("AL", provider.getState());
+    }
+
+    @Test //Hai's
+    public void getZipCodeTest() {
+        assertEquals(35405, member.getZipCode());
+    }
+
 
 }

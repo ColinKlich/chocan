@@ -1,3 +1,4 @@
+//@Author Colin Klich
 package accounts;
 
 public class Operator {
