@@ -1,7 +1,6 @@
 package controllers;
 
-import services.Service;
-import services.ServiceProvided;
+import services.*;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
@@ -9,9 +8,11 @@ import accounts.Member;
 
 public class ProviderController {
 
+	ProviderDirectory providerDirectory;
     Member member;        
+
     public ProviderController() {
-		
+		providerDirectory = new ProviderDirectory();
     }
 
     public void billChocAn(AccountsController accounts) {
@@ -116,10 +117,9 @@ public class ProviderController {
 
 		Scanner input = new Scanner(System.in);
         int memberNum = input.nextInt();
-		input.close();
-
 		// set member equal to Member object with that memberNum
 		member = accounts.getMember(memberNum);
+		input.close();
 
 		//print member status and return boolean value for valid status or invalid and reason
         if (member.getMemberStatus().equals("Valid")) {

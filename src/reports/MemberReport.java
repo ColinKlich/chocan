@@ -48,7 +48,7 @@ public class MemberReport{
             this.formattedReport +=
             "\tDate of Service: " + service.getServiceDate() + '\n' +
             "\tProvider Name: " + service.getProviderName() + '\n' + 
-            "\tService Name: " + service.getServiceName() + '\n';
+            "\tService Name: " + service.getServiceName() + '\n' + '\n';
         }
     }
 

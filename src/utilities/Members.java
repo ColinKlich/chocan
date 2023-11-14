@@ -9,8 +9,8 @@ public class Members {
     List<Service> serviceList;
     public List<Member> memberList;
     public Members(){
-        providerDirectory = new ProviderDirectory();
-        serviceList = providerDirectory.services;
+        this.providerDirectory = new ProviderDirectory();
+        this.serviceList = providerDirectory.services;
         this.memberList = new ArrayList<Member>();
         Member mem1 = new Member("Hai Hoang", 12235, "1234 Meadow Ln", "Tuscaloosa", "AL", 12345);
         Member mem2 = new Member("Colin Klich", 12114, "1234 Meadow Ln", "Tuscaloosa", "AL", 12345);
@@ -21,6 +21,8 @@ public class Members {
         mem1.addServiceUsed(service2);
         mem2.addServiceUsed(service1);
         mem2.addServiceUsed(service2);
+        mem3.addServiceUsed(service1);
+        mem3.addServiceUsed(service2);
         this.memberList.add(mem1);
         this.memberList.add(mem2);
         this.memberList.add(mem3);

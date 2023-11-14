@@ -25,7 +25,7 @@ public class EFTReport {
             this.formattedReport += 
             "\tProvider: " + provider.getName() + '\n' +
             "\t\tRouting Number: " + provider.getNumber() + '\n' +
-            "\t\tRouting Amount: $" + provider.getTotalFees() + '\n';
+            "\t\tRouting Amount: $" + provider.getTotalFees() + '\n' + '\n';
         }
     }
 

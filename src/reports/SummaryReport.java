@@ -34,7 +34,7 @@ public class SummaryReport {
             this.formattedReport += 
             "Provider: " + provider.getName() + '\n' +
             "\tNumber of Consultations: " + provider.getNumberOfConsultations() + '\n' +
-            "\tTotal Fee: " + provider.getTotalFees() + '\n';
+            "\tTotal Fee: " + provider.getTotalFees() + '\n' + '\n';
         }
 
         this.formattedReport += 

@@ -55,7 +55,7 @@ public class ProviderReport {
             "\tMember Name: " + service.getMemberName() + '\n' + 
             "\tMember Number: " + service.getMemberNumber() + '\n' + 
             "\tService Code: " + service.getServiceCode() + '\n' +
-            "\tFee to be paid: $" + service.getFee() + '\n';
+            "\tFee to be paid: $" + service.getFee() + '\n' + '\n';
         }
         
         this.formattedReport += 
