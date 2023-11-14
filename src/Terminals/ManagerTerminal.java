@@ -76,28 +76,19 @@ public class ManagerTerminal {
 
             // Get user input
             String choice = scanner.nextLine();
-            int num; //REPORT NUMBER
 
             switch(choice.toLowerCase()){
                 case "1":
-                
-                    reportInformation.getAllReports(num);
+                    //ALL REPORTS
                     break;
                 case "2":
-                    System.out.println("Enter Provider Number");
-                    num = Integer.valueOf(scanner.nextLine());
-                    Provider provider = accounts.getProvider(num);
-                    reportInformation.printProviderReport(provider);
+                    reportInformation.printAllProviderReports();
                     break;
                 case "3":
-                    System.out.println("Enter Report Number [1-4]:");
-                    num = Integer.valueOf(scanner.nextLine());
-                    reportInformation.getMemberReport(num);
+                    reportInformation.printAllMemberReports();
                     break;
                 case "4":
-                    System.out.println("Enter Report Number [1-4]:");
-                    num = Integer.valueOf(scanner.nextLine());
-                    reportInformation.getSummaryReport(num);
+                    reportInformation.printSummaryReport();
                     break;
                 case "quit":
                     running = false;
