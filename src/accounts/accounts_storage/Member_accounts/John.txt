@@ -1,0 +1,6 @@
+Member name: John
+Member number: 123456789
+Address: yo
+State: AL
+Zipcode: 35405
+Status: Valid
