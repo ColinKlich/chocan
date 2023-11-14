@@ -24,7 +24,7 @@ public class ServiceProvided {
         this.memberNumber = memberNum;
         this.memberName = memberName;
         this.serviceCode = serviceCode;
-        this.comments = comments;
+        this.comments = null;
         this.fee = fee;
     }
 

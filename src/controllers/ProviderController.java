@@ -1,9 +1,6 @@
 package controllers;
 
 import services.ProviderDirectory;
-//import java.io.BufferedReader;
-//import java.io.InputStreamReader;
-/*import java.lang.reflect.Member;*/
 import services.ServiceProvided;
 import java.util.Objects;
 import java.util.Scanner;
@@ -11,12 +8,11 @@ import accounts.Member;
 
 public class ProviderController {
 
-    public static int DEFAULT_FEE = 0;
-    public static int DEFAULT_MEMBER_NUMBER = 000000000;
     Member member;
 	ServiceProvided service = new ServiceProvided("Example Service A", "00-00-0000", 000000, "provider name", 000000, 000000000, "member name", 100, "example comments");
         
     public ProviderController() {
+		
     }
 
     public void billChocAn(AccountsController accounts) {
