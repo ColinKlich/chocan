@@ -4,7 +4,7 @@ package terminals;
 import accounts.Provider;
 import controllers.AccountsController;
 import controllers.ProviderController;
-import services.ProviderDirectory;
+import services.Service;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
@@ -15,7 +15,7 @@ public class ProviderTerminal {
     Scanner scanner = new Scanner(System.in);
     //Provider admin = new Provider("admin", 123456789, "address", "city", "state", 12345);
 
-    ProviderTerminal(AccountsController accounts, ProviderDirectory providerDirectory){
+    ProviderTerminal(AccountsController accounts, List<Service> providerDirectory){
         boolean running = true;
         while (running) {
             System.out.println("Provider Terminal");
