@@ -101,7 +101,7 @@ public class Member  {
 	
 	public void writeToFile() {
 		   try {
-	            File dirFile = new File(System.getProperty("user.dir")+"\\Member_accounts");
+            File dirFile = new File(System.getProperty("user.dir")+"\\src\\accounts\\accounts_storage\\Member_accounts");
 	     		File memberFile = new File(dirFile,this.memberName+".txt");
 	            memberFile.delete();
 	            memberFile = new File(dirFile,this.memberName+".txt");

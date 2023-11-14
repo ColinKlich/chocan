@@ -66,7 +66,7 @@ public class MainTerminal {
 
     private static void importData() throws IOException {
         List<File> listOfFiles = Files
-                .walk(Paths.get(".\\..\\accounts\\accounts_storage\\Member_accounts\\"))
+                .walk(Paths.get(System.getProperty("user.dir")+"\\src\\accounts\\accounts_storage\\Member_accounts"))
                 .filter(Files::isRegularFile).map(Path::toFile).collect(Collectors.toList());
 
         for (File file : listOfFiles) {
@@ -88,7 +88,7 @@ public class MainTerminal {
         }
 
         List<File> listOfFiles2 = Files
-                .walk(Paths.get(".\\..\\accounts\\accounts_storage\\Provider_accounts\\"))
+                .walk(Paths.get(System.getProperty("user.dir")+"\\src\\accounts\\accounts_storage\\Member_accounts"))
                 .filter(Files::isRegularFile).map(Path::toFile).collect(Collectors.toList());
 
         for (File file : listOfFiles2) {
