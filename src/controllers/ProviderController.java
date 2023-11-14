@@ -9,13 +9,18 @@ import accounts.Member;
 public class ProviderController {
 
 	ProviderDirectory providerDirectory;
+	List<Service> serviceList;
     Member member;        
 
     public ProviderController() {
 		providerDirectory = new ProviderDirectory();
+		serviceList = providerDirectory.services;
     }
 
     public void billChocAn(AccountsController accounts) {
+		Service service;
+		String serviceDate;
+		String comments;
 
 		// ensure membership status is valid
 		if (!validateMember(accounts)) {
@@ -27,7 +32,7 @@ public class ProviderController {
 		String date = scanner.nextLine();
 		scanner.close();
 
-		service.serviceDate = date;
+		serviceDate = date;
 
 		// while loops takes service code from input until provider verifies correct service is displayed
 		boolean unverified = true;
@@ -39,18 +44,20 @@ public class ProviderController {
 			int serviceCode = readCode.nextInt();
 			readCode.close();
 
-			if (serviceCode == 000000) {
-				String serviceName = service.getServiceName();
-				int length = serviceName.length();
+			for(Service curr : serviceList){
+				if (curr.getCode() == serviceCode){
+					service = curr;
+				}
+			}
 
-				if (length < 20) {
-					System.out.println(serviceName);
+			if (service.getName().length() < 20) {
+				System.out.println(service.getName());
+			}
+			else {
+				for (int i = 0; i < 20; i++) {
+					System.out.print(service.getName().charAt(i));
 				}
-				else {
-					for (int i = 0; i < 20; i++) {
-						System.out.print(serviceName.charAt(i));
-					}
-				}
+			}
 			}
 
 			System.out.print("Verify service:");
@@ -59,7 +66,6 @@ public class ProviderController {
 			
 			Scanner getVerification = new Scanner(System.in);
 			int verification = getVerification.nextInt();
-			getVerification.close();
 
 			if (Objects.equals(verification, 1)) {
 				unverified = false;
@@ -72,6 +78,7 @@ public class ProviderController {
 				System.out.print("Invalid input");
 				unverified = true;
 			}
+			getVerification.close();
 		}
 
 		//prints fee associated with input serviceCode's service
@@ -90,7 +97,7 @@ public class ProviderController {
 		if (option == 1) {
 			System.out.println("Enter comments:");
 			String enteredComments = scanner.nextLine();
-			service.comments = enteredComments;
+			comments = enteredComments;
 		}
 		else if (option == 2) {
 			return;
