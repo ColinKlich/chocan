@@ -16,12 +16,8 @@ public class SummaryReport {
     private int overallFeeTotal;
     private String formattedReport;
     private String currDate;
-	private Providers providers;
 
-    public SummaryReport (){
-
-		providers = new Providers();
-		List <Provider> providerList = providers.providerList;
+    public SummaryReport (List<Provider> providerList){
 
         LocalDate date = LocalDate.now(); 
         DateTimeFormatter format = DateTimeFormatter.ofPattern("MM-dd-yyyy");

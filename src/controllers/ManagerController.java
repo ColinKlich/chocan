@@ -31,7 +31,7 @@ public class ManagerController{
 	
 	
 	public void printSummaryReport() {
-		SummaryReport summary = new SummaryReport();
+		SummaryReport summary = new SummaryReport(providerList);
 		summary.print();
 	}
 
