@@ -38,8 +38,8 @@ public class SummaryReport {
         for (Provider provider : providerList){
             this.formattedReport += 
             "Provider: " + provider.getName() + '\n' +
-            "Number of Consultations: " + provider.getNumberOfConsultations() + '\n' +
-            "Total Fee: " + provider.getTotalFees() + '\n';
+            "\tNumber of Consultations: " + provider.getNumberOfConsultations() + '\n' +
+            "\tTotal Fee: " + provider.getTotalFees() + '\n';
         }
 
         this.formattedReport += 

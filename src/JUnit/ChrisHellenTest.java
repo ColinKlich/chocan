@@ -44,7 +44,7 @@ public class ChrisHellenTest {
 
     @Test 
     public void memberGetNameTest(){
-        assertEquals("John Doe", member.getName());
+        assertEquals("Hai Hoang", member.getName());
     }
 
 }

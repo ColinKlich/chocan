@@ -34,6 +34,10 @@ public class ServiceProvided {
         return serviceDate;
     }
 
+    public int getProviderNumber(){
+        return providerNumber;
+    }
+
     public String getProviderName() {
         return providerName;
     }
