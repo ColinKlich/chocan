@@ -5,7 +5,9 @@ import java.util.List;
 import accounts.Member;
 import accounts.Provider;
 import reports.*;
-
+/*
+ * @Author Samuel Wisnoff
+ */
 public class ManagerController{
 	//Goal: design a control system designed solely for Managers
 	//Objective #1: Need to have a member report retrieval function
