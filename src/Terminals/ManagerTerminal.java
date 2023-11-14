@@ -80,6 +80,8 @@ public class ManagerTerminal {
 
             switch(choice.toLowerCase()){
                 case "1":
+                
+                    reportInformation.getAllReports(num);
                     break;
                 case "2":
                     System.out.println("Enter Provider Number");
@@ -88,10 +90,14 @@ public class ManagerTerminal {
                     reportInformation.printProviderReport(provider);
                     break;
                 case "3":
-                    reportInformation.printAllMemberReports();
+                    System.out.println("Enter Report Number [1-4]:");
+                    num = Integer.valueOf(scanner.nextLine());
+                    reportInformation.getMemberReport(num);
                     break;
                 case "4":
-                    reportInformation.printSummaryReport();
+                    System.out.println("Enter Report Number [1-4]:");
+                    num = Integer.valueOf(scanner.nextLine());
+                    reportInformation.getSummaryReport(num);
                     break;
                 case "quit":
                     running = false;
