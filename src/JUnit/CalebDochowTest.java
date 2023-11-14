@@ -1,3 +1,4 @@
+//@Author Caleb Dochow
 package JUnit;
 
 import static org.junit.Assert.*;

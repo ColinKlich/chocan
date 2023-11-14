@@ -24,7 +24,7 @@ public class ChrisHellenTest {
         providers = new Providers();
         provider = providers.providerList.get(0);
         providerReport = new ProviderReport(provider);
-        summaryReport = new SummaryReport();
+        summaryReport = new SummaryReport(providers.providerList);
     }
 
     @Test
@@ -44,7 +44,7 @@ public class ChrisHellenTest {
 
     @Test 
     public void memberGetNameTest(){
-        assertEquals("John Doe", member.getName());
+        assertEquals("Hai Hoang", member.getName());
     }
 
 }

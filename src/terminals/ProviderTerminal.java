@@ -1,9 +1,11 @@
+//@Author Caleb Dochow
 package terminals;
 
 import accounts.Provider;
 import controllers.AccountsController;
 import controllers.ProviderController;
 import services.ProviderDirectory;
+import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 //GOAL: Need to create a validate member function for the provider terminal
@@ -11,7 +13,7 @@ public class ProviderTerminal {
     private boolean verified = false;
 
     Scanner scanner = new Scanner(System.in);
-    Provider admin = new Provider("admin", 123456789, "address", "city", "state", 12345);
+    //Provider admin = new Provider("admin", 123456789, "address", "city", "state", 12345);
 
     ProviderTerminal(AccountsController accounts, ProviderDirectory providerDirectory){
         boolean running = true;
@@ -22,7 +24,7 @@ public class ProviderTerminal {
             String terminal = scanner.nextLine();
 
             if (Objects.equals(terminal, "1")) {
-                verified = verifyProvider(admin);
+                verified = verifyProvider(accounts);
                 if (verified) {
                 	ProviderController controller = new ProviderController();
                     System.out.println("Provider Terminal");
@@ -53,11 +55,17 @@ public class ProviderTerminal {
         }
     }
 
-    public boolean verifyProvider(Provider admin) {
+    public boolean verifyProvider(AccountsController accounts) {
+        boolean found = false;
         System.out.println("Enter Provider Number:");
-        String providerNum = scanner.nextLine();
-
-        if (Objects.equals(Integer.toString(admin.getNumber()), providerNum)) {
+        int providerNum = scanner.nextInt();
+        List<Provider> providers = accounts.getProviders();
+        for(Provider temp: providers){
+            if(temp.getNumber() == providerNum){
+                found = true;
+            }
+        }
+        if (found) {
             return true;
         } else {
             System.out.println("Incorrect Provider Number.");

@@ -1,6 +1,5 @@
 package services;
-
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class ServiceProvided {
@@ -16,9 +15,9 @@ public class ServiceProvided {
     public int fee;
 
     public ServiceProvided(String serviceName, String serviceDate, int serviceCode, String providerName, int providerNum, int memberNum, String memberName, int fee, String comments){
-        LocalDate date = LocalDate.now();
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("MM-dd-yyyy");
-        this.currentDateTime = date.format(format);
+        LocalDateTime date = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy kk:mm:ss");
+        this.currentDateTime = date.format(formatter);
         this.serviceDate = serviceDate;
         this.providerNumber = providerNum;
         this.memberNumber = memberNum;
@@ -32,6 +31,10 @@ public class ServiceProvided {
 
     public String getServiceDate() {
         return serviceDate;
+    }
+
+    public int getProviderNumber(){
+        return providerNumber;
     }
 
     public String getProviderName() {
