@@ -3,9 +3,6 @@ package terminals;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.text.ParseException;
 import java.util.List;
 import java.util.Objects;
@@ -21,7 +18,7 @@ public class MainTerminal {
     public static List<Service> providerDirectory;
 
     public static void main(String[] args) throws ParseException, IOException {
-        //importData();
+        importData();
         Scanner terminalInput = new Scanner(System.in);
 
         boolean running = true;
@@ -65,20 +62,18 @@ public class MainTerminal {
     }
 
     private static void importData() throws IOException {
-        List<File> listOfFiles = Files
-                .walk(Paths.get(System.getProperty("user.dir")+"\\src\\accounts\\accounts_storage\\Member_accounts"))
-                .filter(Files::isRegularFile).map(Path::toFile).collect(Collectors.toList());
-
+    	String path = System.getProperty("user.dir")+File.separator+File.separator+"src\\accounts\\accounts_storage\\Member_accounts";
+        File dirFile = new File(path);
+        File listOfFiles[] = dirFile.listFiles();    	
         for (File file : listOfFiles) {
             try {
                 Scanner myReader = new Scanner(file);
                 String name = myReader.nextLine();
-                int number = myReader.nextInt();
+                int number = Integer.valueOf(myReader.nextLine());
                 String address = myReader.nextLine();
                 String city = myReader.nextLine();
                 String state = myReader.nextLine();
-                int zipCode = myReader.nextInt();
-
+                int zipCode = Integer.valueOf(myReader.nextLine());
                 accounts.addMember(name, number, address, city, state, zipCode);
                 myReader.close();
             } catch (FileNotFoundException e) {
@@ -86,21 +81,20 @@ public class MainTerminal {
                 e.printStackTrace();
             }
         }
+        
 
-        List<File> listOfFiles2 = Files
-                .walk(Paths.get(System.getProperty("user.dir")+"\\src\\accounts\\accounts_storage\\Member_accounts"))
-                .filter(Files::isRegularFile).map(Path::toFile).collect(Collectors.toList());
-
+        String path2 = System.getProperty("user.dir")+File.separator+File.separator+"src\\accounts\\accounts_storage\\Provider_accounts";
+        File dirFile2 = new File(path2);
+        File listOfFiles2[] = dirFile2.listFiles();    	
         for (File file : listOfFiles2) {
             try {
                 Scanner myReader = new Scanner(file);
                 String name = myReader.nextLine();
-                int number = myReader.nextInt();
+                int number = Integer.valueOf(myReader.nextLine());
                 String address = myReader.nextLine();
                 String city = myReader.nextLine();
                 String state = myReader.nextLine();
-                int zipCode = myReader.nextInt();
-
+                int zipCode = Integer.valueOf(myReader.nextLine());
                 accounts.addProvider(name, number, address, city, state, zipCode);
                 myReader.close();
             } catch (FileNotFoundException e) {
