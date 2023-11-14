@@ -43,7 +43,7 @@ public class ManagerController{
 		report.print();
 	}
 
-	public printAllReports(){
+	public void printAllReports(){
 	}
 
 
