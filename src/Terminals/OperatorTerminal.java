@@ -99,7 +99,7 @@ public class OperatorTerminal {
             System.out.println("[Quit] Return to Operator Menu");
             String choice = myObj.nextLine();
             if (Objects.equals(choice, "1")) {
-                accounts.createMember();
+                accounts.createProvider();
             } else if (Objects.equals(choice, "2")) {
                 System.out.println("What is the name of the Provider you would like to delete?");
                 String name = myObj.nextLine();

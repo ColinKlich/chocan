@@ -99,24 +99,28 @@ public class Provider {
 	   this.numberOfConsultations = this.numberOfConsultations + 1;
    }
 
-   public void setServicesProvided(List<ServiceProvided> servicesProvided) {
-        this.servicesProvided = servicesProvided;
+   public void addServicesProvided(ServiceProvided service) {
+        this.servicesProvided.add(service);
     }
 
+   public void deleteAllServiceProvided() {
+		this.servicesProvided = new ArrayList<ServiceProvided>();
+	}   
+   
    public void writeToFile() {
        try {
             File dirFile = new File(System.getProperty("user.dir")+"\\src\\accounts\\accounts_storage\\Provider_accounts");
    			File providerFile = new File(dirFile,this.providerName+".txt");
             FileWriter providerWrite;
    			providerWrite = new FileWriter(providerFile);
-   	        providerWrite.write("Provider name: "+this.providerName+"\n"); 
-   	        providerWrite.write("Provider number: "+ this.providerNumber+"\n"); 
-   	        providerWrite.write("Address: "+this.address+"\n");
-   	        providerWrite.write("State: "+this.state+"\n"); 
-   	        providerWrite.write("Zipcode: "+this.zipCode+"\n");
-   	        providerWrite.write("Service Provided: ");
-   	        providerWrite.write("Number of Consultations: "+this.numberOfConsultations);
-   	        providerWrite.write("Total Fees: " + this.totalFees);
+   	        providerWrite.write(this.providerName+"\n"); 
+   	        providerWrite.write(this.providerNumber+"\n"); 
+   	        providerWrite.write(this.address+"\n");
+   	        providerWrite.write(this.city+"\n");
+   	        providerWrite.write(this.state+"\n"); 
+   	        providerWrite.write(this.zipCode+"\n");
+   	        providerWrite.write(this.numberOfConsultations);
+   	        providerWrite.write(this.totalFees);
    	        providerWrite.close();
    		}   catch (IOException e) {
    			System.out.println("Error");

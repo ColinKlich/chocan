@@ -8,4 +8,8 @@ public class ProviderDirectory {
     public ProviderDirectory(){
         
     }
+
+    public void printDirectory() {
+        System.out.println(services);
+    }
 }

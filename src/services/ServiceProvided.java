@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class ServiceProvided {
     private String currentDateTime;
-    private String serviceDate;
+    public String serviceDate;
     private int providerNumber;
     private String providerName;
     private int memberNumber;
@@ -24,7 +24,7 @@ public class ServiceProvided {
         this.memberNumber = memberNum;
         this.memberName = memberName;
         this.serviceCode = serviceCode;
-        this.comments = comments;
+        this.comments = null;
         this.fee = fee;
     }
 

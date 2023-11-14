@@ -60,7 +60,7 @@ public class ProviderReport {
         
         this.formattedReport += 
         "Total number of Consultations with Members: " + numberOfConsultations + '\n' +
-        "Total Fee for the Week" + totalFees;
+        "Total Fee for the Week: $" + totalFees;
 	}
 
     //Uses the formatted report for the given provider and writes it to the ProviderReport.txt file
