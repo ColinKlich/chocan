@@ -1,6 +1,5 @@
 package controllers;
 
-import services.ProviderDirectory;
 import services.Service;
 import services.ServiceProvided;
 import java.util.List;
@@ -20,7 +19,7 @@ public class ProviderController {
     public void billChocAn(AccountsController accounts) {
 
 		// ensure membership status is valid
-		if (Objects.equals(validateMember(accounts), false)) {
+		if (!validateMember(accounts)) {
 			return;
 		}
 
@@ -76,23 +75,27 @@ public class ProviderController {
 			}
 		}
 
+		//prints fee associated with input serviceCode's service
 		System.out.print("Amount billed to ChocAn: $" + service.fee);
 
+		//gives provider option to enter comments
 		System.out.println("Enter comments");
 		System.out.println("[1] Yes");
 		System.out.println("[2] No");
 
 		Scanner scanner2 = new Scanner(System.in);
-		String option = scanner2.nextLine();
+		int option = scanner2.nextInt();
 		scanner2.close();		
 
-		if (Objects.equals(option, "1")) {
+		//sets service's comments field equal to input from provider, else returns
+		if (option == 1) {
 			System.out.println("Enter comments:");
 			String enteredComments = scanner.nextLine();
 			service.comments = enteredComments;
 		}
-		else if (Objects.equals(option, "2"))
+		else if (option == 2) {
 			return;
+		}
 		else {
 			System.out.println("Invalid input");
 			return;

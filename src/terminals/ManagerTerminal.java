@@ -14,7 +14,7 @@ public class ManagerTerminal {
     Scanner scanner = new Scanner(System.in);
     Manager admin = new Manager("admin", "admin", "testing123");
 
-    ManagerTerminal(AccountsController accounts){
+    public ManagerTerminal(AccountsController accounts){
         reports = new ManagerController(accounts);
         boolean running = true;
 
