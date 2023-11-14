@@ -99,10 +99,14 @@ public class Provider {
 	   this.numberOfConsultations = this.numberOfConsultations + 1;
    }
 
-   public void setServicesProvided(List<ServiceProvided> servicesProvided) {
-        this.servicesProvided = servicesProvided;
+   public void addServicesProvided(ServiceProvided service) {
+        this.servicesProvided.add(service);
     }
 
+   public void deleteAllServiceProvided() {
+		this.servicesProvided = new ArrayList<ServiceProvided>();
+	}   
+   
    public void writeToFile() {
        try {
             File dirFile = new File(System.getProperty("user.dir")+"\\src\\accounts\\accounts_storage\\Provider_accounts");
@@ -112,9 +116,9 @@ public class Provider {
    	        providerWrite.write(this.providerName+"\n"); 
    	        providerWrite.write(this.providerNumber+"\n"); 
    	        providerWrite.write(this.address+"\n");
+   	        providerWrite.write(this.city+"\n");
    	        providerWrite.write(this.state+"\n"); 
    	        providerWrite.write(this.zipCode+"\n");
-   	        providerWrite.write("Service provided: ");
    	        providerWrite.write(this.numberOfConsultations);
    	        providerWrite.write(this.totalFees);
    	        providerWrite.close();
