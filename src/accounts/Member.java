@@ -85,12 +85,12 @@ public class Member  {
 	            memberFile = new File(dirFile,this.memberName+".txt");
 	            FileWriter memberWrite;
 	    			memberWrite = new FileWriter(memberFile);
-	    	        memberWrite.write("Member name: "+this.memberName+"\n"); 
-	    	        memberWrite.write("Member number: "+ this.memberNumber+"\n"); 
-	    	        memberWrite.write("Address: "+this.address+"\n");
-	    	        memberWrite.write("State: "+this.state+"\n"); 
-	    	        memberWrite.write("Zipcode: "+this.zipCode+"\n");
-	    	        memberWrite.write("Status: "+this.memberStatus+"\n"); 
+	    	        memberWrite.write(this.memberName+"\n"); 
+	    	        memberWrite.write(this.memberNumber+"\n"); 
+	    	        memberWrite.write(this.address+"\n");
+	    	        memberWrite.write(this.state+"\n"); 
+	    	        memberWrite.write(this.zipCode+"\n");
+	    	        memberWrite.write(this.memberStatus+"\n"); 
 	    	        memberWrite.close();
 	    		} catch (IOException e) {
 	    			System.out.println("Error");
