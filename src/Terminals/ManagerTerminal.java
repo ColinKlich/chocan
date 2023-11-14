@@ -79,7 +79,7 @@ public class ManagerTerminal {
 
             switch(choice.toLowerCase()){
                 case "1":
-            
+                    //ALL REPORTS
                     break;
                 case "2":
                     reportInformation.printAllProviderReports();
