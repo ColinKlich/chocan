@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.Scanner;
 import accounts.Member;
 
-public class ProviderController{
+public class ProviderController {
 
     public static int DEFAULT_FEE = 0;
     public static int DEFAULT_MEMBER_NUMBER = 000000000;
