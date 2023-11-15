@@ -11,6 +11,7 @@ import accounts.Member;
 import accounts.Provider;
 import controllers.AccountsController;
 import controllers.ManagerController;
+import reports.ProviderReport;
 import reports.SummaryReport;
 import services.Service;
 import services.ServiceProvided;
@@ -22,6 +23,7 @@ public class SamuelWisnoffTest {
 	AccountsController accounts;
 	//private List<Provider> providerList;
 	SummaryReport summaryReport;
+	ProviderReport providerReport;
 	Provider provider;
 	Providers providers;
 	ServiceProvided serviceProvided;
@@ -42,6 +44,7 @@ public class SamuelWisnoffTest {
 		accounts.addProvider("Samuel Wisnoff", 123455, "Monkey Lane", "Monkey Town", "MN", 44555);
 		serviceProvided = new ServiceProvided(service, "11-20-11 11:11:11", "yaya", 50, 50, "juniper", "George");
 		summaryReport = new SummaryReport(providers.providerList);
+		providerReport = new ProviderReport(provider);
 		
 		member = new Member("Bobby", 564578 , "Bob Lane", "BobTown",  "California", 35054);
 		
@@ -56,6 +59,10 @@ public class SamuelWisnoffTest {
 	public void getStateTest() {
 		assertEquals("California", member.getState());
 	}
+	@Test
+	public void printProviderReportTest() {
+        assertEquals(true, providerReport.print());
+    }   
 	
 
 }
