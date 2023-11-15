@@ -11,12 +11,10 @@ import java.util.Scanner;
 
 // GOAL: Need to create a validate member function for the provider terminal
 public class ProviderTerminal {
-    private boolean verified = false;
     Provider provider;
     ProviderController controller = new ProviderController();
 
-    public ProviderTerminal(AccountsController accounts, List<Service> providerDirectory) {
-        Scanner scanner = new Scanner(System.in);
+    ProviderTerminal(AccountsController accounts, List<Service> providerDirectory, Scanner scanner) { 
         boolean running = true;
         while (running) {
             System.out.println("Provider Terminal");
@@ -25,31 +23,29 @@ public class ProviderTerminal {
             System.out.println("[3] Request Provider Directory");
             System.out.println("[Quit] Return to Main Menu");
             String terminal = scanner.nextLine();
-            scanner.close();
 
             if (Objects.equals(terminal, "1")) {
-                verified = verifyProvider(accounts);
-                if (verified) {
-                    controller.billChocAn(accounts, provider);
+                if (verifyProvider(accounts, scanner)) {
+                    controller.billChocAn(accounts, provider, scanner);
                 }
             } else if (Objects.equals(terminal, "2")) {
-                verified = verifyProvider(accounts);
-                controller.validateMember(accounts);
+                if (verifyProvider(accounts, scanner)) {
+                    controller.validateMember(accounts, scanner);
+                }
             } else if (Objects.equals(terminal, "3")) {
-                verified = verifyProvider(accounts);
-                controller.requestProviderDirectory(providerDirectory);
+                if (verifyProvider(accounts, scanner)) {
+                        controller.requestProviderDirectory();
+                    }
             } else if (Objects.equals(terminal.toLowerCase(), "quit")) {
                 running = false;
             }
         }
     }
 
-    public boolean verifyProvider(AccountsController accounts) {
+    public boolean verifyProvider(AccountsController accounts, Scanner scanner) {
         boolean found = false;
         System.out.println("Enter Provider Number:");
-        Scanner scanner = new Scanner(System.in);
         int providerNum = scanner.nextInt();
-         scanner.close();
         List<Provider> providers = accounts.getProviders();
         for(Provider temp: providers){
             if(temp.getNumber() == providerNum){

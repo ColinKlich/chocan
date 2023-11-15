@@ -3,7 +3,9 @@ package terminals;
 
 import java.io.IOException;
 import java.text.ParseException;
+import utilities.*;
 import java.util.*;
+import accounts.*;
 import controllers.AccountsController;
 import services.*;
 
@@ -11,6 +13,11 @@ public class MainTerminal {
 
     public static AccountsController accounts = new AccountsController();
     static ProviderDirectory pd = new ProviderDirectory();
+    static Members members = new Members();
+    static List<Member> memberList = members.memberList;
+    static Providers providers = new Providers();
+    static List<Provider> providersList = providers.providerList;
+    static MainAccountingProcedure MAP = new MainAccountingProcedure(providersList, memberList);
 
     public static void main(String[] args) throws ParseException, IOException {
         //imports user accounts
@@ -30,7 +37,7 @@ public class MainTerminal {
             String terminal = terminalInput.nextLine();
 
             if (Objects.equals(terminal, "1")) {
-                new ProviderTerminal(accounts, pd.services);
+                new ProviderTerminal(accounts, pd.services, terminalInput);
             } else if (Objects.equals(terminal, "2")) {
                 new ManagerTerminal(accounts);
             } else if (Objects.equals(terminal, "3")) {
@@ -39,12 +46,11 @@ public class MainTerminal {
                 running = false;
                 //storeData();
                 System.out.println("Have a Great Day!!!");
+                terminalInput.close();
+                break;
             }
-
         }
-        terminalInput.close();
-
-
+        return;
     }
 
     /*private static void storeData() {
@@ -56,9 +62,9 @@ public class MainTerminal {
         for (Provider provider : providers) {
             provider.writeToFile();
         }
-    }*/
+    }
 
-    /*private static void importData() throws IOException {
+    private static void importData() throws IOException {
     	String path = System.getProperty("user.dir")+File.separator+"src\\accounts\\accounts_storage\\Member_accounts";
         File dirFile = new File(path);
         File listOfFiles[] = dirFile.listFiles();    	

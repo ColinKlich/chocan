@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project team13">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <!--define folder properties-->
+    <property name="dir.buildfile" value="."/>
+    <property name="dir.workspace" value="${dir.buildfile}/.."/>
+    <property name="dir.jarfile" value="${dir.buildfile}/release"/>
+    <target name="create_run_jar">
+        <jar destfile="${dir.jarfile}/ChocAn.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="terminals.MainTerminal"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="${dir.buildfile}/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Users/colin/.p2/pool/plugins/org.junit_4.13.2.v20230809-1000.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Users/colin/.p2/pool/plugins/org.hamcrest_2.2.0.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="C:/Users/colin/.p2/pool/plugins/org.hamcrest.core_2.2.0.v20230809-1000.jar"/>
+        </jar>
+    </target>
+</project>

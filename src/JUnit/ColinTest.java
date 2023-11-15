@@ -18,16 +18,19 @@ public class ColinTest {
 		op = new Operator("admin", "admin", "Testing123");
 	}
 
+	//my method
 	@Test
 	public void testOperatorGetUsername() {
 		assertEquals(op.getUsername(), "admin");
 	}
 
+	//my method
 	@Test
 	public void testOperatorGetPassword() {
 		assertNotEquals("admin", op.getPassword());
 	}
 	
+	//other method
 	@Test
 	public void testProviderGetTotalFees() {
 		prv.addFees(50);

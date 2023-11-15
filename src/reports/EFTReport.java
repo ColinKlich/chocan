@@ -1,3 +1,6 @@
+/*
+ * @Author Chris Hellen
+ */
 package reports;
 import java.io.File;
 import java.io.FileWriter;
@@ -10,7 +13,10 @@ public class EFTReport {
     int grossIncome;
     String formattedReport;
 
-    
+    /*
+     * Creates the EFT banking report
+     * @params providerList a list of all providers needed to be payed this week
+     */
     public EFTReport(List<Provider> providerList){
         this.providerList = providerList;
 
@@ -29,6 +35,9 @@ public class EFTReport {
         }
     }
 
+    /*
+     * Prints out the formatted eft report to its file
+     */
     public boolean print(){
         File report = new File("EFTReport.txt");
 

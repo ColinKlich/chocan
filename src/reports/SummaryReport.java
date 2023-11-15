@@ -13,9 +13,13 @@ public class SummaryReport {
     private int totalProviders;
     private int totalConsultations;
     private int overallFeeTotal;
-    private String formattedReport;
+    private String formattedReport = "";
     private String currDate;
 
+	/*
+	 * Contructs a report of all the providers and how much they made
+	 * @params providerList list of all providers
+	 */
     public SummaryReport (List<Provider> providerList){
 
         LocalDate date = LocalDate.now(); 
@@ -43,6 +47,7 @@ public class SummaryReport {
         "Overall Total Fee: " + overallFeeTotal;
     }
 
+	//prints out formatted summary report to its own file
     public boolean print(){
         File report = new File("SummaryReport" + currDate + ".txt");
 
@@ -57,55 +62,4 @@ public class SummaryReport {
         }
 		return false;
 	}
-    
-    public void getSummaryReport(int reportNumber) {
-    	//SummaryReport report;
-    	//4 reports filled with sample info to test functionality
-    	
-    	if (reportNumber == 1) {
-    		System.out.println("Summary Report 11/10/2023");
-    		System.out.println("Provider: Doug Sniffmeister. Number of Consultations: 35. Total Fee: $3456");
-    		System.out.println("Provider: Pig  Oinkfarmer. Number of Consultations: 25. Total Fee: $345");
-    		System.out.println("Provider: Bobby Wasabi. Number of Consultations: 10. Total Fee: $10000");
-    		System.out.println("Provider: Elon Musk. Number of Consultations: 1. Total Fee: $55");
-    		System.out.println("Total Number of Providers: 4");
-    		System.out.println("Total Number of Consultations: 71");
-    		System.out.println("Overall Total Fee: $13856");
-    		
-    	}
-    	else if (reportNumber == 2) {
-    		System.out.println("Summary Report 9/20/2023");
-    		System.out.println("Provider: Big Fish. Number of Consultations: 10. Total Fee: $50");
-    		System.out.println("Provider: Freddy Fazbear. Number of Consultations: 10. Total Fee: $300");
-    		System.out.println("Provider: Ben Shapiro. Number of Consultations: 5. Total Fee: $100");
-    		System.out.println("Provider: Doc McStuffins. Number of Consultations: 1. Total Fee: $50");
-    		System.out.println("Total Number of Providers: 4");
-    		System.out.println("Total Number of Consultations: 26");
-    		System.out.println("Overall Total Fee: $500");
-    		
-    	}
-    	else if (reportNumber == 3) {
-    		System.out.println("Summary Report 9/1/2023");
-    		System.out.println("Provider: Grunkle Stan. Number of Consultations: 50. Total Fee: $500");
-    		System.out.println("Provider: Bill Nye. Number of Consultations: 50. Total Fee: $300");
-    		System.out.println("Provider: Doctor Who. Number of Consultations: 7. Total Fee: $1000");
-    		System.out.println("Provider: Illidan Stormrage. Number of Consultations: 50. Total Fee: $500");
-    		System.out.println("Total Number of Providers: 4");
-    		System.out.println("Total Number of Consultations: 157");
-    		System.out.println("Overall Total Fee: $2300");
-    		
-    	}
-    	else if (reportNumber == 4) {
-    		System.out.println("Summary Report 4/5/2023");
-    		System.out.println("Provider: Stuart R. Bell. Number of Consultations: 20. Total Fee: $5000");
-    		System.out.println("Provider: Lego City. Number of Consultations: 50. Total Fee: $300");
-    		System.out.println("Provider: Jeff Bezos. Number of Consultations: 25. Total Fee: $1000");
-    		System.out.println("Provider: LeBron James. Number of Consultations: 50. Total Fee: $500");
-    		System.out.println("Total Number of Providers: 4");
-    		System.out.println("Total Number of Consultations: 145");
-    		System.out.println("Overall Total Fee: $6800");
-    		
-    	}
-    	return ;
-    }
 }
