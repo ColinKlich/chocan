@@ -1,3 +1,4 @@
+//@Author Kara Moran
 package controllers;
 
 import services.*;
@@ -107,8 +108,9 @@ public class ProviderController {
 		provider.addServicesProvided(serviceProvided);
 	}
 
-	public void requestProviderDirectory() {
+	public boolean requestProviderDirectory() {
 		providerDirectory.printDirectory();
+		return true;
 	}
 
 	public boolean validateMember(AccountsController accounts, Scanner scanner) {
