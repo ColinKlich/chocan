@@ -29,9 +29,9 @@ public class ProviderController {
 		}
 
 		// read date from input and store for service
+		scanner.nextLine();
 		System.out.println("Enter Date (MM-DD-YYY): ");
-
-		String serviceDate = scanner.nextLine();
+		serviceDate = scanner.nextLine();
 
 		// while loops takes service code from input until provider verifies correct service is displayed
 		boolean unverified = true;
