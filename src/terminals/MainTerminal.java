@@ -20,7 +20,6 @@ public class MainTerminal {
     static MainAccountingProcedure MAP = new MainAccountingProcedure(providersList, memberList);
 
     public static void main(String[] args) throws ParseException, IOException {
-        MAP.runProcedure();
         //imports user accounts
         //importData();
         //create services in directory
@@ -47,9 +46,11 @@ public class MainTerminal {
                 running = false;
                 //storeData();
                 System.out.println("Have a Great Day!!!");
+                terminalInput.close();
+                break;
             }
         }
-        terminalInput.close();
+        return;
     }
 
     /*private static void storeData() {
